@@ -68,12 +68,12 @@ void Cube::spinR(){
 	cubeArr[1].getFace()[0][2] = cubeArr[5].getFace()[0][2];
 	cubeArr[1].getFace()[1][2] = cubeArr[5].getFace()[1][2];
 	cubeArr[1].getFace()[2][2] = cubeArr[5].getFace()[2][2];
-	cubeArr[5].getFace()[0][2] = cubeArr[3].getFace()[0][2];
-	cubeArr[5].getFace()[1][2] = cubeArr[3].getFace()[1][2];
-	cubeArr[5].getFace()[2][2] = cubeArr[3].getFace()[2][2];
-	cubeArr[3].getFace()[0][2] = temp0;
-	cubeArr[3].getFace()[1][2] = temp1;
-	cubeArr[3].getFace()[2][2] = temp2;
+	cubeArr[5].getFace()[0][2] = cubeArr[3].getFace()[2][0];
+	cubeArr[5].getFace()[1][2] = cubeArr[3].getFace()[1][0];
+	cubeArr[5].getFace()[2][2] = cubeArr[3].getFace()[0][0];
+	cubeArr[3].getFace()[2][0] = temp0;
+	cubeArr[3].getFace()[1][0] = temp1;
+	cubeArr[3].getFace()[0][0] = temp2;
 	cubeArr[2].rotate();
 }
 
@@ -82,12 +82,12 @@ void Cube::spinRi(){
 	temp0 = cubeArr[0].getFace()[0][2];
 	temp1 = cubeArr[0].getFace()[1][2];
 	temp2 = cubeArr[0].getFace()[2][2];
-	cubeArr[0].getFace()[0][2] = cubeArr[3].getFace()[0][2];
-	cubeArr[0].getFace()[1][2] = cubeArr[3].getFace()[1][2];
-	cubeArr[0].getFace()[2][2] = cubeArr[3].getFace()[2][2];
-	cubeArr[3].getFace()[0][2] = cubeArr[5].getFace()[0][2];
-	cubeArr[3].getFace()[1][2] = cubeArr[5].getFace()[1][2];
-	cubeArr[3].getFace()[2][2] = cubeArr[5].getFace()[2][2];
+	cubeArr[0].getFace()[0][2] = cubeArr[3].getFace()[2][0];
+	cubeArr[0].getFace()[1][2] = cubeArr[3].getFace()[1][0];
+	cubeArr[0].getFace()[2][2] = cubeArr[3].getFace()[0][0];
+	cubeArr[3].getFace()[2][0] = cubeArr[5].getFace()[0][2];
+	cubeArr[3].getFace()[1][0] = cubeArr[5].getFace()[1][2];
+	cubeArr[3].getFace()[0][0] = cubeArr[5].getFace()[2][2];
 	cubeArr[5].getFace()[0][2] = cubeArr[1].getFace()[0][2];
 	cubeArr[5].getFace()[1][2] = cubeArr[1].getFace()[1][2];
 	cubeArr[5].getFace()[2][2] = cubeArr[1].getFace()[2][2];
@@ -108,12 +108,12 @@ void Cube::spinLi(){
 	cubeArr[1].getFace()[0][0] = cubeArr[5].getFace()[0][0];
 	cubeArr[1].getFace()[1][0] = cubeArr[5].getFace()[1][0];
 	cubeArr[1].getFace()[2][0] = cubeArr[5].getFace()[2][0];
-	cubeArr[5].getFace()[0][0] = cubeArr[3].getFace()[0][0];
-	cubeArr[5].getFace()[1][0] = cubeArr[3].getFace()[1][0];
-	cubeArr[5].getFace()[2][0] = cubeArr[3].getFace()[2][0];
-	cubeArr[3].getFace()[0][0] = temp0;
-	cubeArr[3].getFace()[1][0] = temp1;
-	cubeArr[3].getFace()[2][0] = temp2;
+	cubeArr[5].getFace()[0][0] = cubeArr[3].getFace()[2][2];
+	cubeArr[5].getFace()[1][0] = cubeArr[3].getFace()[1][2];
+	cubeArr[5].getFace()[2][0] = cubeArr[3].getFace()[0][2];
+	cubeArr[3].getFace()[2][2] = temp0;
+	cubeArr[3].getFace()[1][2] = temp1;
+	cubeArr[3].getFace()[0][2] = temp2;
 	cubeArr[4].rotateI();
 }
 
@@ -122,12 +122,12 @@ void Cube::spinL(){
 	temp0 = cubeArr[0].getFace()[0][0];
 	temp1 = cubeArr[0].getFace()[1][0];
 	temp2 = cubeArr[0].getFace()[2][0];
-	cubeArr[0].getFace()[0][0] = cubeArr[3].getFace()[0][0];
-	cubeArr[0].getFace()[1][0] = cubeArr[3].getFace()[1][0];
-	cubeArr[0].getFace()[2][0] = cubeArr[3].getFace()[2][0];
-	cubeArr[3].getFace()[0][0] = cubeArr[5].getFace()[0][0];
-	cubeArr[3].getFace()[1][0] = cubeArr[5].getFace()[1][0];
-	cubeArr[3].getFace()[2][0] = cubeArr[5].getFace()[2][0];
+	cubeArr[0].getFace()[0][0] = cubeArr[3].getFace()[2][2];
+	cubeArr[0].getFace()[1][0] = cubeArr[3].getFace()[1][2];
+	cubeArr[0].getFace()[2][0] = cubeArr[3].getFace()[0][2];
+	cubeArr[3].getFace()[2][2] = cubeArr[5].getFace()[0][0];
+	cubeArr[3].getFace()[1][2] = cubeArr[5].getFace()[1][0];
+	cubeArr[3].getFace()[0][2] = cubeArr[5].getFace()[2][0];
 	cubeArr[5].getFace()[0][0] = cubeArr[1].getFace()[0][0];
 	cubeArr[5].getFace()[1][0] = cubeArr[1].getFace()[1][0];
 	cubeArr[5].getFace()[2][0] = cubeArr[1].getFace()[2][0];
