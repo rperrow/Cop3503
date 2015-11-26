@@ -66,6 +66,9 @@ public:
 	void setTop(int k);
 	void rotate(int k);
 	void step1Move();
+	bool CheckColors();
+	bool CheckRepeats();
+	bool Valid();
 };
 
 #endif 
