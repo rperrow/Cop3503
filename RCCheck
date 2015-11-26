@@ -63,3 +63,11 @@ bool Cube::CheckRepeats()  // checks to see if any of the same color share the s
 	
 	return true;
 }
+
+bool Cube::Valid()
+{
+	if (this.CheckColors() && this.CheckRepeats())
+		return true;
+	else
+		return false;
+}
