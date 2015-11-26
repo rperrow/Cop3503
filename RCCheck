@@ -64,10 +64,10 @@ bool Cube::CheckRepeats()  // checks to see if any of the same color share the s
 	return true;
 }
 
-bool Cube::Valid()
+bool Cube::Valid()  // combines the previous functions to evaluate if the overall cube is valid or not
 {
-	if (this.CheckColors() && this.CheckRepeats())
+	if (this.CheckColors() && this.CheckRepeats())  // checks to see if the cube passes both tests and returns true if the cube does
 		return true;
-	else
+	else  // if it doesn't the functions returns false
 		return false;
 }
