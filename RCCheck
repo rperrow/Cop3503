@@ -1,4 +1,5 @@
 #include <string>
+#include"RCSolver.h"
 
 bool Cube::CheckColors() // checks to see if the inputted cube has the appropriate number of each color
 {
@@ -12,11 +13,11 @@ bool Cube::CheckColors() // checks to see if the inputted cube has the appropria
 	int white = 0;
 	
 // loop to go through and access each tile in the cube, summing up the number of each color
-	for (int k = 0, k < 6, k++)
+	for (int k = 0; k < 6; k++)
 	{
-		for (int i = 0, i < 3, i++)
+		for (int i = 0; i < 3; i++)
 			{
-				for (int j = 0, j < 3, j++)
+				for (int j = 0; j < 3; j++)
 				{
 					if (cubeArr[k].getFace()[i][k].getColor().compare("green") == 0)
 						green++;
@@ -43,13 +44,13 @@ bool Cube::CheckColors() // checks to see if the inputted cube has the appropria
 bool Cube::CheckRepeats()  // checks to see if any of the same color share the same relative positioning
 {
 // first three for loops isolates a cell to be compared
-	for (int k = 0, k < 6, k++)
+	for (int k = 0; k < 6; k++)
 	{
-		for (int i = 0, i < 3, i++)
+		for (int i = 0; i < 3; i++)
 			{
-				for (int j = 0, j < 3, j++)
+				for (int j = 0; j < 3; j++)
 				{
-					for (int m = 0, m < 6, m++) // last for loop is then used to compare to other relative positions
+					for (int m = 0; m < 6; m++) // last for loop is then used to compare to other relative positions
 						{
 							if (m != k)  // case when you are comparing an object to itself will of course result in a "repeat" thus is excluded
 							{
@@ -66,7 +67,7 @@ bool Cube::CheckRepeats()  // checks to see if any of the same color share the s
 
 bool Cube::Valid()  // combines the previous functions to evaluate if the overall cube is valid or not
 {
-	if (this.CheckColors() && this.CheckRepeats())  // checks to see if the cube passes both tests and returns true if the cube does
+	if (this->CheckColors()== true && this->CheckRepeats() == true)  // checks to see if the cube passes both tests and returns true if the cube does
 		return true;
 	else  // if it doesn't the functions returns false
 		return false;
