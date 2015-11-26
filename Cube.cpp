@@ -161,7 +161,7 @@ void Cube::spinDi(){
 	Tile temp0; Tile temp1; Tile temp2;
 	temp0 = cubeArr[1].getFace()[2][0];
 	temp1 = cubeArr[1].getFace()[2][1];
-	temp2 = cubeArr[1].getFace()[2][1];
+	temp2 = cubeArr[1].getFace()[2][2];
 	cubeArr[1].getFace()[2][0] = cubeArr[2].getFace()[2][0];
 	cubeArr[1].getFace()[2][1] = cubeArr[2].getFace()[2][1];
 	cubeArr[1].getFace()[2][2] = cubeArr[2].getFace()[2][2];
