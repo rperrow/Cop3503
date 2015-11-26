@@ -1,3 +1,6 @@
+#ifndef RCSOLVER_H
+#define RCSOLVER_H
+
 #include <iostream>
 #include <string>
 
@@ -64,3 +67,5 @@ public:
 	void rotate(int k);
 	void step1Move();
 };
+
+#endif 
