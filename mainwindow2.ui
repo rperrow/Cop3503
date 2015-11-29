@@ -1,0 +1,1168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1023</width>
+    <height>754</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <widget class="QPushButton" name="pushButton">
+    <property name="geometry">
+     <rect>
+      <x>680</x>
+      <y>80</y>
+      <width>201</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Solve 1 Step</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>700</x>
+      <y>190</y>
+      <width>131</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Rubik's Cube Solver</string>
+    </property>
+   </widget>
+   <widget class="QFrame" name="Square">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>80</y>
+      <width>631</width>
+      <height>501</height>
+     </rect>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QFrame" name="Blue_1">
+     <property name="geometry">
+      <rect>
+       <x>270</x>
+       <y>140</y>
+       <width>31</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#Blue_1{
+background: blue; 
+border:5px solid black;
+border-radius: 40px; 
+}
+
+</string>
+     </property>
+     <layout class="QFormLayout" name="MyLogin"/>
+    </widget>
+    <widget class="QFrame" name="Blue5">
+     <property name="geometry">
+      <rect>
+       <x>300</x>
+       <y>140</y>
+       <width>31</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#Blue5{
+background: blue; 
+border:5px solid black;
+border-radius: 40px; 
+}
+
+</string>
+     </property>
+     <layout class="QFormLayout" name="MyLogin_2"/>
+    </widget>
+    <widget class="QFrame" name="Blue6">
+     <property name="geometry">
+      <rect>
+       <x>330</x>
+       <y>140</y>
+       <width>31</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#Blue6{
+background: blue; 
+border:5px solid black;
+border-radius: 40px; 
+}
+
+</string>
+     </property>
+     <layout class="QFormLayout" name="MyLogin_3"/>
+    </widget>
+    <widget class="QFrame" name="Blue7">
+     <property name="geometry">
+      <rect>
+       <x>270</x>
+       <y>170</y>
+       <width>31</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#Blue7
+
+{
+background: blue; 
+border:5px solid black;
+border-radius: 40px; 
+}
+
+</string>
+     </property>
+     <layout class="QFormLayout" name="MyLogin_7"/>
+    </widget>
+    <widget class="QFrame" name="Blue8">
+     <property name="geometry">
+      <rect>
+       <x>300</x>
+       <y>170</y>
+       <width>31</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#Blue8
+
+{
+background: blue; 
+border:5px solid black;
+border-radius: 40px; 
+}
+
+</string>
+     </property>
+     <layout class="QFormLayout" name="MyLogin_8"/>
+    </widget>
+    <widget class="QFrame" name="Blue9">
+     <property name="geometry">
+      <rect>
+       <x>330</x>
+       <y>170</y>
+       <width>31</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#Blue9
+
+{
+background: blue; 
+border:5px solid black;
+border-radius: 40px; 
+}
+
+</string>
+     </property>
+     <layout class="QFormLayout" name="MyLogin_9"/>
+    </widget>
+    <widget class="QFrame" name="Blue2">
+     <property name="geometry">
+      <rect>
+       <x>270</x>
+       <y>200</y>
+       <width>31</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#Blue2
+{
+background: blue; 
+border:5px solid black;
+border-radius: 40px; 
+}
+
+</string>
+     </property>
+     <layout class="QFormLayout" name="MyLogin_10"/>
+    </widget>
+    <widget class="QFrame" name="Blue_3">
+     <property name="geometry">
+      <rect>
+       <x>300</x>
+       <y>200</y>
+       <width>31</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#Blue_3
+{
+background: blue; 
+border:5px solid black;
+border-radius: 40px; 
+}
+
+</string>
+     </property>
+     <layout class="QFormLayout" name="MyLogin_11"/>
+    </widget>
+    <widget class="QFrame" name="Blue4">
+     <property name="geometry">
+      <rect>
+       <x>330</x>
+       <y>200</y>
+       <width>31</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#Blue4
+
+{
+background: blue; 
+border:5px solid black;
+border-radius: 40px; 
+}
+
+</string>
+     </property>
+     <layout class="QFormLayout" name="MyLogin_12"/>
+    </widget>
+    <widget class="QFrame" name="Green1_5">
+     <property name="geometry">
+      <rect>
+       <x>120</x>
+       <y>170</y>
+       <width>31</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#Green1_5
+
+{
+background: green; 
+border:5px solid black;
+border-radius: 40px; 
+}
+
+</string>
+     </property>
+     <layout class="QFormLayout" name="MyLogin_17"/>
+    </widget>
+    <widget class="QFrame" name="Yellow1">
+     <property name="geometry">
+      <rect>
+       <x>180</x>
+       <y>290</y>
+       <width>31</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#Yellow1
+
+{
+background: yellow; 
+border:5px solid black;
+border-radius: 40px; 
+}
+
+</string>
+     </property>
+     <layout class="QFormLayout" name="MyLogin_22"/>
+    </widget>
+    <widget class="QFrame" name="Yellow">
+     <property name="geometry">
+      <rect>
+       <x>210</x>
+       <y>290</y>
+       <width>31</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#Yellow
+
+{
+background: yellow; 
+border:5px solid black;
+border-radius: 40px; 
+}
+
+</string>
+     </property>
+     <layout class="QFormLayout" name="MyLogin_23"/>
+    </widget>
+    <widget class="QFrame" name="Yellow_2">
+     <property name="geometry">
+      <rect>
+       <x>240</x>
+       <y>290</y>
+       <width>31</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#Yellow_2
+
+{
+background: yellow; 
+border:5px solid black;
+border-radius: 40px; 
+}
+
+</string>
+     </property>
+     <layout class="QFormLayout" name="MyLogin_24"/>
+    </widget>
+    <widget class="QFrame" name="Yellow_3">
+     <property name="geometry">
+      <rect>
+       <x>240</x>
+       <y>260</y>
+       <width>31</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#Yellow_3
+
+{
+background: yellow; 
+border:5px solid black;
+border-radius: 40px; 
+}
+
+</string>
+     </property>
+     <layout class="QFormLayout" name="MyLogin_25"/>
+    </widget>
+    <widget class="QFrame" name="Yellow_4">
+     <property name="geometry">
+      <rect>
+       <x>210</x>
+       <y>260</y>
+       <width>31</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#Yellow_4
+
+{
+background: yellow; 
+border:5px solid black;
+border-radius: 40px; 
+}
+
+</string>
+     </property>
+     <layout class="QFormLayout" name="MyLogin_26"/>
+    </widget>
+    <widget class="QFrame" name="Yellow_5">
+     <property name="geometry">
+      <rect>
+       <x>180</x>
+       <y>260</y>
+       <width>31</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#Yellow_5
+
+{
+background: yellow; 
+border:5px solid black;
+border-radius: 40px; 
+}
+
+</string>
+     </property>
+     <layout class="QFormLayout" name="MyLogin_27"/>
+    </widget>
+    <widget class="QFrame" name="Yellow_6">
+     <property name="geometry">
+      <rect>
+       <x>240</x>
+       <y>230</y>
+       <width>31</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#Yellow_6
+
+{
+background: yellow; 
+border:5px solid black;
+border-radius: 40px; 
+}
+
+</string>
+     </property>
+     <layout class="QFormLayout" name="MyLogin_28"/>
+    </widget>
+    <widget class="QFrame" name="Yellow_7">
+     <property name="geometry">
+      <rect>
+       <x>210</x>
+       <y>230</y>
+       <width>31</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#Yellow_7
+
+{
+background: yellow; 
+border:5px solid black;
+border-radius: 40px; 
+}
+
+</string>
+     </property>
+     <layout class="QFormLayout" name="MyLogin_29"/>
+    </widget>
+    <widget class="QFrame" name="Yellow_8">
+     <property name="geometry">
+      <rect>
+       <x>180</x>
+       <y>230</y>
+       <width>31</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#Yellow_8
+
+{
+background: yellow; 
+border:5px solid black;
+border-radius: 40px; 
+}
+
+</string>
+     </property>
+     <layout class="QFormLayout" name="MyLogin_30"/>
+    </widget>
+    <widget class="QFrame" name="Red">
+     <property name="geometry">
+      <rect>
+       <x>180</x>
+       <y>200</y>
+       <width>31</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#Red
+
+{
+background: red; 
+border:5px solid black;
+border-radius: 40px; 
+}
+
+</string>
+     </property>
+     <layout class="QFormLayout" name="MyLogin_31"/>
+    </widget>
+    <widget class="QFrame" name="Red_2">
+     <property name="geometry">
+      <rect>
+       <x>210</x>
+       <y>200</y>
+       <width>31</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#Red_2
+
+{
+background: red; 
+border:5px solid black;
+border-radius: 40px; 
+}
+
+</string>
+     </property>
+     <layout class="QFormLayout" name="MyLogin_32"/>
+    </widget>
+    <widget class="QFrame" name="Red_3">
+     <property name="geometry">
+      <rect>
+       <x>240</x>
+       <y>200</y>
+       <width>31</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#Red_3
+
+{
+background: red; 
+border:5px solid black;
+border-radius: 40px; 
+}
+
+</string>
+     </property>
+     <layout class="QFormLayout" name="MyLogin_33"/>
+    </widget>
+    <widget class="QFrame" name="Red_4">
+     <property name="geometry">
+      <rect>
+       <x>180</x>
+       <y>170</y>
+       <width>31</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#Red_4
+
+{
+background: red; 
+border:5px solid black;
+border-radius: 40px; 
+}
+
+</string>
+     </property>
+     <layout class="QFormLayout" name="MyLogin_34"/>
+    </widget>
+    <widget class="QFrame" name="Red_5">
+     <property name="geometry">
+      <rect>
+       <x>210</x>
+       <y>170</y>
+       <width>31</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#Red_5
+
+{
+background: red; 
+border:5px solid black;
+border-radius: 40px; 
+}
+
+</string>
+     </property>
+     <layout class="QFormLayout" name="MyLogin_35"/>
+    </widget>
+    <widget class="QFrame" name="Red_6">
+     <property name="geometry">
+      <rect>
+       <x>240</x>
+       <y>170</y>
+       <width>31</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#Red_6
+
+{
+background: red; 
+border:5px solid black;
+border-radius: 40px; 
+}
+
+</string>
+     </property>
+     <layout class="QFormLayout" name="MyLogin_36"/>
+    </widget>
+    <widget class="QFrame" name="Red_7">
+     <property name="geometry">
+      <rect>
+       <x>180</x>
+       <y>140</y>
+       <width>31</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#Red_7
+
+{
+background: red; 
+border:5px solid black;
+border-radius: 40px; 
+}
+
+</string>
+     </property>
+     <layout class="QFormLayout" name="MyLogin_37"/>
+    </widget>
+    <widget class="QFrame" name="Red_8">
+     <property name="geometry">
+      <rect>
+       <x>210</x>
+       <y>140</y>
+       <width>31</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#Red_8
+
+{
+background: red; 
+border:5px solid black;
+border-radius: 40px; 
+}
+
+</string>
+     </property>
+     <layout class="QFormLayout" name="MyLogin_38"/>
+    </widget>
+    <widget class="QFrame" name="Red_9">
+     <property name="geometry">
+      <rect>
+       <x>240</x>
+       <y>140</y>
+       <width>31</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#Red_9
+
+{
+background: red; 
+border:5px solid black;
+border-radius: 40px; 
+}
+
+</string>
+     </property>
+     <layout class="QFormLayout" name="MyLogin_39"/>
+    </widget>
+    <widget class="QFrame" name="White">
+     <property name="geometry">
+      <rect>
+       <x>180</x>
+       <y>110</y>
+       <width>31</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#White{
+background: white; 
+border:5px solid black;
+border-radius: 40px; 
+}
+
+</string>
+     </property>
+     <layout class="QFormLayout" name="MyLogin_40"/>
+    </widget>
+    <widget class="QFrame" name="White_2">
+     <property name="geometry">
+      <rect>
+       <x>210</x>
+       <y>110</y>
+       <width>31</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#White_2{
+background: white; 
+border:5px solid black;
+border-radius: 40px; 
+}
+
+</string>
+     </property>
+     <layout class="QFormLayout" name="MyLogin_41"/>
+    </widget>
+    <widget class="QFrame" name="White_3">
+     <property name="geometry">
+      <rect>
+       <x>240</x>
+       <y>110</y>
+       <width>31</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#White_3{
+background: white; 
+border:5px solid black;
+border-radius: 40px; 
+}
+
+</string>
+     </property>
+     <layout class="QFormLayout" name="MyLogin_42"/>
+    </widget>
+    <widget class="QFrame" name="White_4">
+     <property name="geometry">
+      <rect>
+       <x>240</x>
+       <y>80</y>
+       <width>31</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#White_4{
+background: white; 
+border:5px solid black;
+border-radius: 40px; 
+}
+
+</string>
+     </property>
+     <layout class="QFormLayout" name="MyLogin_43"/>
+    </widget>
+    <widget class="QFrame" name="White_5">
+     <property name="geometry">
+      <rect>
+       <x>210</x>
+       <y>80</y>
+       <width>31</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#White_5{
+background: white; 
+border:5px solid black;
+border-radius: 40px; 
+}
+
+</string>
+     </property>
+     <layout class="QFormLayout" name="MyLogin_44"/>
+    </widget>
+    <widget class="QFrame" name="White_6">
+     <property name="geometry">
+      <rect>
+       <x>180</x>
+       <y>80</y>
+       <width>31</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#White_6{
+background: white; 
+border:5px solid black;
+border-radius: 40px; 
+}
+
+</string>
+     </property>
+     <layout class="QFormLayout" name="MyLogin_45"/>
+    </widget>
+    <widget class="QFrame" name="White_7">
+     <property name="geometry">
+      <rect>
+       <x>180</x>
+       <y>50</y>
+       <width>31</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#White_7{
+background: white; 
+border:5px solid black;
+border-radius: 40px; 
+}
+
+</string>
+     </property>
+     <layout class="QFormLayout" name="MyLogin_46"/>
+    </widget>
+    <widget class="QFrame" name="White_8">
+     <property name="geometry">
+      <rect>
+       <x>210</x>
+       <y>50</y>
+       <width>31</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#White_8{
+background: white; 
+border:5px solid black;
+border-radius: 40px; 
+}
+
+</string>
+     </property>
+     <layout class="QFormLayout" name="MyLogin_47"/>
+    </widget>
+    <widget class="QFrame" name="White_9">
+     <property name="geometry">
+      <rect>
+       <x>240</x>
+       <y>50</y>
+       <width>31</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#White_9{
+background: white; 
+border:5px solid black;
+border-radius: 40px; 
+}
+
+</string>
+     </property>
+     <layout class="QFormLayout" name="MyLogin_48"/>
+    </widget>
+    <widget class="QFrame" name="Orange">
+     <property name="geometry">
+      <rect>
+       <x>360</x>
+       <y>140</y>
+       <width>31</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#Orange{
+background: orange; 
+border:5px solid black;
+border-radius: 40px; 
+}
+
+</string>
+     </property>
+     <layout class="QFormLayout" name="MyLogin_49"/>
+    </widget>
+    <widget class="QFrame" name="Orange_2">
+     <property name="geometry">
+      <rect>
+       <x>390</x>
+       <y>140</y>
+       <width>31</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#Orange_2{
+background: orange; 
+border:5px solid black;
+border-radius: 40px; 
+}
+
+</string>
+     </property>
+     <layout class="QFormLayout" name="MyLogin_50"/>
+    </widget>
+    <widget class="QWidget" name="Orange_3" native="true">
+     <property name="geometry">
+      <rect>
+       <x>420</x>
+       <y>140</y>
+       <width>31</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#Orange_3{
+background: orange; 
+border:5px solid black;
+border-radius: 40px; 
+}
+
+</string>
+     </property>
+     <layout class="QFormLayout" name="MyLogin_51"/>
+    </widget>
+    <widget class="QFrame" name="Orange_4">
+     <property name="geometry">
+      <rect>
+       <x>360</x>
+       <y>170</y>
+       <width>31</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#Orange_4{
+background: orange; 
+border:5px solid black;
+border-radius: 40px; 
+}
+
+</string>
+     </property>
+     <layout class="QFormLayout" name="MyLogin_52"/>
+    </widget>
+    <widget class="QFrame" name="Orange_5">
+     <property name="geometry">
+      <rect>
+       <x>390</x>
+       <y>170</y>
+       <width>31</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#Orange_5{
+background: orange; 
+border:5px solid black;
+border-radius: 40px; 
+}
+
+</string>
+     </property>
+     <layout class="QFormLayout" name="MyLogin_53"/>
+    </widget>
+    <widget class="QFrame" name="Orange_6">
+     <property name="geometry">
+      <rect>
+       <x>420</x>
+       <y>170</y>
+       <width>31</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#Orange_6{
+background: orange; 
+border:5px solid black;
+border-radius: 40px; 
+}
+
+</string>
+     </property>
+     <layout class="QFormLayout" name="MyLogin_54"/>
+    </widget>
+    <widget class="QFrame" name="Orange_7">
+     <property name="geometry">
+      <rect>
+       <x>360</x>
+       <y>200</y>
+       <width>31</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#Orange_7{
+background: orange; 
+border:5px solid black;
+border-radius: 40px; 
+}
+
+</string>
+     </property>
+     <layout class="QFormLayout" name="MyLogin_55"/>
+    </widget>
+    <widget class="QFrame" name="Orange_8">
+     <property name="geometry">
+      <rect>
+       <x>390</x>
+       <y>200</y>
+       <width>31</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#Orange_8{
+background: orange; 
+border:5px solid black;
+border-radius: 40px; 
+}
+
+</string>
+     </property>
+     <layout class="QFormLayout" name="MyLogin_56"/>
+    </widget>
+    <widget class="QFrame" name="Orange_9">
+     <property name="geometry">
+      <rect>
+       <x>420</x>
+       <y>200</y>
+       <width>31</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#Orange_9{
+background: orange; 
+border:5px solid black;
+border-radius: 40px; 
+}
+
+</string>
+     </property>
+     <layout class="QFormLayout" name="MyLogin_57"/>
+    </widget>
+    <widget class="QPushButton" name="Green2">
+     <property name="geometry">
+      <rect>
+       <x>120</x>
+       <y>140</y>
+       <width>31</width>
+       <height>32</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#Green2
+
+{
+background: green; 
+border:5px solid black;
+border-radius: 40px; 
+}
+
+</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="Green2_2">
+     <property name="geometry">
+      <rect>
+       <x>150</x>
+       <y>170</y>
+       <width>31</width>
+       <height>32</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#Green2
+
+{
+background: green; 
+border:5px solid black;
+border-radius: 40px; 
+}
+
+</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>60</y>
+      <width>131</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Your Cube</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_2">
+    <property name="geometry">
+     <rect>
+      <x>680</x>
+      <y>110</y>
+      <width>201</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Solve All Step</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="Randomize">
+    <property name="geometry">
+     <rect>
+      <x>680</x>
+      <y>140</y>
+      <width>201</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Randomize</string>
+    </property>
+   </widget>
+   <widget class="QTextBrowser" name="textBrowser">
+    <property name="geometry">
+     <rect>
+      <x>660</x>
+      <y>290</y>
+      <width>256</width>
+      <height>261</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_3">
+    <property name="geometry">
+     <rect>
+      <x>700</x>
+      <y>250</y>
+      <width>115</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>PushButton</string>
+    </property>
+   </widget>
+   <zorder>textBrowser</zorder>
+   <zorder>pushButton</zorder>
+   <zorder>label</zorder>
+   <zorder>Square</zorder>
+   <zorder>label_2</zorder>
+   <zorder>pushButton_2</zorder>
+   <zorder>Randomize</zorder>
+   <zorder>pushButton_3</zorder>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1023</width>
+     <height>25</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+  </widget>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections/>
+</ui>
