@@ -6,765 +6,746 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>916</width>
-    <height>740</height>
+    <width>1041</width>
+    <height>706</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="RedCube" name="Green16">
+   <widget class="QPushButton" name="solve1">
     <property name="geometry">
      <rect>
-      <x>280</x>
-      <y>230</y>
-      <width>41</width>
-      <height>31</height>
+      <x>744</x>
+      <y>60</y>
+      <width>211</width>
+      <height>32</height>
      </rect>
     </property>
     <property name="text">
-     <string/>
+     <string>SolveOne</string>
     </property>
    </widget>
-   <widget class="RedCube" name="Green28">
+   <widget class="QPushButton" name="solveall">
     <property name="geometry">
      <rect>
-      <x>320</x>
-      <y>230</y>
-      <width>41</width>
-      <height>31</height>
+      <x>740</x>
+      <y>100</y>
+      <width>211</width>
+      <height>32</height>
      </rect>
     </property>
     <property name="text">
-     <string/>
+     <string>SolveAll</string>
     </property>
    </widget>
-   <widget class="RedCube" name="White3">
-    <property name="geometry">
-     <rect>
-      <x>360</x>
-      <y>230</y>
-      <width>41</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
-   <widget class="RedCube" name="pushButton_4">
-    <property name="geometry">
-     <rect>
-      <x>280</x>
-      <y>260</y>
-      <width>41</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
-   <widget class="RedCube" name="pushButton_5">
-    <property name="geometry">
-     <rect>
-      <x>280</x>
-      <y>290</y>
-      <width>41</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
-   <widget class="RedCube" name="pushButton_6">
-    <property name="geometry">
-     <rect>
-      <x>320</x>
-      <y>290</y>
-      <width>41</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
-   <widget class="RedCube" name="pushButton_8">
-    <property name="geometry">
-     <rect>
-      <x>360</x>
-      <y>290</y>
-      <width>41</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
-   <widget class="RedCube" name="pushButton_9">
-    <property name="geometry">
-     <rect>
-      <x>360</x>
-      <y>260</y>
-      <width>41</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
-   <widget class="WhiteCube" name="Red7">
-    <property name="geometry">
-     <rect>
-      <x>320</x>
-      <y>200</y>
-      <width>41</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
-   <widget class="WhiteCube" name="Red1">
-    <property name="geometry">
-     <rect>
-      <x>280</x>
-      <y>140</y>
-      <width>41</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
-   <widget class="WhiteCube" name="Red2">
-    <property name="geometry">
-     <rect>
-      <x>320</x>
-      <y>140</y>
-      <width>41</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
-   <widget class="WhiteCube" name="Red4">
-    <property name="geometry">
-     <rect>
-      <x>280</x>
-      <y>170</y>
-      <width>41</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
-   <widget class="WhiteCube" name="Red8">
-    <property name="geometry">
-     <rect>
-      <x>280</x>
-      <y>200</y>
-      <width>41</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
-   <widget class="WhiteCube" name="Red3">
-    <property name="geometry">
-     <rect>
-      <x>360</x>
-      <y>140</y>
-      <width>41</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
-   <widget class="WhiteCube" name="Red6">
-    <property name="geometry">
-     <rect>
-      <x>360</x>
-      <y>170</y>
-      <width>41</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
-   <widget class="WhiteCube" name="Red9">
-    <property name="geometry">
-     <rect>
-      <x>360</x>
-      <y>200</y>
-      <width>41</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
-   <widget class="YellowSquare" name="Yellow8">
-    <property name="geometry">
-     <rect>
-      <x>320</x>
-      <y>380</y>
-      <width>41</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
-   <widget class="YellowSquare" name="Yellow1">
-    <property name="geometry">
-     <rect>
-      <x>280</x>
-      <y>320</y>
-      <width>41</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
-   <widget class="YellowSquare" name="Yellow2">
-    <property name="geometry">
-     <rect>
-      <x>320</x>
-      <y>320</y>
-      <width>41</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
-   <widget class="YellowSquare" name="Yellow5">
-    <property name="geometry">
-     <rect>
-      <x>280</x>
-      <y>350</y>
-      <width>41</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
-   <widget class="YellowSquare" name="Yellow7">
-    <property name="geometry">
-     <rect>
-      <x>280</x>
-      <y>380</y>
-      <width>41</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
-   <widget class="YellowSquare" name="Yellow3">
-    <property name="geometry">
-     <rect>
-      <x>360</x>
-      <y>320</y>
-      <width>41</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
-   <widget class="YellowSquare" name="Yellow6">
-    <property name="geometry">
-     <rect>
-      <x>360</x>
-      <y>350</y>
-      <width>41</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
-   <widget class="YellowSquare" name="Yellow9">
-    <property name="geometry">
-     <rect>
-      <x>360</x>
-      <y>380</y>
-      <width>41</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
-   <widget class="BlueSquare" name="Blue8">
-    <property name="geometry">
-     <rect>
-      <x>440</x>
-      <y>290</y>
-      <width>41</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
-   <widget class="Cube" name="pushButton_23">
-    <property name="geometry">
-     <rect>
-      <x>440</x>
-      <y>260</y>
-      <width>41</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
-   <widget class="BlueSquare" name="Blue1">
-    <property name="geometry">
-     <rect>
-      <x>400</x>
-      <y>230</y>
-      <width>41</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
-   <widget class="BlueSquare" name="Blue2">
-    <property name="geometry">
-     <rect>
-      <x>440</x>
-      <y>230</y>
-      <width>41</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
-   <widget class="BlueSquare" name="Blue4">
-    <property name="geometry">
-     <rect>
-      <x>400</x>
-      <y>260</y>
-      <width>41</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
-   <widget class="BlueSquare" name="Blue6">
-    <property name="geometry">
-     <rect>
-      <x>400</x>
-      <y>290</y>
-      <width>41</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
-   <widget class="BlueSquare" name="Blue3">
-    <property name="geometry">
-     <rect>
-      <x>480</x>
-      <y>230</y>
-      <width>41</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
-   <widget class="BlueSquare" name="Blue5">
-    <property name="geometry">
-     <rect>
-      <x>480</x>
-      <y>260</y>
-      <width>41</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
-   <widget class="BlueSquare" name="Blue9">
-    <property name="geometry">
-     <rect>
-      <x>480</x>
-      <y>290</y>
-      <width>41</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
-   <widget class="OrangeSquare" name="Orange8">
-    <property name="geometry">
-     <rect>
-      <x>560</x>
-      <y>290</y>
-      <width>41</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
-   <widget class="OrangeSquare" name="Orange1">
-    <property name="geometry">
-     <rect>
-      <x>520</x>
-      <y>230</y>
-      <width>41</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
-   <widget class="OrangeSquare" name="Orange2">
-    <property name="geometry">
-     <rect>
-      <x>560</x>
-      <y>230</y>
-      <width>41</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
-   <widget class="OrangeSquare" name="Orange4">
-    <property name="geometry">
-     <rect>
-      <x>520</x>
-      <y>260</y>
-      <width>41</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
-   <widget class="OrangeSquare" name="Orange7">
-    <property name="geometry">
-     <rect>
-      <x>520</x>
-      <y>290</y>
-      <width>41</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
-   <widget class="OrangeSquare" name="Orange3">
-    <property name="geometry">
-     <rect>
-      <x>600</x>
-      <y>230</y>
-      <width>41</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
-   <widget class="OrangeSquare" name="Orange6">
-    <property name="geometry">
-     <rect>
-      <x>600</x>
-      <y>260</y>
-      <width>41</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
-   <widget class="OrangeSquare" name="Orange9">
-    <property name="geometry">
-     <rect>
-      <x>600</x>
-      <y>290</y>
-      <width>41</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
-   <widget class="Cube" name="Green8">
-    <property name="geometry">
-     <rect>
-      <x>200</x>
-      <y>290</y>
-      <width>41</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">#Green8
-
-
-{
-background: green; 
-border:5px solid black;
-border-radius: 40px; 
-}
-
-</string>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
-   <widget class="Cube" name="Green1">
+   <widget class="QPushButton" name="white0">
     <property name="geometry">
      <rect>
       <x>160</x>
-      <y>230</y>
-      <width>41</width>
-      <height>31</height>
+      <y>100</y>
+      <width>31</width>
+      <height>32</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">#Green1_6
-
+     <string notr="true">#white0
 {
-background: green; 
-border:5px solid black;
+background:white;
+border: 4px solid black; 
 border-radius: 40px; 
-}
-
-</string>
+}</string>
     </property>
     <property name="text">
      <string/>
     </property>
    </widget>
-   <widget class="Cube" name="Green2">
+   <widget class="QPushButton" name="white1">
     <property name="geometry">
      <rect>
-      <x>200</x>
-      <y>230</y>
-      <width>41</width>
+      <x>190</x>
+      <y>100</y>
+      <width>31</width>
       <height>31</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">#Green2
-
-
+     <string notr="true">#white1
 {
-background: green; 
-border:5px solid black;
+background:white;
+border: 4px solid black; 
 border-radius: 40px; 
 }
-
 </string>
     </property>
     <property name="text">
      <string/>
     </property>
    </widget>
-   <widget class="Cube" name="Green4">
+   <widget class="QPushButton" name="white3">
+    <property name="geometry">
+     <rect>
+      <x>220</x>
+      <y>100</y>
+      <width>31</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#white3
+{
+background:white;
+border: 4px solid black; 
+border-radius: 40px; 
+
+}</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="white4">
     <property name="geometry">
      <rect>
       <x>160</x>
-      <y>260</y>
-      <width>41</width>
-      <height>31</height>
+      <y>130</y>
+      <width>31</width>
+      <height>32</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">#Green4
-
-
+     <string notr="true">#white4
 {
-background: green; 
-border:5px solid black;
+background:white;
+border: 4px solid black; 
 border-radius: 40px; 
-}
-
-</string>
+}</string>
     </property>
     <property name="text">
      <string/>
     </property>
    </widget>
-   <widget class="Cube" name="Green7">
+   <widget class="QPushButton" name="white5">
+    <property name="geometry">
+     <rect>
+      <x>220</x>
+      <y>130</y>
+      <width>31</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#white5
+{
+background:white;
+border: 4px solid black; 
+border-radius: 40px; 
+}</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="white6">
     <property name="geometry">
      <rect>
       <x>160</x>
-      <y>290</y>
-      <width>41</width>
-      <height>31</height>
+      <y>160</y>
+      <width>31</width>
+      <height>32</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">#Green7
-
-
+     <string notr="true">#white6
 {
-background: green; 
-border:5px solid black;
+background:white;
+border: 4px solid black; 
 border-radius: 40px; 
-}
-
-</string>
+}</string>
     </property>
     <property name="text">
      <string/>
     </property>
    </widget>
-   <widget class="Cube" name="Green3">
+   <widget class="QPushButton" name="white8">
     <property name="geometry">
      <rect>
-      <x>240</x>
-      <y>230</y>
-      <width>41</width>
-      <height>31</height>
+      <x>220</x>
+      <y>160</y>
+      <width>31</width>
+      <height>32</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">#Green3
-
-
+     <string notr="true">#white8
 {
-background: green; 
-border:5px solid black;
+background:white;
+border: 4px solid black; 
 border-radius: 40px; 
-}
-
-</string>
+}</string>
     </property>
     <property name="text">
      <string/>
     </property>
    </widget>
-   <widget class="Cube" name="Green6">
+   <widget class="QPushButton" name="white7">
     <property name="geometry">
      <rect>
-      <x>240</x>
-      <y>260</y>
-      <width>41</width>
-      <height>31</height>
+      <x>190</x>
+      <y>160</y>
+      <width>31</width>
+      <height>32</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">#Green6
-
-
+     <string notr="true">#white7
 {
-background: green; 
-border:5px solid black;
+background:white;
+border: 4px solid black; 
 border-radius: 40px; 
-}
-
-</string>
+}</string>
     </property>
     <property name="text">
      <string/>
     </property>
    </widget>
-   <widget class="Cube" name="Green9">
+   <widget class="QPushButton" name="white8_2">
     <property name="geometry">
      <rect>
-      <x>240</x>
-      <y>290</y>
-      <width>41</width>
-      <height>31</height>
+      <x>220</x>
+      <y>250</y>
+      <width>31</width>
+      <height>32</height>
      </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">#Green9
-
-
-{
-background: green; 
-border:5px solid black;
-border-radius: 40px; 
-}
-
-</string>
     </property>
     <property name="text">
      <string/>
     </property>
    </widget>
-   <widget class="QFrame" name="frame">
+   <widget class="QPushButton" name="white6_2">
     <property name="geometry">
      <rect>
-      <x>200</x>
-      <y>260</y>
-      <width>41</width>
+      <x>160</x>
+      <y>250</y>
+      <width>31</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="white4_2">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>220</y>
+      <width>31</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="red0">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>190</y>
+      <width>31</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="white3_2">
+    <property name="geometry">
+     <rect>
+      <x>220</x>
+      <y>190</y>
+      <width>31</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="white5_2">
+    <property name="geometry">
+     <rect>
+      <x>220</x>
+      <y>220</y>
+      <width>31</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="white7_2">
+    <property name="geometry">
+     <rect>
+      <x>190</x>
+      <y>251</y>
+      <width>31</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="red1">
+    <property name="geometry">
+     <rect>
+      <x>190</x>
+      <y>190</y>
+      <width>31</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="white8_3">
+    <property name="geometry">
+     <rect>
+      <x>310</x>
+      <y>251</y>
+      <width>31</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="white6_3">
+    <property name="geometry">
+     <rect>
+      <x>250</x>
+      <y>250</y>
+      <width>31</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="white4_3">
+    <property name="geometry">
+     <rect>
+      <x>250</x>
+      <y>220</y>
+      <width>31</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="blue0">
+    <property name="geometry">
+     <rect>
+      <x>250</x>
+      <y>190</y>
+      <width>31</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="white3_3">
+    <property name="geometry">
+     <rect>
+      <x>310</x>
+      <y>190</y>
+      <width>31</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="white5_3">
+    <property name="geometry">
+     <rect>
+      <x>310</x>
+      <y>220</y>
+      <width>31</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="white7_3">
+    <property name="geometry">
+     <rect>
+      <x>280</x>
+      <y>251</y>
+      <width>31</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="blue1">
+    <property name="geometry">
+     <rect>
+      <x>280</x>
+      <y>190</y>
+      <width>31</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="white8_4">
+    <property name="geometry">
+     <rect>
+      <x>400</x>
+      <y>250</y>
+      <width>31</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="white6_4">
+    <property name="geometry">
+     <rect>
+      <x>340</x>
+      <y>250</y>
+      <width>31</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="white4_4">
+    <property name="geometry">
+     <rect>
+      <x>340</x>
+      <y>220</y>
+      <width>31</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="orange0">
+    <property name="geometry">
+     <rect>
+      <x>340</x>
+      <y>190</y>
+      <width>31</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="white3_4">
+    <property name="geometry">
+     <rect>
+      <x>400</x>
+      <y>190</y>
+      <width>31</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="white5_4">
+    <property name="geometry">
+     <rect>
+      <x>400</x>
+      <y>220</y>
+      <width>31</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="white7_4">
+    <property name="geometry">
+     <rect>
+      <x>370</x>
+      <y>251</y>
+      <width>31</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="orange1">
+    <property name="geometry">
+     <rect>
+      <x>370</x>
+      <y>190</y>
+      <width>31</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="white8_5">
+    <property name="geometry">
+     <rect>
+      <x>220</x>
+      <y>340</y>
+      <width>31</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="white6_5">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>340</y>
+      <width>31</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="white4_5">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>310</y>
+      <width>31</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="yellow0">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>280</y>
+      <width>31</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="white3_5">
+    <property name="geometry">
+     <rect>
+      <x>220</x>
+      <y>280</y>
+      <width>31</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="white5_5">
+    <property name="geometry">
+     <rect>
+      <x>220</x>
+      <y>310</y>
+      <width>31</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="white7_5">
+    <property name="geometry">
+     <rect>
+      <x>190</x>
+      <y>341</y>
+      <width>31</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="yellow1">
+    <property name="geometry">
+     <rect>
+      <x>190</x>
+      <y>280</y>
+      <width>31</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="white7_6">
+    <property name="geometry">
+     <rect>
+      <x>100</x>
+      <y>251</y>
+      <width>31</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="white5_6">
+    <property name="geometry">
+     <rect>
+      <x>130</x>
+      <y>220</y>
+      <width>31</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="white4_6">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>220</y>
+      <width>31</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="white8_6">
+    <property name="geometry">
+     <rect>
+      <x>130</x>
+      <y>251</y>
+      <width>31</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="green0">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>190</y>
+      <width>31</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="white3_6">
+    <property name="geometry">
+     <rect>
+      <x>130</x>
+      <y>190</y>
+      <width>31</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="white6_6">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>251</y>
+      <width>31</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="green1">
+    <property name="geometry">
+     <rect>
+      <x>100</x>
+      <y>190</y>
+      <width>31</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QFrame" name="whitecenter">
+    <property name="geometry">
+     <rect>
+      <x>190</x>
+      <y>130</y>
+      <width>31</width>
       <height>31</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">#frame 
-
+     <string notr="true">#whitecenter
 {
-background: green; 
-border:5px solid black;
+background:white;
+border: 4px solid black; 
 border-radius: 40px; 
-}
-
-</string>
+}</string>
     </property>
     <property name="frameShape">
      <enum>QFrame::StyledPanel</enum>
@@ -773,203 +754,13 @@ border-radius: 40px;
      <enum>QFrame::Raised</enum>
     </property>
    </widget>
-   <widget class="QFrame" name="frame_2">
-    <property name="geometry">
-     <rect>
-      <x>320</x>
-      <y>170</y>
-      <width>41</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">#frame_2
-
-{
-background: white; 
-border:5px solid black;
-border-radius: 40px; 
-}
-
-</string>
-    </property>
-    <property name="frameShape">
-     <enum>QFrame::StyledPanel</enum>
-    </property>
-    <property name="frameShadow">
-     <enum>QFrame::Raised</enum>
-    </property>
-   </widget>
-   <widget class="QFrame" name="frame_3">
-    <property name="geometry">
-     <rect>
-      <x>320</x>
-      <y>260</y>
-      <width>41</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">#frame_3
-
-{
-background: red; 
-border:5px solid black;
-border-radius: 40px; 
-}
-
-</string>
-    </property>
-    <property name="frameShape">
-     <enum>QFrame::StyledPanel</enum>
-    </property>
-    <property name="frameShadow">
-     <enum>QFrame::Raised</enum>
-    </property>
-   </widget>
-   <widget class="QFrame" name="frame_4">
-    <property name="geometry">
-     <rect>
-      <x>320</x>
-      <y>350</y>
-      <width>41</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">#frame_4
-
-{
-background: yellow; 
-border:5px solid black;
-border-radius: 40px; 
-}
-
-</string>
-    </property>
-    <property name="frameShape">
-     <enum>QFrame::StyledPanel</enum>
-    </property>
-    <property name="frameShadow">
-     <enum>QFrame::Raised</enum>
-    </property>
-   </widget>
-   <widget class="QFrame" name="frame_5">
-    <property name="geometry">
-     <rect>
-      <x>440</x>
-      <y>260</y>
-      <width>41</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">#frame_5
-
-{
-background: blue; 
-border:5px solid black;
-border-radius: 40px; 
-}
-
-</string>
-    </property>
-    <property name="frameShape">
-     <enum>QFrame::StyledPanel</enum>
-    </property>
-    <property name="frameShadow">
-     <enum>QFrame::Raised</enum>
-    </property>
-   </widget>
-   <widget class="QFrame" name="frame_6">
-    <property name="geometry">
-     <rect>
-      <x>560</x>
-      <y>260</y>
-      <width>41</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">#frame_6
-
-{
-background: orange; 
-border:5px solid black;
-border-radius: 40px; 
-}
-
-</string>
-    </property>
-    <property name="frameShape">
-     <enum>QFrame::StyledPanel</enum>
-    </property>
-    <property name="frameShadow">
-     <enum>QFrame::Raised</enum>
-    </property>
-   </widget>
-   <zorder>Green16</zorder>
-   <zorder>Green28</zorder>
-   <zorder>White3</zorder>
-   <zorder>pushButton_4</zorder>
-   <zorder>pushButton_5</zorder>
-   <zorder>pushButton_6</zorder>
-   <zorder>pushButton_8</zorder>
-   <zorder>pushButton_9</zorder>
-   <zorder>Red7</zorder>
-   <zorder>Red1</zorder>
-   <zorder>Red2</zorder>
-   <zorder>Red4</zorder>
-   <zorder>Red8</zorder>
-   <zorder>Red3</zorder>
-   <zorder>Red6</zorder>
-   <zorder>Red9</zorder>
-   <zorder>Yellow8</zorder>
-   <zorder>Yellow1</zorder>
-   <zorder>Yellow2</zorder>
-   <zorder>Yellow5</zorder>
-   <zorder>Yellow7</zorder>
-   <zorder>Yellow3</zorder>
-   <zorder>Yellow6</zorder>
-   <zorder>Yellow9</zorder>
-   <zorder>Blue8</zorder>
-   <zorder>pushButton_23</zorder>
-   <zorder>Blue1</zorder>
-   <zorder>Blue2</zorder>
-   <zorder>Blue4</zorder>
-   <zorder>Blue6</zorder>
-   <zorder>Blue3</zorder>
-   <zorder>Blue5</zorder>
-   <zorder>Blue9</zorder>
-   <zorder>Orange8</zorder>
-   <zorder>Orange1</zorder>
-   <zorder>Orange2</zorder>
-   <zorder>Orange4</zorder>
-   <zorder>Orange7</zorder>
-   <zorder>Orange3</zorder>
-   <zorder>Orange6</zorder>
-   <zorder>Orange9</zorder>
-   <zorder>Green8</zorder>
-   <zorder>Green1</zorder>
-   <zorder>Green2</zorder>
-   <zorder>Green4</zorder>
-   <zorder>Green7</zorder>
-   <zorder>Green3</zorder>
-   <zorder>Green6</zorder>
-   <zorder>Green9</zorder>
-   <zorder>frame_3</zorder>
-   <zorder>frame_2</zorder>
-   <zorder>frame_5</zorder>
-   <zorder>frame_4</zorder>
-   <zorder>frame_6</zorder>
-   <zorder>frame</zorder>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>916</width>
+     <width>1041</width>
      <height>22</height>
     </rect>
    </property>
@@ -985,38 +776,6 @@ border-radius: 40px;
   <widget class="QStatusBar" name="statusBar"/>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
- <customwidgets>
-  <customwidget>
-   <class>Cube</class>
-   <extends>QPushButton</extends>
-   <header>cube.h</header>
-  </customwidget>
-  <customwidget>
-   <class>RedCube</class>
-   <extends>QPushButton</extends>
-   <header>redcube.h</header>
-  </customwidget>
-  <customwidget>
-   <class>WhiteCube</class>
-   <extends>QPushButton</extends>
-   <header>whitecube.h</header>
-  </customwidget>
-  <customwidget>
-   <class>BlueSquare</class>
-   <extends>QPushButton</extends>
-   <header>bluesquare.h</header>
-  </customwidget>
-  <customwidget>
-   <class>YellowSquare</class>
-   <extends>QPushButton</extends>
-   <header>yellowsquare.h</header>
-  </customwidget>
-  <customwidget>
-   <class>OrangeSquare</class>
-   <extends>QPushButton</extends>
-   <header>orangesquare.h</header>
-  </customwidget>
- </customwidgets>
  <resources/>
  <connections/>
 </ui>
