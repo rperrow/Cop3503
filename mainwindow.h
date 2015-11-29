@@ -2,6 +2,8 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <string>
+
 
 namespace Ui {
 class MainWindow;
@@ -13,27 +15,33 @@ class MainWindow : public QMainWindow
 
 public:
     explicit MainWindow(QWidget *parent = 0);
-    int m_counter;//added
+
+    std::string white_arr[8];
+    std::string Blue_arr[8];
+    std::string orange[8];
+    std::string yellow[8];
+    std::string green[8];
+    std::string red[8];
+
+
+    int m_counter;
     ~MainWindow();
 
-signals:
-    void counterReached();
-
 private slots:
-    void on_pushButton_3_clicked();
 
 
+    void on_white0_clicked();
 
-    //void on_Orange_5_objectNameChanged(const QString &objectName);
+    void on_white1_clicked();
 
-    void on_pushButton_clicked();
+    void on_white3_clicked();
 
-    void on_Green2_clicked();
+    void on_white4_clicked();
+
+    void on_white5_clicked();
 
 private:
     Ui::MainWindow *ui;
 };
-
-
 
 #endif // MAINWINDOW_H
