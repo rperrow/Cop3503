@@ -51,9 +51,13 @@ void Cube::spinFi(){
 	cubeArr[5].getFace()[0][0] = cubeArr[4].getFace()[0][2];
 	cubeArr[5].getFace()[0][1] = cubeArr[4].getFace()[1][2];
 	cubeArr[5].getFace()[0][2] = cubeArr[4].getFace()[2][2];
-	cubeArr[4].getFace()[0][2] = temp0;
+	/*cubeArr[4].getFace()[0][2] = temp0;
 	cubeArr[4].getFace()[1][2] = temp1;
-	cubeArr[4].getFace()[2][2] = temp2;
+	cubeArr[4].getFace()[2][2] = temp2;*/
+	//edit
+	cubeArr[4].getFace()[0][2] = temp2;
+	cubeArr[4].getFace()[1][2] = temp1;
+	cubeArr[4].getFace()[2][2] = temp0;
 	cubeArr[1].rotateI();
 }
 
@@ -267,13 +271,71 @@ void Cube::rotate(int k){
 }
 
 void Cube::step1Move(){
-	//	this is unfinished
-
 	spinRi();
 	spinU();
-	//spinFi();
-	//spinUi();
+	spinFi();
+	spinUi();
+}
 
+void Cube::step2Move(){
+	spinRi();
+	spinDi();
+	spinR();
+	spinD();
+}
+
+void Cube::step3aMove(){
+	spinU();
+	spinR();
+	spinUi();
+	spinRi();
+	spinUi();
+	spinFi();
+	spinU();
+	spinF();
+}
+
+void Cube::step3bMove(){
+	spinUi();
+	spinFi();
+	spinU();
+	spinF();
+	spinU();
+	spinR();
+	spinUi();
+	spinRi();
+}
+
+void Cube::step4Move(){
+	spinF();
+	spinR();
+	spinU();
+	spinRi();
+	spinUi();
+	spinFi();
+}
+
+void Cube::step5Move(){
+	spinR();
+	spinU();
+	spinRi();
+	spinU();
+	spinR();
+	spinU();
+	spinU();
+	spinRi();
+
+}
+
+void Cube::step6Move(){
+	spinU();
+	spinR();
+	spinUi();
+	spinLi();
+	spinU();
+	spinRi();
+	spinUi();
+	spinL();
 }
 
 
@@ -307,3 +369,5 @@ void Cube::printCube(){
 		cout<<"\n";
 	}
 }
+
+
