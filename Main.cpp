@@ -123,7 +123,7 @@ int main()
 	
 	myCube = Cube(myFace1, myFace2,myFace3,myFace4,myFace5,myFace6);
 	bool cont = true;
-	cout<<"1 - F, 2 - Fi, 3 - L, 4 - Li, 5 - R, 6 - Ri, \n 7 - U, 8 - Ui, 9 - D, 10 - Ti, 11 - Print, 12 - RotateCW, \n 13 - RotateCCW, 14 - RotateFW, 15 - Rotate BW, 16 - RotateSideCCW, 17 - RotateSideCW 18 - Step1Move \n 19 - Exit \n";
+	cout<<"1 - F, 2 - Fi, 3 - L, 4 - Li, 5 - R, 6 - Ri, \n 7 - U, 8 - Ui, 9 - D, 10 - Di, 11 - Print, 12 - RotateCW, \n 13 - RotateCCW, 14 - RotateFW, 15 - Rotate BW, 16 - RotateSideCCW, 17 - RotateSideCW 18 - Step1Move \n 19 - Step2Move 20 - Step3aMove 21 - Step3bMove 22 - Step4Move \n 23 - Step5Move 24 - Step6Move 25 - Exit \n";
 	while(cont){
 	int k; cin>>k;
 	//if(k == 1) myCube.spinF();
@@ -163,8 +163,16 @@ int main()
 	if(k == 16) {myCube.rotate(1); myCube.printCube();}
 	if(k == 17) {myCube.rotate(2); myCube.printCube();}
 	if(k == 18) {myCube.step1Move(); myCube.printCube();}
-	else if (k==19) cont = false;
+	if(k == 19) {myCube.step2Move(); myCube.printCube();}
+	if(k == 20) {myCube.step3aMove(); myCube.printCube();}
+	if(k == 21) {myCube.step3bMove(); myCube.printCube();}
+	if(k == 22) {myCube.step4Move(); myCube.printCube();}
+	if(k == 23) {myCube.step5Move(); myCube.printCube();}
+	if(k == 24) {myCube.step6Move(); myCube.printCube();}
+	else if (k==25) cont = false;
 	}
 	system("pause");
 	return 0;
 	}
+
+
