@@ -66,6 +66,18 @@ public:
 	void setTop(int k);
 	void rotate(int k);
 	void step1Move();
+	void step2Move();
+	void step3aMove();
+	void step3bMove();
+	void step4Move();
+	void step5Move();
+	void step6Move();
+	void solveTop();
+	void solveTopCross();
+	void solveTopCorners();
+	void solveCorner(string c0, string c1, string c2);
+	void solveSide(string c0, string c1);
+	void fixSideOrientation();
 	bool CheckColors();
 	bool CheckRepeats();
 	bool Valid();
