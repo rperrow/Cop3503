@@ -4,6 +4,7 @@
 #include"stdafx.h"
 #include <iostream>
 #include <string>
+#include<vector>
 
 using namespace std;
 
@@ -49,6 +50,7 @@ public:
 class Cube{
 private:
 	Face * cubeArr;
+	vector<string> solutionVector;
 public:
 	Cube();
 	Cube(Face top, Face front, Face right, Face back, Face left, Face down);
@@ -85,6 +87,8 @@ public:
 	void solveFinalCross();
 	void solveFinalCorners();
 	void finishCube();
+	void printVector();
+	vector<string> getVector();
 	bool checkColors(Face f1, Face f2, Face f3, string c1, string c2, string c3);
 	bool checkColors();
 	bool CheckRepeats();
