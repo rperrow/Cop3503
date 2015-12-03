@@ -1,6 +1,7 @@
 #ifndef RCSOLVER_H
 #define RCSOLVER_H
 
+#include"stdafx.h"
 #include <iostream>
 #include <string>
 
@@ -78,7 +79,14 @@ public:
 	void solveCorner(string c0, string c1, string c2);
 	void solveSide(string c0, string c1);
 	void fixSideOrientation();
-	bool CheckColors();
+	void solveMiddleRow();
+	void solveMiddleSide(string c1, string c2);
+	void solveCube();
+	void solveFinalCross();
+	void solveFinalCorners();
+	void finishCube();
+	bool checkColors(Face f1, Face f2, Face f3, string c1, string c2, string c3);
+	bool checkColors();
 	bool CheckRepeats();
 	bool Valid();
 };
