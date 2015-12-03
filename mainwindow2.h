@@ -89,13 +89,6 @@ public:
     int orange7count;
 
 
-
-
-
-
-
-
-
     int m_counter;
     ~MainWindow();
 
@@ -111,7 +104,6 @@ private slots:
     void on_white4_clicked();
 
     void on_white5_clicked();
-
 
     void on_green0_clicked();
 
