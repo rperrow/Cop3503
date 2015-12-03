@@ -1,3 +1,4 @@
+#include<vector>
 #include<iostream>
 #include<string>
 #include"RCSolver.h"
@@ -35,6 +36,7 @@ void Cube::spinF(){
 	cubeArr[2].getFace()[1][0] = temp1;
 	cubeArr[2].getFace()[2][0] = temp2;
 	cubeArr[1].rotate();
+	solutionVector.push_back("F");
 }
 
 void Cube::spinFi(){
@@ -59,6 +61,7 @@ void Cube::spinFi(){
 	cubeArr[4].getFace()[1][2] = temp1;
 	cubeArr[4].getFace()[2][2] = temp0;
 	cubeArr[1].rotateI();
+	solutionVector.push_back("Fi");
 }
 
 void Cube::spinR(){
@@ -79,6 +82,7 @@ void Cube::spinR(){
 	cubeArr[3].getFace()[1][0] = temp1;
 	cubeArr[3].getFace()[0][0] = temp2;
 	cubeArr[2].rotate();
+	solutionVector.push_back("R");
 }
 
 void Cube::spinRi(){
@@ -99,6 +103,7 @@ void Cube::spinRi(){
 	cubeArr[1].getFace()[1][2] = temp1;
 	cubeArr[1].getFace()[2][2] = temp2;
 	cubeArr[2].rotateI();
+	solutionVector.push_back("Ri");
 }
 
 void Cube::spinLi(){
@@ -119,6 +124,7 @@ void Cube::spinLi(){
 	cubeArr[3].getFace()[1][2] = temp1;
 	cubeArr[3].getFace()[0][2] = temp2;
 	cubeArr[4].rotateI();
+	solutionVector.push_back("Li");
 }
 
 void Cube::spinL(){
@@ -139,6 +145,7 @@ void Cube::spinL(){
 	cubeArr[1].getFace()[1][0] = temp1;
 	cubeArr[1].getFace()[2][0] = temp2;
 	cubeArr[4].rotate();
+	solutionVector.push_back("L");
 }
 
 void Cube::spinD(){
@@ -159,6 +166,7 @@ void Cube::spinD(){
 	cubeArr[2].getFace()[2][1] = temp1;
 	cubeArr[2].getFace()[2][2] = temp2;
 	cubeArr[5].rotate();
+	solutionVector.push_back("D");
 }
 
 void Cube::spinDi(){
@@ -179,6 +187,7 @@ void Cube::spinDi(){
 	cubeArr[4].getFace()[2][1] = temp1;
 	cubeArr[4].getFace()[2][2] = temp2;
 	cubeArr[5].rotateI();
+	solutionVector.push_back("Di");
 }
 
 void Cube::spinU(){
@@ -199,6 +208,7 @@ void Cube::spinU(){
 	cubeArr[4].getFace()[0][1] = temp1;
 	cubeArr[4].getFace()[0][2] = temp2;
 	cubeArr[0].rotate();
+	solutionVector.push_back("U");
 }
 
 void Cube::spinUi(){
@@ -219,6 +229,7 @@ void Cube::spinUi(){
 	cubeArr[2].getFace()[0][1] = temp1;
 	cubeArr[2].getFace()[0][2] = temp2;
 	cubeArr[0].rotateI();
+	solutionVector.push_back("Ui");
 }
 
 void Cube::setTop(int k){
@@ -232,6 +243,7 @@ void Cube::setTop(int k){
 		cubeArr[3] = temp;
 		cubeArr[2].rotate();
 		cubeArr[4].rotateI();
+		solutionVector.push_back("RotateFW");
 	}
 	if(k==2){
 		Face temp = cubeArr[0];
@@ -245,6 +257,7 @@ void Cube::setTop(int k){
 		cubeArr[4] = temp;
 		cubeArr[1].rotateI();
 		cubeArr[3].rotate();
+		solutionVector.push_back("RotateCCW");
 	}
 	if(k==3){
 		Face temp = cubeArr[0];
@@ -256,6 +269,7 @@ void Cube::setTop(int k){
 		cubeArr[1] = temp;
 		cubeArr[2].rotateI();
 		cubeArr[4].rotate();
+		solutionVector.push_back("RotateBW");
 	}
 	if(k==4){
 		Face temp = cubeArr[0];
@@ -269,6 +283,7 @@ void Cube::setTop(int k){
 		cubeArr[2] = temp;
 		cubeArr[1].rotate();
 		cubeArr[3].rotateI();
+		solutionVector.push_back("RotateCW");
 	}
 
 }
@@ -282,6 +297,7 @@ void Cube::rotate(int k){
 		cubeArr[4] = temp;
 		cubeArr[0].rotate();
 		cubeArr[5].rotateI();
+		solutionVector.push_back("SpinCW");
 	}
 	if(k==2){		
 		Face temp = cubeArr[1];
@@ -291,6 +307,7 @@ void Cube::rotate(int k){
 		cubeArr[2] = temp;		
 		cubeArr[0].rotateI();
 		cubeArr[5].rotate();
+		solutionVector.push_back("SpinCCW");
 	}
 }
 
@@ -299,6 +316,8 @@ void Cube::step1Move(){
 	spinU();
 	spinFi();
 	spinUi();
+	solutionVector.pop_back(); solutionVector.pop_back(); solutionVector.pop_back(); solutionVector.pop_back();
+	solutionVector.push_back("Step1Move");
 }
 
 void Cube::step2Move(){
@@ -306,6 +325,8 @@ void Cube::step2Move(){
 	spinDi();
 	spinR();
 	spinD();
+	solutionVector.pop_back(); solutionVector.pop_back(); solutionVector.pop_back(); solutionVector.pop_back();
+	solutionVector.push_back("Step2Move");
 }
 
 void Cube::step3aMove(){
@@ -317,6 +338,8 @@ void Cube::step3aMove(){
 	spinFi();
 	spinU();
 	spinF();
+	solutionVector.pop_back(); solutionVector.pop_back(); solutionVector.pop_back(); solutionVector.pop_back(); solutionVector.pop_back(); solutionVector.pop_back(); solutionVector.pop_back(); solutionVector.pop_back();
+	solutionVector.push_back("Step3aMove");
 }
 
 void Cube::step3bMove(){
@@ -328,6 +351,8 @@ void Cube::step3bMove(){
 	spinR();
 	spinUi();
 	spinRi();
+	solutionVector.pop_back(); solutionVector.pop_back(); solutionVector.pop_back(); solutionVector.pop_back(); solutionVector.pop_back(); solutionVector.pop_back(); solutionVector.pop_back(); solutionVector.pop_back();
+	solutionVector.push_back("Step3bMove");
 }
 
 void Cube::step4Move(){
@@ -337,6 +362,8 @@ void Cube::step4Move(){
 	spinRi();
 	spinUi();
 	spinFi();
+	solutionVector.pop_back(); solutionVector.pop_back(); solutionVector.pop_back(); solutionVector.pop_back(); solutionVector.pop_back(); solutionVector.pop_back();
+	solutionVector.push_back("Step4Move");
 }
 
 void Cube::step5Move(){
@@ -348,7 +375,8 @@ void Cube::step5Move(){
 	spinU();
 	spinU();
 	spinRi();
-
+	solutionVector.pop_back(); solutionVector.pop_back(); solutionVector.pop_back(); solutionVector.pop_back(); solutionVector.pop_back(); solutionVector.pop_back(); solutionVector.pop_back(); solutionVector.pop_back();
+	solutionVector.push_back("Step5Move");
 }
 
 void Cube::step6Move(){
@@ -360,6 +388,8 @@ void Cube::step6Move(){
 	spinRi();
 	spinUi();
 	spinL();
+	solutionVector.pop_back(); solutionVector.pop_back(); solutionVector.pop_back(); solutionVector.pop_back(); solutionVector.pop_back(); solutionVector.pop_back(); solutionVector.pop_back(); solutionVector.pop_back();
+	solutionVector.push_back("Step6Move");
 }
 
 void Cube::fixSideOrientation(){
@@ -367,6 +397,8 @@ void Cube::fixSideOrientation(){
 	spinU();
 	spinLi();
 	spinUi();
+	solutionVector.pop_back(); solutionVector.pop_back(); solutionVector.pop_back(); solutionVector.pop_back();
+	solutionVector.push_back("FixSideOrientation");
 }
 
 void Cube::solveSide(string c0, string c1){
@@ -665,12 +697,37 @@ void Cube::finishCube(){
 }
 
 void Cube::solveCube(){
+	solutionVector.clear();
 	solveTop();
 	setTop(2); setTop(2);
 	solveMiddleRow();
 	solveFinalCross();
 	//solveFinalCorners();
 	finishCube();
+}
+
+vector<string> Cube::getVector(){
+	return solutionVector;
+}
+
+void Cube::printVector(){
+	solutionVector.push_back("");
+	int k = 0; int oldk = 0; bool print = false;
+	for(int i = 0; i < solutionVector.size(); i++){
+		if(i == 0) k += 1;
+		else if(solutionVector.at(i) == solutionVector.at(i-1)) k += 1;
+		else {
+			oldk = k;
+			k = 1;
+			print = true;
+		}
+		if (print){
+			if (oldk==1) cout<<solutionVector.at(i-1)<<" ";
+			else cout<<solutionVector.at(i-1)<<"x"<<oldk<<" ";
+			print = false;
+		}
+	}
+	cout<<"\n";
 }
 
 void Cube::printCube(){
