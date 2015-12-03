@@ -36,5 +36,20 @@ int main(int argc, char *argv[])
     MainWindow w;
     w.show();
 
+    QString filename2 = "output.txt";
+       QFile file2(filename2);
+       if(file2.open(QIODevice::ReadWrite|QIODevice::Truncate))
+       {
+           QTextStream stream(&file2);
+           stream <<""<< endl;
+       }
+       QString filename3 = "input.txt";
+          QFile file3(filename3);
+          if(file3.open(QIODevice::ReadWrite|QIODevice::Truncate))
+          {
+              QTextStream stream(&file3);
+              stream <<""<< endl;
+          }
     return a.exec();
+
 }
