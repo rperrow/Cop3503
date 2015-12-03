@@ -17,22 +17,22 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
   //  m_counter = 0;
     for(int i=0;i<8;i++){
-         white_arr[i]="";
+         white_arr[i]="white";
     }
     for(int i=0;i<8;i++){
-         green_arr[i]="";
+         green_arr[i]="green";
     }
     for(int i=0;i<8;i++){
-         red_arr[i]="";
+         red_arr[i]="red";
     }
     for(int i=0;i<8;i++){
-         blue_arr[i]="";
+         blue_arr[i]="blue";
     }
     for(int i=0;i<8;i++){
-         orange_arr[i]="";
+         orange_arr[i]="orange";
     }
     for(int i=0;i<8;i++){
-         yellow_arr[i]="";
+         yellow_arr[i]="yellow";
     }
     //white
      white0count = 0;
@@ -1899,13 +1899,13 @@ void MainWindow::on_yellow7_clicked()
 
 void MainWindow::on_SolveAllSteps_clicked()
 {
-    /*QFile file("input.txt");
+    QFile file("output.txt");
     if(!file.open(QIODevice::ReadOnly))
         QMessageBox::information(0, "info", file.errorString());
 
     QTextStream in(&file);
 
-    ui->textBrowser->setText(in.readAll());*/
+    ui->textBrowser->setText(in.readAll());
 }
 
 void MainWindow::on_CommitCube_clicked()
@@ -1917,12 +1917,30 @@ void MainWindow::on_CommitCube_clicked()
     if(file.open(QIODevice::ReadWrite|QIODevice::Truncate))
     {
         QTextStream stream(&file);
-        stream << red_arr[0] << endl;
-        stream << yellow_arr[0] << endl;
-        stream << blue_arr[0] << endl;
-        stream << green_arr[0] << endl;
-        stream << orange_arr[0] << endl;
-        stream << white_arr[0] << endl;
+
+        for(int i=0;i<8;i++){
+            stream << white_arr[i]<<",";
+        }
+      //  stream <<endl;
+        for(int i=0;i<8;i++){
+            stream << green_arr[i]<<",";
+        }
+      // stream <<endl;
+        for(int i=0;i<8;i++){
+            stream << red_arr[i]<<",";
+        }
+      //  stream <<endl;
+        for(int i=0;i<8;i++){
+            stream << blue_arr[i]<<",";
+        }
+      //  stream <<endl;
+        for(int i=0;i<8;i++){
+            stream << orange_arr[i]<<",";
+        }
+      //  stream <<endl;
+        for(int i=0;i<8;i++){
+            stream << yellow_arr[i]<<",";
+        }
 
     }
 
