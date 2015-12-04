@@ -1,8 +1,7 @@
 #include <string>
 #include"RCSolver.h"
 
-bool Cube::CheckColors() // checks to see if the inputted cube has the appropriate number of each color
-{
+bool Cube::CheckColors(){ // checks to see if the inputted cube has the appropriate number of each color
 
 // variables for keeping track of each color
 	int green = 0;
@@ -40,9 +39,8 @@ bool Cube::CheckColors() // checks to see if the inputted cube has the appropria
 	else
 		return false;
 }
+bool Cube::CheckRepeats(){  // checks to see if any of the same color share the same relative positioning
 
-bool Cube::CheckRepeats()  // checks to see if any of the same color share the same relative positioning
-{
 // first three for loops isolates a cell to be compared
 	for (int k = 0; k < 6; k++)
 	{
@@ -64,10 +62,69 @@ bool Cube::CheckRepeats()  // checks to see if any of the same color share the s
 	
 	return true;
 }
+bool Cube::CheckSides(){  //checks to see if a side piecs has the same color on both sides
+	
+// first four for loops compares the front sides to see if any colors share the same edge
+	for (int i=0; i < 3; i++)
+	{
+		if (cubeArr[1].getFace()[0][i].getColor().compare(cubeArr[0].getFace()[2][i].getColor()) == 0)
+			return false;
+	}
+	for (int i=0; i < 3; i++)
+	{
+		if (cubeArr[1].getFace()[2][i].getColor().compare(cubeArr[5].getFace()[0][i].getColor()) == 0)
+			return false;
+	}
+	for (int i=0; i < 3; i++)
+	{
+		if (cubeArr[1].getFace()[i][0].getColor().compare(cubeArr[4].getFace()[i][2].getColor()) == 0)
+			return false;
+	}
+	for (int i=0; i < 3; i++)
+	{
+		if (cubeArr[1].getFace()[2][i].getColor().compare(cubeArr[2].getFace()[i][2].getColor()) == 0)
+			return false;
+	}
+	
+// second four for loops compares the back sides to see if any colors share the same edge
+	for (int i=0; i < 3; i++)
+	{
+		if (cubeArr[3].getFace()[0][i].getColor().compare(cubeArr[0].getFace()[0][i].getColor()) == 0)
+			return false;
+	}
+	
+	for (int i=0; i < 3; i++)
+	{
+		if (cubeArr[3].getFace()[2][i].getColor().compare(cubeArr[5].getFace()[2][i].getColor()) == 0)
+			return false;
+	}
+	
+	for (int i=0; i < 3; i++)
+	{
+		if (cubeArr[3].getFace()[i][0].getColor().compare(cubeArr[4].getFace()[i][0].getColor()) == 0)
+			return false;
+	}
+	
+	for (int i=0; i < 3; i++)
+	{
+		if (cubeArr[3].getFace()[2][i].getColor().compare(cubeArr[2].getFace()[i][2].getColor()) == 0)
+			return false;
+	}
 
-bool Cube::Valid()  // combines the previous functions to evaluate if the overall cube is valid or not
-{
-	if (this->CheckColors()== true && this->CheckRepeats() == true)  // checks to see if the cube passes both tests and returns true if the cube does
+// checks the remaining sides to see if two of the same colored tiles share the same edge
+	if (cubeArr[0].getFace()[1][0].getColor().compare(cubeArr[4].getFace()[0][1].getColor()) == 0)
+		return false;
+	if (cubeArr[0].getFace()[1][2].getColor().compare(cubeArr[2].getFace()[0][1].getColor()) == 0)
+		return false;
+	if (cubeArr[5].getFace()[1][0].getColor().compare(cubeArr[4].getFace()[2][1].getColor()) == 0)
+		return false;
+	if (cubeArr[5].getFace()[1][2].getColor().compare(cubeArr[2].getFace()[2][1].getColor()) == 0)
+		return false;
+		
+	return true;
+}
+bool Cube::Valid(){  // combines the previous functions to evaluate if the overall cube is valid or not
+	if (this->CheckColors() == true && this->CheckRepeats() == true && this->CheckSides() == true)  // checks to see if the cube passes all of the tests and returns true if the cube does
 		return true;
 	else  // if it doesn't the functions returns false
 		return false;
