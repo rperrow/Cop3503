@@ -82,7 +82,7 @@ bool Cube::CheckSides(){  //checks to see if a side piecs has the same color on 
 	}
 	for (int i=0; i < 3; i++)
 	{
-		if (cubeArr[1].getFace()[2][i].getColor().compare(cubeArr[2].getFace()[i][2].getColor()) == 0)
+		if (cubeArr[1].getFace()[i][2].getColor().compare(cubeArr[2].getFace()[i][0].getColor()) == 0)
 			return false;
 	}
 	
@@ -101,13 +101,13 @@ bool Cube::CheckSides(){  //checks to see if a side piecs has the same color on 
 	
 	for (int i=0; i < 3; i++)
 	{
-		if (cubeArr[3].getFace()[i][0].getColor().compare(cubeArr[4].getFace()[i][0].getColor()) == 0)
+		if (cubeArr[3].getFace()[i][0].getColor().compare(cubeArr[2].getFace()[i][2].getColor()) == 0)
 			return false;
 	}
 	
 	for (int i=0; i < 3; i++)
 	{
-		if (cubeArr[3].getFace()[2][i].getColor().compare(cubeArr[2].getFace()[i][2].getColor()) == 0)
+		if (cubeArr[3].getFace()[i][2].getColor().compare(cubeArr[4].getFace()[i][0].getColor()) == 0)
 			return false;
 	}
 
