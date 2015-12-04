@@ -64,7 +64,7 @@ bool Cube::CheckRepeats(){  // checks to see if any of the same color share the 
 }
 bool Cube::CheckSides(){  //checks to see if a side piecs has the same color on both sides
 	
-// first four for loops compares the front sides to see if any colors share the same edge
+// first four for loops compares the front sides to see if any two colors share the same edge
 	for (int i=0; i < 3; i++)
 	{
 		if (cubeArr[1].getFace()[0][i].getColor().compare(cubeArr[0].getFace()[2][i].getColor()) == 0)
@@ -86,7 +86,7 @@ bool Cube::CheckSides(){  //checks to see if a side piecs has the same color on 
 			return false;
 	}
 	
-// second four for loops compares the back sides to see if any colors share the same edge
+// second four for loops compares the back sides to see if any two colors share the same edge
 	for (int i=0; i < 3; i++)
 	{
 		if (cubeArr[3].getFace()[0][i].getColor().compare(cubeArr[0].getFace()[0][i].getColor()) == 0)
