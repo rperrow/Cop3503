@@ -12,29 +12,29 @@ bool Cube::CheckColors(){ // checks to see if the inputted cube has the appropri
 	int white = 0;
 	
 // loop to go through and access each tile in the cube, summing up the number of each color
-	for (int k = 0; k < 6; k++)
+	for (int i = 0; i < 48; i++)
 	{
-		for (int i = 0; i < 3; i++)
-			{
-				for (int j = 0; j < 3; j++)
-				{
-					if (this->cubeArr[k].getFace()[i][k].getColor() == "G")
-						green++;
-					else if (this->cubeArr[k].getFace()[i][k].getColor() == "R")
-						red++;
-					else if (this->cubeArr[k].getFace()[i][k].getColor() == "B")
-						blue++;
-					else if (this->cubeArr[k].getFace()[i][k].getColor() == "O")
-						orange++;
-					else if (this->cubeArr[k].getFace()[i][k].getColor() == "Y")
-						yellow++;
-					else if (this->cubeArr[k].getFace()[i][k].getColor() == "W")
-						white++;
-				}
-			}
+		if (input[i] == "G"){
+			green++;
+		}
+		if (input[i] == "R"){
+			red++;
+		}
+		if (input[i] == "B"){
+			blue++;
+		}
+		if (input[i] == "O"){
+			orange++;
+		}
+		if (input[i] == "Y"){
+			yellow++;
+		}
+		if (input[i] == "W"){
+			white++;
+		}
 	}
 
-	if ( (green == 9) && (red == 9) && (blue == 9) && (orange == 9) && (yellow == 9) && (white == 9) )  // checks to see if all the colors adds up to the appropriate amount
+	if ( (green == 8) && (red == 8) && (blue == 8) && (orange == 8) && (yellow == 8) && (white == 8) )  // checks to see if all the colors adds up to the appropriate amount
 		return true;
 	else
 		return false;
