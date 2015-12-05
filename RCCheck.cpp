@@ -14,22 +14,22 @@ bool Cube::CheckColors(){ // checks to see if the inputted cube has the appropri
 // loop to go through and access each tile in the cube, summing up the number of each color
 	for (int i = 0; i < 48; i++)
 	{
-		if (input[i] == "G"){
+		if (inputs[i] == "G"){
 			green++;
 		}
-		if (input[i] == "R"){
+		if (inputs[i] == "R"){
 			red++;
 		}
-		if (input[i] == "B"){
+		if (inputs[i] == "B"){
 			blue++;
 		}
-		if (input[i] == "O"){
+		if (inputs[i] == "O"){
 			orange++;
 		}
-		if (input[i] == "Y"){
+		if (inputs[i] == "Y"){
 			yellow++;
 		}
-		if (input[i] == "W"){
+		if (inputs[i] == "W"){
 			white++;
 		}
 	}
