@@ -95,7 +95,7 @@ bool Cube::CheckSides(){  //checks to see if a side piecs has the same color on 
 	
 	for (int i=0; i < 3; i++)
 	{
-		if (cubeArr[3].getFace()[2][i].getColor() == (cubeArr[5].getFace()[2][i].getColor())
+		if (cubeArr[3].getFace()[2][i].getColor() == cubeArr[5].getFace()[2][i].getColor())
 			return false;
 	}
 	
