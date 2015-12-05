@@ -18,17 +18,17 @@ bool Cube::CheckColors(){ // checks to see if the inputted cube has the appropri
 			{
 				for (int j = 0; j < 3; j++)
 				{
-					if (cubeArr[k].getFace()[i][k].getColor().compare("green") == 0)
+					if (cubeArr[k].getFace()[i][k].getColor().compare("G") == 0)
 						green++;
-					else if (cubeArr[k].getFace()[i][k].getColor().compare("red") == 0)
+					else if (cubeArr[k].getFace()[i][k].getColor().compare("R") == 0)
 						red++;
-					else if (cubeArr[k].getFace()[i][k].getColor().compare("blue") == 0)
+					else if (cubeArr[k].getFace()[i][k].getColor().compare("B") == 0)
 						blue++;
-					else if (cubeArr[k].getFace()[i][k].getColor().compare("orange") == 0)
+					else if (cubeArr[k].getFace()[i][k].getColor().compare("O") == 0)
 						orange++;
-					else if (cubeArr[k].getFace()[i][k].getColor().compare("yellow") == 0)
+					else if (cubeArr[k].getFace()[i][k].getColor().compare("Y") == 0)
 						yellow++;
-					else if (cubeArr[k].getFace()[i][k].getColor().compare("white") == 0)
+					else if (cubeArr[k].getFace()[i][k].getColor().compare("W") == 0)
 						white++;
 				}
 			}
