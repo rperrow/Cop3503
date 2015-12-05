@@ -18,22 +18,22 @@ bool Cube::CheckColors(){ // checks to see if the inputted cube has the appropri
 			{
 				for (int j = 0; j < 3; j++)
 				{
-					if (cubeArr[k].getFace()[i][k].getColor() == "G")
+					if (this->cubeArr[k].getFace()[i][k].getColor() == "G")
 						green++;
-					else if (cubeArr[k].getFace()[i][k].getColor() == "R")
+					else if (this->cubeArr[k].getFace()[i][k].getColor() == "R")
 						red++;
-					else if (cubeArr[k].getFace()[i][k].getColor() == "B")
+					else if (this->cubeArr[k].getFace()[i][k].getColor() == "B")
 						blue++;
-					else if (cubeArr[k].getFace()[i][k].getColor() == "O")
+					else if (this->cubeArr[k].getFace()[i][k].getColor() == "O")
 						orange++;
-					else if (cubeArr[k].getFace()[i][k].getColor() == "Y")
+					else if (this->cubeArr[k].getFace()[i][k].getColor() == "Y")
 						yellow++;
-					else if (cubeArr[k].getFace()[i][k].getColor() == "W")
+					else if (this->cubeArr[k].getFace()[i][k].getColor() == "W")
 						white++;
 				}
 			}
 	}
-	
+
 	if ( (green == 9) && (red == 9) && (blue == 9) && (orange == 9) && (yellow == 9) && (white == 9) )  // checks to see if all the colors adds up to the appropriate amount
 		return true;
 	else
@@ -52,7 +52,7 @@ bool Cube::CheckRepeats(){  // checks to see if any of the same color share the 
 						{
 							if (m != k)  // case when you are comparing an object to itself will of course result in a "repeat" thus is excluded
 							{
-								if (cubeArr[k].getFace()[i][k].getColor() == cubeArr[m].getFace()[i][k].getColor())
+								if (this->cubeArr[k].getFace()[i][k].getColor() == this->cubeArr[m].getFace()[i][k].getColor())
 									return false;
 							}
 						}
@@ -67,58 +67,58 @@ bool Cube::CheckSides(){  //checks to see if a side piecs has the same color on 
 // first four for loops compares the front sides to see if any two colors share the same edge
 	for (int i=0; i < 3; i++)
 	{
-		if (cubeArr[1].getFace()[0][i].getColor() == cubeArr[0].getFace()[2][i].getColor())
+		if (this->cubeArr[1].getFace()[0][i].getColor() == this->cubeArr[0].getFace()[2][i].getColor())
 			return false;
 	}
 	for (int i=0; i < 3; i++)
 	{
-		if (cubeArr[1].getFace()[2][i].getColor() == cubeArr[5].getFace()[0][i].getColor())
+		if (this->cubeArr[1].getFace()[2][i].getColor() == this->cubeArr[5].getFace()[0][i].getColor())
 			return false;
 	}
 	for (int i=0; i < 3; i++)
 	{
-		if (cubeArr[1].getFace()[i][0].getColor() == cubeArr[4].getFace()[i][2].getColor())
+		if (this->cubeArr[1].getFace()[i][0].getColor() == this->cubeArr[4].getFace()[i][2].getColor())
 			return false;
 	}
 	for (int i=0; i < 3; i++)
 	{
-		if (cubeArr[1].getFace()[i][2].getColor() == cubeArr[2].getFace()[i][0].getColor())
+		if (this->cubeArr[1].getFace()[i][2].getColor() == this->cubeArr[2].getFace()[i][0].getColor())
 			return false;
 	}
 	
 // second four for loops compares the back sides to see if any two colors share the same edge
 	for (int i=0; i < 3; i++)
 	{
-		if (cubeArr[3].getFace()[0][i].getColor() == cubeArr[0].getFace()[0][i].getColor())
+		if (this->cubeArr[3].getFace()[0][i].getColor() == this->cubeArr[0].getFace()[0][i].getColor())
 			return false;
 	}
 	
 	for (int i=0; i < 3; i++)
 	{
-		if (cubeArr[3].getFace()[2][i].getColor() == cubeArr[5].getFace()[2][i].getColor())
+		if (this->cubeArr[3].getFace()[2][i].getColor() == this->cubeArr[5].getFace()[2][i].getColor())
 			return false;
 	}
 	
 	for (int i=0; i < 3; i++)
 	{
-		if (cubeArr[3].getFace()[i][0].getColor() == cubeArr[2].getFace()[i][2].getColor())
+		if (this->cubeArr[3].getFace()[i][0].getColor() == this->cubeArr[2].getFace()[i][2].getColor())
 			return false;
 	}
 	
 	for (int i=0; i < 3; i++)
 	{
-		if (cubeArr[3].getFace()[i][2].getColor() == cubeArr[4].getFace()[i][0].getColor())
+		if (this->cubeArr[3].getFace()[i][2].getColor() == this->cubeArr[4].getFace()[i][0].getColor())
 			return false;
 	}
 
 // checks the remaining sides to see if two of the same colored tiles share the same edge
-	if (cubeArr[0].getFace()[1][0].getColor() == cubeArr[4].getFace()[0][1].getColor())
+	if (this->cubeArr[0].getFace()[1][0].getColor() == this->cubeArr[4].getFace()[0][1].getColor())
 		return false;
-	if (cubeArr[0].getFace()[1][2].getColor() == cubeArr[2].getFace()[0][1].getColor())
+	if (this->cubeArr[0].getFace()[1][2].getColor() == this->cubeArr[2].getFace()[0][1].getColor())
 		return false;
-	if (cubeArr[5].getFace()[1][0].getColor() == cubeArr[4].getFace()[2][1].getColor())
+	if (this->cubeArr[5].getFace()[1][0].getColor() == this->cubeArr[4].getFace()[2][1].getColor())
 		return false;
-	if (cubeArr[5].getFace()[1][2].getColor() == cubeArr[2].getFace()[2][1].getColor())
+	if (this->cubeArr[5].getFace()[1][2].getColor() == this->cubeArr[2].getFace()[2][1].getColor())
 		return false;
 		
 	return true;
