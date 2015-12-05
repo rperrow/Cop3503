@@ -92,6 +92,7 @@ public:
 	bool checkColors(Face f1, Face f2, Face f3, string c1, string c2, string c3);
 	bool checkColors();
 	bool CheckRepeats();
+	bool CheckSides();
 	bool Valid();
 };
 
