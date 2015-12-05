@@ -960,42 +960,18 @@ for (int i=0; i<48; i++){   //0-7,8-15,16-23,24-31,32-39,40-47
 //inside each step get the colors into the 
 	for(int i = 0; i < 6; i ++){
 			if (i==0){
-			r0c0 = Tile(face[8]);
-			r0c1 = Tile(face[9]);
-			r0c2 = Tile(face[10]);
-			r1c0 = Tile(face[11]);
-			r1c1 = Tile("G");
-			r1c2 = Tile(face[12]);
-			r2c0 = Tile(face[13]);
-			r2c1 = Tile(face[14]);
-			r2c2 = Tile(face[15]);
+			r0c0 = Tile(face[0]);
+			r0c1 = Tile(face[1]);
+			r0c2 = Tile(face[2]);
+			r1c0 = Tile(face[3]);
+			r1c1 = Tile("W");
+			r1c2 = Tile(face[4]);
+			r2c0 = Tile(face[5]);
+			r2c1 = Tile(face[6]);
+			r2c2 = Tile(face[7]);
 			}
 
 			if (i==1){
-			r0c0 = Tile(face[32]);
-			r0c1 = Tile(face[33]);
-			r0c2 = Tile(face[34]);
-			r1c0 = Tile(face[35]);
-			r1c1 = Tile("O");
-			r1c2 = Tile(face[36]);
-			r2c0 = Tile(face[37]);
-			r2c1 = Tile(face[38]);
-			r2c2 = Tile(face[39]);
-			}
-			
-			if (i==2){
-			r0c0 = Tile(face[40]);
-			r0c1 = Tile(face[41]);
-			r0c2 = Tile(face[42]);
-			r1c0 = Tile(face[43]);
-			r1c1 = Tile("Y");
-			r1c2 = Tile(face[44]);
-			r2c0 = Tile(face[45]);
-			r2c1 = Tile(face[46]);
-			r2c2 = Tile(face[47]);
-			}
-			
-			if (i==3){
 			r0c0 = Tile(face[16]);
 			r0c1 = Tile(face[17]);
 			r0c2 = Tile(face[18]);
@@ -1007,19 +983,7 @@ for (int i=0; i<48; i++){   //0-7,8-15,16-23,24-31,32-39,40-47
 			r2c2 = Tile(face[23]);
 			}
 			
-			if (i==4){
-			r0c0 = Tile(face[0]);
-			r0c1 = Tile(face[1]);
-			r0c2 = Tile(face[2]);
-			r1c0 = Tile(face[3]);
-			r1c1 = Tile("W");
-			r1c2 = Tile(face[4]);
-			r2c0 = Tile(face[5]);
-			r2c1 = Tile(face[6]);
-			r2c2 = Tile(face[7]);
-			}
-			
-			if (i==5){
+			if (i==2){
 			r0c0 = Tile(face[24]);
 			r0c1 = Tile(face[25]);
 			r0c2 = Tile(face[26]);
@@ -1029,6 +993,42 @@ for (int i=0; i<48; i++){   //0-7,8-15,16-23,24-31,32-39,40-47
 			r2c0 = Tile(face[29]);
 			r2c1 = Tile(face[30]);
 			r2c2 = Tile(face[31]);
+			}
+			
+			if (i==3){
+			r0c0 = Tile(face[32]);
+			r0c1 = Tile(face[33]);
+			r0c2 = Tile(face[34]);
+			r1c0 = Tile(face[35]);
+			r1c1 = Tile("O");
+			r1c2 = Tile(face[36]);
+			r2c0 = Tile(face[37]);
+			r2c1 = Tile(face[38]);
+			r2c2 = Tile(face[39]);
+			}
+			
+			if (i==4){
+			r0c0 = Tile(face[8]);
+			r0c1 = Tile(face[9]);
+			r0c2 = Tile(face[10]);
+			r1c0 = Tile(face[11]);
+			r1c1 = Tile("G");
+			r1c2 = Tile(face[12]);
+			r2c0 = Tile(face[13]);
+			r2c1 = Tile(face[14]);
+			r2c2 = Tile(face[15]);
+			}
+			
+			if (i==5){
+			r0c0 = Tile(face[40]);
+			r0c1 = Tile(face[41]);
+			r0c2 = Tile(face[42]);
+			r1c0 = Tile(face[43]);
+			r1c1 = Tile("Y");
+			r1c2 = Tile(face[44]);
+			r2c0 = Tile(face[45]);
+			r2c1 = Tile(face[46]);
+			r2c2 = Tile(face[47]);
 			}
 
 			if(i == 0) myFace1 =  Face(r0c0, r0c1, r0c2, r1c0, r1c1, r1c2, r2c0, r2c1, r2c2);
