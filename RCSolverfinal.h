@@ -51,6 +51,7 @@ private:
     Face * cubeArr;
     vector<string> solutionVector;
 public:
+  ///  vector<string> solutionVector;
     Cube();
     Cube(Face top, Face front, Face right, Face back, Face left, Face down);
     Face * getCube();
