@@ -1152,8 +1152,7 @@ MainWindow::MainWindow(QWidget *parent) :
         /****************************************************/
 
 
-
-
+    //to give all squares their initial colors 
     for(int i=0;i<8;i++){
          white_arr[i]="white";
     }
@@ -1172,7 +1171,7 @@ MainWindow::MainWindow(QWidget *parent) :
     for(int i=0;i<8;i++){
          yellow_arr[i]="yellow";
     }
-    //white
+    //white count initialized
      white0count = 0;
      white1count = 0;
      white2count = 0;
@@ -1183,7 +1182,7 @@ MainWindow::MainWindow(QWidget *parent) :
      white7count = 0;
      white8count = 0;
 
-    //red
+    //red count initialized
      red0count = 1;
      red1count = 1;
      red2count = 1;
@@ -1194,8 +1193,7 @@ MainWindow::MainWindow(QWidget *parent) :
      red7count = 1;
      red8count = 1;
 
-    //green
-
+    //green count initialized
      green0count = 4;
      green1count = 4;
      green2count = 4;
@@ -1207,7 +1205,7 @@ MainWindow::MainWindow(QWidget *parent) :
      green8count = 4;
 
 
-     //blue
+     //blue count initialized
       blue0count = 3;
       blue1count = 3;
       blue2count = 3;
@@ -1217,7 +1215,7 @@ MainWindow::MainWindow(QWidget *parent) :
       blue6count = 3;
       blue7count = 3;
 
-     //yellow
+     //yellow count initialized
       yellow0count = 2;
       yellow1count = 2;
       yellow2count = 2;
@@ -1227,7 +1225,7 @@ MainWindow::MainWindow(QWidget *parent) :
       yellow6count = 2;
       yellow7count = 2;
 
-     //orange
+     //orange count initialized
       orange0count = 5;
       orange1count = 5;
       orange2count = 5;
@@ -3033,7 +3031,7 @@ void MainWindow::on_yellow7_clicked()
 }
 
 
-
+//Begin working on displaying steps 
 
 void MainWindow::on_SolveAllSteps_clicked()
 {
@@ -3048,7 +3046,7 @@ void MainWindow::on_SolveAllSteps_clicked()
     ui->textBrowser->setText(in.readAll());
 
 }
-
+//to create the steps to solve the mixed up cube
 void MainWindow::on_CommitCube_clicked(){
     buttoncount=0;
     QString tempy= "";
@@ -3106,7 +3104,7 @@ void MainWindow::on_CommitCube_clicked(){
     string subline = "";
     QString temp = "";
 
-
+    //save steps to an array for displaying one by one 
     while(fileread >> subline)
     {
         temp = QString::fromStdString(subline);
