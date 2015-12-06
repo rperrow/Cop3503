@@ -19,6 +19,9 @@
 
 using namespace std;
 
+vector<QString> steps;
+
+
 Corner::Corner(Tile t1, Tile t2, Tile t3){
     tile1 = t1;
     tile2 = t2;
@@ -427,7 +430,7 @@ spinU();
 spinLi();
 spinUi();
 solutionVector.pop_back(); solutionVector.pop_back(); solutionVector.pop_back(); solutionVector.pop_back();
-solutionVector.push_back("FixSideOrientation");
+solutionVector.push_back("Step1Move");
 }
 void Cube::solveSide(string c0, string c1){
 if((c0 == cubeArr[0].getFace()[1][0].getColor() && c1 == cubeArr[4].getFace()[0][1].getColor()) || (c1 == cubeArr[0].getFace()[1][0].getColor() && c0 == cubeArr[4].getFace()[0][1].getColor())){
@@ -722,6 +725,13 @@ finishCube();
 }
 
 void Cube::printVector(){
+    QString filenamez = "input.txt";
+    QFile filez(filenamez);
+    if(filez.open(QIODevice::ReadWrite|QIODevice::Truncate)){
+        QTextStream streamz(&filez);
+
+    QString tempx;
+
 solutionVector.push_back("");
 int k = 0; int oldk = 0; bool print = false;
 for(unsigned int i = 0; i < solutionVector.size(); i++){
@@ -733,13 +743,47 @@ k = 1;
 print = true;
 }
 if (print){
-if (oldk==1) cout<<solutionVector.at(i-1)<<" ";
-else cout<<solutionVector.at(i-1)<<"x"<<oldk<<" ";
+if (oldk==1) {
+ tempx =QString::fromStdString(solutionVector.at(i-1));
+    streamz<<tempx<<" ";
+}
+else{
+    tempx =QString::fromStdString(solutionVector.at(i-1));
+    streamz<<tempx<<"x"<<oldk<<" ";
+}
 print = false;
 }
 }
+
+}
+
 cout<<"\n";
 }
+
+
+/*  QString filenamez = "input.txt";
+  QFile filez(filenamez);
+  if(filez.open(QIODevice::ReadWrite|QIODevice::Truncate))
+  {
+      QTextStream streamz(&filez);
+
+
+
+      QString tempx;
+
+      for(int i=0;i<tempstring.size();i++){
+
+          tempx =QString::fromStdString(tempstring[i]);
+          streamz << tempx<<"\n";
+
+      }
+
+
+  }
+*/
+
+
+
 void Cube::printCube(){
 Face * activeFace;
 activeFace = &cubeArr[0];
@@ -1065,57 +1109,7 @@ for(int i = 0; i < 6; i ++){
     myCube.printVector();
  ///   bool cont = true;
  ///   cout<<"1 - F, 2 - Fi, 3 - L, 4 - Li, 5 - R, 6 - Ri, \n 7 - U, 8 - Ui, 9 - D, 10 - Di, 11 - Print, 12 - RotateCW, \n 13 - RotateCCW, 14 - RotateFW, 15 - Rotate BW, 16 - RotateSideCCW, 17 - RotateSideCW 18 - Step1Move \n 19 - Step2Move 20 - Step3aMove 21 - Step3bMove 22 - Step4Move \n 23 - Step5Move 24 - Step6Move 25 - Solve Top, 26 - Solve Cube, 27 - Exit 28 - Print Instructions\n";
-  /*  while(cont){
-    int k; cin>>k;
-    //if(k == 1) myCube.spinF();
-    //if(k == 2) myCube.spinFi();
-    //if(k == 3) myCube.spinL();
-    //if(k == 4) myCube.spinLi();
-    //if(k == 5) myCube.spinR();
-    //if(k == 6) myCube.spinRi();
-    //if(k == 7) myCube.spinT();
-    //if(k == 8) myCube.spinTi();
-    //if(k == 9) myCube.spinD();
-    //if(k == 10) myCube.spinDi();
-    //if(k == 11) myCube.printCube();
-    //if(k == 12) myCube.setTop(4);
-    //if(k == 13) myCube.setTop(2);
-    //if(k == 14) myCube.setTop(1);
-    //if(k == 15) myCube.setTop(3);
-    //else if (k==16) cont = false;
-    // printCube with each action for testing purposes
 
-    if(k == 1) {myCube.spinF(); myCube.printCube();}
-    if(k == 2) {myCube.spinFi(); myCube.printCube();}
-    if(k == 3) {myCube.spinL(); myCube.printCube();}
-    if(k == 4) {myCube.spinLi(); myCube.printCube();}
-    if(k == 5) {myCube.spinR(); myCube.printCube();}
-    if(k == 6) {myCube.spinRi(); myCube.printCube();}
-    if(k == 7) {myCube.spinU(); myCube.printCube();}
-    if(k == 8) {myCube.spinUi(); myCube.printCube();}
-    if(k == 9) {myCube.spinD(); myCube.printCube();}
-    if(k == 10) {myCube.spinDi(); myCube.printCube();}
-    if(k == 11) myCube.printCube();
-    if(k == 12) {myCube.setTop(4); myCube.printCube();}
-    if(k == 13) {myCube.setTop(2); myCube.printCube();}
-    if(k == 14) {myCube.setTop(1); myCube.printCube();}
-    if(k == 15) {myCube.setTop(3); myCube.printCube();}
-    if(k == 16) {myCube.rotate(2); myCube.printCube();}
-    if(k == 17) {myCube.rotate(1); myCube.printCube();}
-    if(k == 18) {myCube.step1Move(); myCube.printCube();}
-    if(k == 19) {myCube.step2Move(); myCube.printCube();}
-    if(k == 20) {myCube.step3aMove(); myCube.printCube();}
-    if(k == 21) {myCube.step3bMove(); myCube.printCube();}
-    if(k == 22) {myCube.step4Move(); myCube.printCube();}
-    if(k == 23) {myCube.step5Move(); myCube.printCube();}
-    if(k == 24) {myCube.step6Move(); myCube.printCube();}
-    if(k == 25) {myCube.solveTop(); myCube.printCube();}
-    if(k == 26) {myCube.solveCube(); myCube.printCube();}
-    if(k == 28) myCube.printVector();
-    else if(k==27) cont = false;
-    }*/
-    //system("pause");
-   /// return 0;
     }
 
 
@@ -1125,10 +1119,41 @@ for(int i = 0; i < 6; i ++){
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
+
 {
 
     ui->setupUi(this);
-  //  m_counter = 0;
+
+    /****************************************************/
+        /****************************************************/
+        //listing steps one by one
+        buttoncount = 0;
+        step=0;
+
+
+       /* QFile file("input.txt");
+        if(!file.open(QIODevice::ReadOnly|QIODevice::Truncate)){
+            QMessageBox::information(0, "info", file.errorString());
+        }else{
+
+        fstream fileread("input.txt");
+        string subline = "";
+        QString temp = "";
+
+
+        while(fileread >> subline)
+        {
+            temp = QString::fromStdString(subline);
+            steps.push_back(temp);
+        }
+
+       }*/
+        /****************************************************/
+        /****************************************************/
+
+
+
+
     for(int i=0;i<8;i++){
          white_arr[i]="white";
     }
@@ -3012,18 +3037,30 @@ void MainWindow::on_yellow7_clicked()
 
 void MainWindow::on_SolveAllSteps_clicked()
 {
-    QFile file("output.txt");
+    buttoncount=0;
+
+    QFile file("input.txt");
     if(!file.open(QIODevice::ReadOnly))
         QMessageBox::information(0, "info", file.errorString());
 
     QTextStream in(&file);
 
     ui->textBrowser->setText(in.readAll());
+
 }
 
-void MainWindow::on_CommitCube_clicked()
-{
-    //this method is not finished, it is a generic start on how to output the array colors to a text file
+void MainWindow::on_CommitCube_clicked(){
+    buttoncount=0;
+    QString tempy= "";
+
+    for(int gg=0;gg<steps.size();gg++){
+             steps[gg]=tempy;
+    }
+    for(int gg=0;gg<steps.size();gg++){
+             steps.pop_back();
+    }
+
+
 
     QString filename = "output.txt";
     QFile file(filename);
@@ -3060,12 +3097,40 @@ void MainWindow::on_CommitCube_clicked()
 
     solver();
 
+    QFile file2("input.txt");
+    if(!file2.open(QIODevice::ReadOnly|QIODevice::Truncate)){
+        QMessageBox::information(0, "info", file2.errorString());
+    }else{
 
+    fstream fileread("input.txt");
+    string subline = "";
+    QString temp = "";
+
+
+    while(fileread >> subline)
+    {
+        temp = QString::fromStdString(subline);
+        steps.push_back(temp);
+    }
+
+   }
 
 }
 
-void MainWindow::on_SolveOneStep_clicked()
-{
+
+
+
+
+void MainWindow::on_SolveOneStep_clicked(){
+
+    if(buttoncount == (steps.size())){
+          ui->textBrowser->setText("Finished");
+          buttoncount=0;
+      }else{
+      QString dis = steps[buttoncount];
+      ui->textBrowser->setText(dis);
+      buttoncount++;
+    }
 
 }
 
@@ -3073,6 +3138,8 @@ void MainWindow::on_SolveOneStep_clicked()
 
 void MainWindow::on_HelpButton_clicked()
 {
+    buttoncount=0;
+
     QFile file("help.txt");
     if(!file.open(QIODevice::ReadOnly))
         QMessageBox::information(0, "info", file.errorString());
