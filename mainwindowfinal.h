@@ -15,6 +15,10 @@ class MainWindow : public QMainWindow
 
 public:
     explicit MainWindow(QWidget *parent = 0);
+    std::vector<QString> steps;
+    int buttoncount;
+    int step;
+
     //for storing variables
     QString white_arr[8];
     QString green_arr[8];
