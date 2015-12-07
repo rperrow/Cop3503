@@ -7,7 +7,7 @@
 
 using namespace std;
 
-class Tile{
+class Tile{   //Creates Tile Objects which indicate the individual colors on the cube.
 private:
     string color;
 public:
@@ -16,7 +16,7 @@ public:
     string getColor();
 };
 
-class Corner{
+class Corner{  // Creates corner objects which each represent an individual corner piece
 private:
     Tile tile1, tile2, tile3;
 public:
@@ -26,7 +26,7 @@ public:
     Tile getTile3();
 };
 
-class Side{
+class Side{    // Takes the 4 middle side pieces of each face (Basically not a corner and not the middle piece)
 private:
     Tile tile1, tile2;
 public:
@@ -35,7 +35,7 @@ public:
     Tile getTile2();
 };
 
-class Face{
+class Face{    // Creates a face object which allows us to represent the Cube as 6 faces with 9 tiles to a face
 private:
     Tile ** faceArr;
 public:
@@ -46,7 +46,7 @@ public:
     void rotateI();
 };
 
-class Cube{
+class Cube{   // The cube object allows us to see the entire cube as made up of faces and tiles and allows us to do the required movements
 private:
     Face * cubeArr;
     vector<string> solutionVector;
@@ -56,7 +56,7 @@ public:
     Cube(Face top, Face front, Face right, Face back, Face left, Face down);
     Face * getCube();
     void printCube();
-    void spinF();
+    void spinF();    // these are the movements of the cube
     void spinFi();
     void spinL();
     void spinLi();
@@ -74,8 +74,8 @@ public:
     void step3bMove();
     void step4Move();
     void step5Move();
-    void step6Move();
-    void solveTop();
+    void step6Move();  // end of movements
+    void solveTop();   // solving functions
     void solveTopCross();
     void solveTopCorners();
     void solveCorner(string c0, string c1, string c2);
@@ -86,14 +86,14 @@ public:
     void solveCube();
     void solveFinalCross();
     void solveFinalCorners();
-    void finishCube();
-    void printVector();
-    vector<string> getVector();
-    bool checkColors(Face f1, Face f2, Face f3, string c1, string c2, string c3);
+    void finishCube();  // end of the solving function
+    void printVector();  //print function for the steps used
+    vector<string> getVector(); // allows us to retrieve a vector string (the container for the steps)
+    bool checkColors(Face f1, Face f2, Face f3, string c1, string c2, string c3); // the error checking functions
     bool CheckColors();
     bool CheckRepeats();
     bool CheckSides();
-    bool Valid();
+    bool Valid();  // end of error check
 };
 
 
