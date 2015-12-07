@@ -55,673 +55,706 @@ Tile::Tile(string c){
 string Tile::getColor(){
     return color;
 }
+
 Cube::Cube(){
-cubeArr = NULL;
+	cubeArr = NULL;
 }
 Cube::Cube(Face top, Face front, Face right, Face back, Face left, Face down){
-cubeArr = new Face[6];
-cubeArr[0] = top;
-cubeArr[1] = front;
-cubeArr[2] = right;
-cubeArr[3] = back;
-cubeArr[4] = left;
-cubeArr[5] = down;
+	cubeArr = new Face[6];
+	cubeArr[0] = top;
+	cubeArr[1] = front;
+	cubeArr[2] = right;
+	cubeArr[3] = back;
+	cubeArr[4] = left;
+	cubeArr[5] = down;
 }
-vector<string> Cube::getVector(){
-return solutionVector;
-}
+
 void Cube::spinF(){
-Tile temp0; Tile temp1; Tile temp2;
-temp0 = cubeArr[0].getFace()[2][0];
-temp1 = cubeArr[0].getFace()[2][1];
-temp2 = cubeArr[0].getFace()[2][2];
-cubeArr[0].getFace()[2][0] = cubeArr[4].getFace()[2][2];
-cubeArr[0].getFace()[2][1] = cubeArr[4].getFace()[1][2];
-cubeArr[0].getFace()[2][2] = cubeArr[4].getFace()[0][2];
-cubeArr[4].getFace()[0][2] = cubeArr[5].getFace()[0][0];
-cubeArr[4].getFace()[1][2] = cubeArr[5].getFace()[0][1];
-cubeArr[4].getFace()[2][2] = cubeArr[5].getFace()[0][2];
-cubeArr[5].getFace()[0][0] = cubeArr[2].getFace()[2][0];
-cubeArr[5].getFace()[0][1] = cubeArr[2].getFace()[1][0];
-cubeArr[5].getFace()[0][2] = cubeArr[2].getFace()[0][0];
-cubeArr[2].getFace()[0][0] = temp0;
-cubeArr[2].getFace()[1][0] = temp1;
-cubeArr[2].getFace()[2][0] = temp2;
-cubeArr[1].rotate();
-solutionVector.push_back("F");
+	Tile temp0; Tile temp1; Tile temp2;
+	temp0 = cubeArr[0].getFace()[2][0];
+	temp1 = cubeArr[0].getFace()[2][1];
+	temp2 = cubeArr[0].getFace()[2][2];
+	cubeArr[0].getFace()[2][0] = cubeArr[4].getFace()[2][2];
+	cubeArr[0].getFace()[2][1] = cubeArr[4].getFace()[1][2];
+	cubeArr[0].getFace()[2][2] = cubeArr[4].getFace()[0][2];
+	cubeArr[4].getFace()[0][2] = cubeArr[5].getFace()[0][0];
+	cubeArr[4].getFace()[1][2] = cubeArr[5].getFace()[0][1];
+	cubeArr[4].getFace()[2][2] = cubeArr[5].getFace()[0][2];
+	cubeArr[5].getFace()[0][0] = cubeArr[2].getFace()[2][0];
+	cubeArr[5].getFace()[0][1] = cubeArr[2].getFace()[1][0];
+	cubeArr[5].getFace()[0][2] = cubeArr[2].getFace()[0][0];
+	cubeArr[2].getFace()[0][0] = temp0;
+	cubeArr[2].getFace()[1][0] = temp1;
+	cubeArr[2].getFace()[2][0] = temp2;
+	cubeArr[1].rotate();                                      //the front face must also rotate
+	solutionVector.push_back("F");                            //add the instruction to the solution vector
 }
+
 void Cube::spinFi(){
-Tile temp0; Tile temp1; Tile temp2;
-temp0 = cubeArr[0].getFace()[2][0];
-temp1 = cubeArr[0].getFace()[2][1];
-temp2 = cubeArr[0].getFace()[2][2];
-cubeArr[0].getFace()[2][0] = cubeArr[2].getFace()[0][0];
-cubeArr[0].getFace()[2][1] = cubeArr[2].getFace()[1][0];
-cubeArr[0].getFace()[2][2] = cubeArr[2].getFace()[2][0];
-cubeArr[2].getFace()[0][0] = cubeArr[5].getFace()[0][2];
-cubeArr[2].getFace()[1][0] = cubeArr[5].getFace()[0][1];
-cubeArr[2].getFace()[2][0] = cubeArr[5].getFace()[0][0];
-cubeArr[5].getFace()[0][0] = cubeArr[4].getFace()[0][2];
-cubeArr[5].getFace()[0][1] = cubeArr[4].getFace()[1][2];
-cubeArr[5].getFace()[0][2] = cubeArr[4].getFace()[2][2];
-/*cubeArr[4].getFace()[0][2] = temp0;
-cubeArr[4].getFace()[1][2] = temp1;
-cubeArr[4].getFace()[2][2] = temp2;*/
-//edit
-cubeArr[4].getFace()[0][2] = temp2;
-cubeArr[4].getFace()[1][2] = temp1;
-cubeArr[4].getFace()[2][2] = temp0;
-cubeArr[1].rotateI();
-solutionVector.push_back("Fi");
+	Tile temp0; Tile temp1; Tile temp2;
+	temp0 = cubeArr[0].getFace()[2][0];
+	temp1 = cubeArr[0].getFace()[2][1];
+	temp2 = cubeArr[0].getFace()[2][2];
+	cubeArr[0].getFace()[2][0] = cubeArr[2].getFace()[0][0];
+	cubeArr[0].getFace()[2][1] = cubeArr[2].getFace()[1][0];
+	cubeArr[0].getFace()[2][2] = cubeArr[2].getFace()[2][0];
+	cubeArr[2].getFace()[0][0] = cubeArr[5].getFace()[0][2];
+	cubeArr[2].getFace()[1][0] = cubeArr[5].getFace()[0][1];
+	cubeArr[2].getFace()[2][0] = cubeArr[5].getFace()[0][0];
+	cubeArr[5].getFace()[0][0] = cubeArr[4].getFace()[0][2];
+	cubeArr[5].getFace()[0][1] = cubeArr[4].getFace()[1][2];
+	cubeArr[5].getFace()[0][2] = cubeArr[4].getFace()[2][2];
+	/*cubeArr[4].getFace()[0][2] = temp0;
+	cubeArr[4].getFace()[1][2] = temp1;
+	cubeArr[4].getFace()[2][2] = temp2;*/
+	//edit
+	cubeArr[4].getFace()[0][2] = temp2;
+	cubeArr[4].getFace()[1][2] = temp1;
+	cubeArr[4].getFace()[2][2] = temp0;
+	cubeArr[1].rotateI();
+	solutionVector.push_back("Fi");
 }
+
 void Cube::spinR(){
-Tile temp0; Tile temp1; Tile temp2;
-temp0 = cubeArr[0].getFace()[0][2];
-temp1 = cubeArr[0].getFace()[1][2];
-temp2 = cubeArr[0].getFace()[2][2];
-cubeArr[0].getFace()[0][2] = cubeArr[1].getFace()[0][2];
-cubeArr[0].getFace()[1][2] = cubeArr[1].getFace()[1][2];
-cubeArr[0].getFace()[2][2] = cubeArr[1].getFace()[2][2];
-cubeArr[1].getFace()[0][2] = cubeArr[5].getFace()[0][2];
-cubeArr[1].getFace()[1][2] = cubeArr[5].getFace()[1][2];
-cubeArr[1].getFace()[2][2] = cubeArr[5].getFace()[2][2];
-cubeArr[5].getFace()[0][2] = cubeArr[3].getFace()[2][0];
-cubeArr[5].getFace()[1][2] = cubeArr[3].getFace()[1][0];
-cubeArr[5].getFace()[2][2] = cubeArr[3].getFace()[0][0];
-cubeArr[3].getFace()[2][0] = temp0;
-cubeArr[3].getFace()[1][0] = temp1;
-cubeArr[3].getFace()[0][0] = temp2;
-cubeArr[2].rotate();
-solutionVector.push_back("R");
+	Tile temp0; Tile temp1; Tile temp2;
+	temp0 = cubeArr[0].getFace()[0][2];
+	temp1 = cubeArr[0].getFace()[1][2];
+	temp2 = cubeArr[0].getFace()[2][2];
+	cubeArr[0].getFace()[0][2] = cubeArr[1].getFace()[0][2];
+	cubeArr[0].getFace()[1][2] = cubeArr[1].getFace()[1][2];
+	cubeArr[0].getFace()[2][2] = cubeArr[1].getFace()[2][2];
+	cubeArr[1].getFace()[0][2] = cubeArr[5].getFace()[0][2];
+	cubeArr[1].getFace()[1][2] = cubeArr[5].getFace()[1][2];
+	cubeArr[1].getFace()[2][2] = cubeArr[5].getFace()[2][2];
+	cubeArr[5].getFace()[0][2] = cubeArr[3].getFace()[2][0];
+	cubeArr[5].getFace()[1][2] = cubeArr[3].getFace()[1][0];
+	cubeArr[5].getFace()[2][2] = cubeArr[3].getFace()[0][0];
+	cubeArr[3].getFace()[2][0] = temp0;
+	cubeArr[3].getFace()[1][0] = temp1;
+	cubeArr[3].getFace()[0][0] = temp2;
+	cubeArr[2].rotate();
+	solutionVector.push_back("R");
 }
+
 void Cube::spinRi(){
-Tile temp0; Tile temp1; Tile temp2;
-temp0 = cubeArr[0].getFace()[0][2];
-temp1 = cubeArr[0].getFace()[1][2];
-temp2 = cubeArr[0].getFace()[2][2];
-cubeArr[0].getFace()[0][2] = cubeArr[3].getFace()[2][0];
-cubeArr[0].getFace()[1][2] = cubeArr[3].getFace()[1][0];
-cubeArr[0].getFace()[2][2] = cubeArr[3].getFace()[0][0];
-cubeArr[3].getFace()[2][0] = cubeArr[5].getFace()[0][2];
-cubeArr[3].getFace()[1][0] = cubeArr[5].getFace()[1][2];
-cubeArr[3].getFace()[0][0] = cubeArr[5].getFace()[2][2];
-cubeArr[5].getFace()[0][2] = cubeArr[1].getFace()[0][2];
-cubeArr[5].getFace()[1][2] = cubeArr[1].getFace()[1][2];
-cubeArr[5].getFace()[2][2] = cubeArr[1].getFace()[2][2];
-cubeArr[1].getFace()[0][2] = temp0;
-cubeArr[1].getFace()[1][2] = temp1;
-cubeArr[1].getFace()[2][2] = temp2;
-cubeArr[2].rotateI();
-solutionVector.push_back("Ri");
+	Tile temp0; Tile temp1; Tile temp2;
+	temp0 = cubeArr[0].getFace()[0][2];
+	temp1 = cubeArr[0].getFace()[1][2];
+	temp2 = cubeArr[0].getFace()[2][2];
+	cubeArr[0].getFace()[0][2] = cubeArr[3].getFace()[2][0];
+	cubeArr[0].getFace()[1][2] = cubeArr[3].getFace()[1][0];
+	cubeArr[0].getFace()[2][2] = cubeArr[3].getFace()[0][0];
+	cubeArr[3].getFace()[2][0] = cubeArr[5].getFace()[0][2];
+	cubeArr[3].getFace()[1][0] = cubeArr[5].getFace()[1][2];
+	cubeArr[3].getFace()[0][0] = cubeArr[5].getFace()[2][2];
+	cubeArr[5].getFace()[0][2] = cubeArr[1].getFace()[0][2];
+	cubeArr[5].getFace()[1][2] = cubeArr[1].getFace()[1][2];
+	cubeArr[5].getFace()[2][2] = cubeArr[1].getFace()[2][2];
+	cubeArr[1].getFace()[0][2] = temp0;
+	cubeArr[1].getFace()[1][2] = temp1;
+	cubeArr[1].getFace()[2][2] = temp2;
+	cubeArr[2].rotateI();
+	solutionVector.push_back("Ri");
 }
+
 void Cube::spinLi(){
-Tile temp0; Tile temp1; Tile temp2;
-temp0 = cubeArr[0].getFace()[0][0];
-temp1 = cubeArr[0].getFace()[1][0];
-temp2 = cubeArr[0].getFace()[2][0];
-cubeArr[0].getFace()[0][0] = cubeArr[1].getFace()[0][0];
-cubeArr[0].getFace()[1][0] = cubeArr[1].getFace()[1][0];
-cubeArr[0].getFace()[2][0] = cubeArr[1].getFace()[2][0];
-cubeArr[1].getFace()[0][0] = cubeArr[5].getFace()[0][0];
-cubeArr[1].getFace()[1][0] = cubeArr[5].getFace()[1][0];
-cubeArr[1].getFace()[2][0] = cubeArr[5].getFace()[2][0];
-cubeArr[5].getFace()[0][0] = cubeArr[3].getFace()[2][2];
-cubeArr[5].getFace()[1][0] = cubeArr[3].getFace()[1][2];
-cubeArr[5].getFace()[2][0] = cubeArr[3].getFace()[0][2];
-cubeArr[3].getFace()[2][2] = temp0;
-cubeArr[3].getFace()[1][2] = temp1;
-cubeArr[3].getFace()[0][2] = temp2;
-cubeArr[4].rotateI();
-solutionVector.push_back("Li");
+	Tile temp0; Tile temp1; Tile temp2;
+	temp0 = cubeArr[0].getFace()[0][0];
+	temp1 = cubeArr[0].getFace()[1][0];
+	temp2 = cubeArr[0].getFace()[2][0];
+	cubeArr[0].getFace()[0][0] = cubeArr[1].getFace()[0][0];
+	cubeArr[0].getFace()[1][0] = cubeArr[1].getFace()[1][0];
+	cubeArr[0].getFace()[2][0] = cubeArr[1].getFace()[2][0];
+	cubeArr[1].getFace()[0][0] = cubeArr[5].getFace()[0][0];
+	cubeArr[1].getFace()[1][0] = cubeArr[5].getFace()[1][0];
+	cubeArr[1].getFace()[2][0] = cubeArr[5].getFace()[2][0];
+	cubeArr[5].getFace()[0][0] = cubeArr[3].getFace()[2][2];
+	cubeArr[5].getFace()[1][0] = cubeArr[3].getFace()[1][2];
+	cubeArr[5].getFace()[2][0] = cubeArr[3].getFace()[0][2];
+	cubeArr[3].getFace()[2][2] = temp0;
+	cubeArr[3].getFace()[1][2] = temp1;
+	cubeArr[3].getFace()[0][2] = temp2;
+	cubeArr[4].rotateI();
+	solutionVector.push_back("Li");
 }
+
 void Cube::spinL(){
-Tile temp0; Tile temp1; Tile temp2;
-temp0 = cubeArr[0].getFace()[0][0];
-temp1 = cubeArr[0].getFace()[1][0];
-temp2 = cubeArr[0].getFace()[2][0];
-cubeArr[0].getFace()[0][0] = cubeArr[3].getFace()[2][2];
-cubeArr[0].getFace()[1][0] = cubeArr[3].getFace()[1][2];
-cubeArr[0].getFace()[2][0] = cubeArr[3].getFace()[0][2];
-cubeArr[3].getFace()[2][2] = cubeArr[5].getFace()[0][0];
-cubeArr[3].getFace()[1][2] = cubeArr[5].getFace()[1][0];
-cubeArr[3].getFace()[0][2] = cubeArr[5].getFace()[2][0];
-cubeArr[5].getFace()[0][0] = cubeArr[1].getFace()[0][0];
-cubeArr[5].getFace()[1][0] = cubeArr[1].getFace()[1][0];
-cubeArr[5].getFace()[2][0] = cubeArr[1].getFace()[2][0];
-cubeArr[1].getFace()[0][0] = temp0;
-cubeArr[1].getFace()[1][0] = temp1;
-cubeArr[1].getFace()[2][0] = temp2;
-cubeArr[4].rotate();
-solutionVector.push_back("L");
+	Tile temp0; Tile temp1; Tile temp2;
+	temp0 = cubeArr[0].getFace()[0][0];
+	temp1 = cubeArr[0].getFace()[1][0];
+	temp2 = cubeArr[0].getFace()[2][0];
+	cubeArr[0].getFace()[0][0] = cubeArr[3].getFace()[2][2];
+	cubeArr[0].getFace()[1][0] = cubeArr[3].getFace()[1][2];
+	cubeArr[0].getFace()[2][0] = cubeArr[3].getFace()[0][2];
+	cubeArr[3].getFace()[2][2] = cubeArr[5].getFace()[0][0];
+	cubeArr[3].getFace()[1][2] = cubeArr[5].getFace()[1][0];
+	cubeArr[3].getFace()[0][2] = cubeArr[5].getFace()[2][0];
+	cubeArr[5].getFace()[0][0] = cubeArr[1].getFace()[0][0];
+	cubeArr[5].getFace()[1][0] = cubeArr[1].getFace()[1][0];
+	cubeArr[5].getFace()[2][0] = cubeArr[1].getFace()[2][0];
+	cubeArr[1].getFace()[0][0] = temp0;
+	cubeArr[1].getFace()[1][0] = temp1;
+	cubeArr[1].getFace()[2][0] = temp2;
+	cubeArr[4].rotate();
+	solutionVector.push_back("L");
 }
+
 void Cube::spinD(){
-Tile temp0; Tile temp1; Tile temp2;
-temp0 = cubeArr[1].getFace()[2][0];
-temp1 = cubeArr[1].getFace()[2][1];
-temp2 = cubeArr[1].getFace()[2][2];
-cubeArr[1].getFace()[2][0] = cubeArr[4].getFace()[2][0];
-cubeArr[1].getFace()[2][1] = cubeArr[4].getFace()[2][1];
-cubeArr[1].getFace()[2][2] = cubeArr[4].getFace()[2][2];
-cubeArr[4].getFace()[2][0] = cubeArr[3].getFace()[2][0];
-cubeArr[4].getFace()[2][1] = cubeArr[3].getFace()[2][1];
-cubeArr[4].getFace()[2][2] = cubeArr[3].getFace()[2][2];
-cubeArr[3].getFace()[2][0] = cubeArr[2].getFace()[2][0];
-cubeArr[3].getFace()[2][1] = cubeArr[2].getFace()[2][1];
-cubeArr[3].getFace()[2][2] = cubeArr[2].getFace()[2][2];
-cubeArr[2].getFace()[2][0] = temp0;
-cubeArr[2].getFace()[2][1] = temp1;
-cubeArr[2].getFace()[2][2] = temp2;
-cubeArr[5].rotate();
-solutionVector.push_back("D");
+	Tile temp0; Tile temp1; Tile temp2;
+	temp0 = cubeArr[1].getFace()[2][0];
+	temp1 = cubeArr[1].getFace()[2][1];
+	temp2 = cubeArr[1].getFace()[2][2];
+	cubeArr[1].getFace()[2][0] = cubeArr[4].getFace()[2][0];
+	cubeArr[1].getFace()[2][1] = cubeArr[4].getFace()[2][1];
+	cubeArr[1].getFace()[2][2] = cubeArr[4].getFace()[2][2];
+	cubeArr[4].getFace()[2][0] = cubeArr[3].getFace()[2][0];
+	cubeArr[4].getFace()[2][1] = cubeArr[3].getFace()[2][1];
+	cubeArr[4].getFace()[2][2] = cubeArr[3].getFace()[2][2];
+	cubeArr[3].getFace()[2][0] = cubeArr[2].getFace()[2][0];
+	cubeArr[3].getFace()[2][1] = cubeArr[2].getFace()[2][1];
+	cubeArr[3].getFace()[2][2] = cubeArr[2].getFace()[2][2];
+	cubeArr[2].getFace()[2][0] = temp0;
+	cubeArr[2].getFace()[2][1] = temp1;
+	cubeArr[2].getFace()[2][2] = temp2;
+	cubeArr[5].rotate();
+	solutionVector.push_back("D");
 }
+
 void Cube::spinDi(){
-Tile temp0; Tile temp1; Tile temp2;
-temp0 = cubeArr[1].getFace()[2][0];
-temp1 = cubeArr[1].getFace()[2][1];
-temp2 = cubeArr[1].getFace()[2][2];
-cubeArr[1].getFace()[2][0] = cubeArr[2].getFace()[2][0];
-cubeArr[1].getFace()[2][1] = cubeArr[2].getFace()[2][1];
-cubeArr[1].getFace()[2][2] = cubeArr[2].getFace()[2][2];
-cubeArr[2].getFace()[2][0] = cubeArr[3].getFace()[2][0];
-cubeArr[2].getFace()[2][1] = cubeArr[3].getFace()[2][1];
-cubeArr[2].getFace()[2][2] = cubeArr[3].getFace()[2][2];
-cubeArr[3].getFace()[2][0] = cubeArr[4].getFace()[2][0];
-cubeArr[3].getFace()[2][1] = cubeArr[4].getFace()[2][1];
-cubeArr[3].getFace()[2][2] = cubeArr[4].getFace()[2][2];
-cubeArr[4].getFace()[2][0] = temp0;
-cubeArr[4].getFace()[2][1] = temp1;
-cubeArr[4].getFace()[2][2] = temp2;
-cubeArr[5].rotateI();
-solutionVector.push_back("Di");
+	Tile temp0; Tile temp1; Tile temp2;
+	temp0 = cubeArr[1].getFace()[2][0];
+	temp1 = cubeArr[1].getFace()[2][1];
+	temp2 = cubeArr[1].getFace()[2][2];
+	cubeArr[1].getFace()[2][0] = cubeArr[2].getFace()[2][0];
+	cubeArr[1].getFace()[2][1] = cubeArr[2].getFace()[2][1];
+	cubeArr[1].getFace()[2][2] = cubeArr[2].getFace()[2][2];
+	cubeArr[2].getFace()[2][0] = cubeArr[3].getFace()[2][0];
+	cubeArr[2].getFace()[2][1] = cubeArr[3].getFace()[2][1];
+	cubeArr[2].getFace()[2][2] = cubeArr[3].getFace()[2][2];
+	cubeArr[3].getFace()[2][0] = cubeArr[4].getFace()[2][0];
+	cubeArr[3].getFace()[2][1] = cubeArr[4].getFace()[2][1];
+	cubeArr[3].getFace()[2][2] = cubeArr[4].getFace()[2][2];
+	cubeArr[4].getFace()[2][0] = temp0;
+	cubeArr[4].getFace()[2][1] = temp1;
+	cubeArr[4].getFace()[2][2] = temp2;
+	cubeArr[5].rotateI();
+	solutionVector.push_back("Di");
 }
+
 void Cube::spinU(){
-Tile temp0; Tile temp1; Tile temp2;
-temp0 = cubeArr[1].getFace()[0][0];
-temp1 = cubeArr[1].getFace()[0][1];
-temp2 = cubeArr[1].getFace()[0][2];
-cubeArr[1].getFace()[0][0] = cubeArr[2].getFace()[0][0];
-cubeArr[1].getFace()[0][1] = cubeArr[2].getFace()[0][1];
-cubeArr[1].getFace()[0][2] = cubeArr[2].getFace()[0][2];
-cubeArr[2].getFace()[0][0] = cubeArr[3].getFace()[0][0];
-cubeArr[2].getFace()[0][1] = cubeArr[3].getFace()[0][1];
-cubeArr[2].getFace()[0][2] = cubeArr[3].getFace()[0][2];
-cubeArr[3].getFace()[0][0] = cubeArr[4].getFace()[0][0];
-cubeArr[3].getFace()[0][1] = cubeArr[4].getFace()[0][1];
-cubeArr[3].getFace()[0][2] = cubeArr[4].getFace()[0][2];
-cubeArr[4].getFace()[0][0] = temp0;
-cubeArr[4].getFace()[0][1] = temp1;
-cubeArr[4].getFace()[0][2] = temp2;
-cubeArr[0].rotate();
-solutionVector.push_back("U");
+	Tile temp0; Tile temp1; Tile temp2;
+	temp0 = cubeArr[1].getFace()[0][0];
+	temp1 = cubeArr[1].getFace()[0][1];
+	temp2 = cubeArr[1].getFace()[0][2];
+	cubeArr[1].getFace()[0][0] = cubeArr[2].getFace()[0][0];
+	cubeArr[1].getFace()[0][1] = cubeArr[2].getFace()[0][1];
+	cubeArr[1].getFace()[0][2] = cubeArr[2].getFace()[0][2];
+	cubeArr[2].getFace()[0][0] = cubeArr[3].getFace()[0][0];
+	cubeArr[2].getFace()[0][1] = cubeArr[3].getFace()[0][1];
+	cubeArr[2].getFace()[0][2] = cubeArr[3].getFace()[0][2];
+	cubeArr[3].getFace()[0][0] = cubeArr[4].getFace()[0][0];
+	cubeArr[3].getFace()[0][1] = cubeArr[4].getFace()[0][1];
+	cubeArr[3].getFace()[0][2] = cubeArr[4].getFace()[0][2];
+	cubeArr[4].getFace()[0][0] = temp0;
+	cubeArr[4].getFace()[0][1] = temp1;
+	cubeArr[4].getFace()[0][2] = temp2;
+	cubeArr[0].rotate();
+	solutionVector.push_back("U");
 }
+
 void Cube::spinUi(){
-Tile temp0; Tile temp1; Tile temp2;
-temp0 = cubeArr[1].getFace()[0][0];
-temp1 = cubeArr[1].getFace()[0][1];
-temp2 = cubeArr[1].getFace()[0][2];
-cubeArr[1].getFace()[0][0] = cubeArr[4].getFace()[0][0];
-cubeArr[1].getFace()[0][1] = cubeArr[4].getFace()[0][1];
-cubeArr[1].getFace()[0][2] = cubeArr[4].getFace()[0][2];
-cubeArr[4].getFace()[0][0] = cubeArr[3].getFace()[0][0];
-cubeArr[4].getFace()[0][1] = cubeArr[3].getFace()[0][1];
-cubeArr[4].getFace()[0][2] = cubeArr[3].getFace()[0][2];
-cubeArr[3].getFace()[0][0] = cubeArr[2].getFace()[0][0];
-cubeArr[3].getFace()[0][1] = cubeArr[2].getFace()[0][1];
-cubeArr[3].getFace()[0][2] = cubeArr[2].getFace()[0][2];
-cubeArr[2].getFace()[0][0] = temp0;
-cubeArr[2].getFace()[0][1] = temp1;
-cubeArr[2].getFace()[0][2] = temp2;
-cubeArr[0].rotateI();
-solutionVector.push_back("Ui");
+	Tile temp0; Tile temp1; Tile temp2;
+	temp0 = cubeArr[1].getFace()[0][0];
+	temp1 = cubeArr[1].getFace()[0][1];
+	temp2 = cubeArr[1].getFace()[0][2];
+	cubeArr[1].getFace()[0][0] = cubeArr[4].getFace()[0][0];
+	cubeArr[1].getFace()[0][1] = cubeArr[4].getFace()[0][1];
+	cubeArr[1].getFace()[0][2] = cubeArr[4].getFace()[0][2];
+	cubeArr[4].getFace()[0][0] = cubeArr[3].getFace()[0][0];
+	cubeArr[4].getFace()[0][1] = cubeArr[3].getFace()[0][1];
+	cubeArr[4].getFace()[0][2] = cubeArr[3].getFace()[0][2];
+	cubeArr[3].getFace()[0][0] = cubeArr[2].getFace()[0][0];
+	cubeArr[3].getFace()[0][1] = cubeArr[2].getFace()[0][1];
+	cubeArr[3].getFace()[0][2] = cubeArr[2].getFace()[0][2];
+	cubeArr[2].getFace()[0][0] = temp0;
+	cubeArr[2].getFace()[0][1] = temp1;
+	cubeArr[2].getFace()[0][2] = temp2;
+	cubeArr[0].rotateI();
+	solutionVector.push_back("Ui");
 }
+
 void Cube::setTop(int k){
-if(k==1){
-Face temp = cubeArr[0];
-cubeArr[0] = cubeArr[1];
-cubeArr[1] = cubeArr[5];
-cubeArr[3].rotate(); cubeArr[3].rotate();
-cubeArr[5] = cubeArr[3];
-temp.rotate(); temp.rotate();
-cubeArr[3] = temp;
-cubeArr[2].rotate();
-cubeArr[4].rotateI();
-solutionVector.push_back("RotateFW");
+	if(k==1){
+		Face temp = cubeArr[0];
+		cubeArr[0] = cubeArr[1];
+		cubeArr[1] = cubeArr[5];
+		cubeArr[3].rotate(); cubeArr[3].rotate();          //the back face needs to be rotated twice - dimensions get tricky
+		cubeArr[5] = cubeArr[3];
+		temp.rotate(); temp.rotate();
+		cubeArr[3] = temp;
+		cubeArr[2].rotate();
+		cubeArr[4].rotateI();
+		solutionVector.push_back("RotateFW");
+	}
+	if(k==2){
+		Face temp = cubeArr[0];
+		cubeArr[2].rotateI();
+		cubeArr[0] = cubeArr[2];
+		cubeArr[5].rotateI();
+		cubeArr[2] = cubeArr[5];
+		cubeArr[4].rotateI();
+		cubeArr[5] = cubeArr[4];
+		temp.rotateI();
+		cubeArr[4] = temp;
+		cubeArr[1].rotateI();
+		cubeArr[3].rotate();
+		solutionVector.push_back("RotateCCW");
+	}
+	if(k==3){
+		Face temp = cubeArr[0];
+		cubeArr[3].rotate(); cubeArr[3].rotate();
+		cubeArr[0] = cubeArr[3];
+		cubeArr[5].rotate(); cubeArr[5].rotate();
+		cubeArr[3] = cubeArr[5];
+		cubeArr[5] = cubeArr[1];
+		cubeArr[1] = temp;
+		cubeArr[2].rotateI();
+		cubeArr[4].rotate();
+		solutionVector.push_back("RotateBW");
+	}
+	if(k==4){
+		Face temp = cubeArr[0];
+		cubeArr[4].rotate();
+		cubeArr[0] = cubeArr[4];
+		cubeArr[5].rotate();
+		cubeArr[4] = cubeArr[5];
+		cubeArr[2].rotate();
+		cubeArr[5] = cubeArr[2];
+		temp.rotate();
+		cubeArr[2] = temp;
+		cubeArr[1].rotate();
+		cubeArr[3].rotateI();
+		solutionVector.push_back("RotateCW");
+	}
+
 }
-if(k==2){
-Face temp = cubeArr[0];
-cubeArr[2].rotateI();
-cubeArr[0] = cubeArr[2];
-cubeArr[5].rotateI();
-cubeArr[2] = cubeArr[5];
-cubeArr[4].rotateI();
-cubeArr[5] = cubeArr[4];
-temp.rotateI();
-cubeArr[4] = temp;
-cubeArr[1].rotateI();
-cubeArr[3].rotate();
-solutionVector.push_back("RotateCCW");
-}
-if(k==3){
-Face temp = cubeArr[0];
-cubeArr[3].rotate(); cubeArr[3].rotate();
-cubeArr[0] = cubeArr[3];
-cubeArr[5].rotate(); cubeArr[5].rotate();
-cubeArr[3] = cubeArr[5];
-cubeArr[5] = cubeArr[1];
-cubeArr[1] = temp;
-cubeArr[2].rotateI();
-cubeArr[4].rotate();
-solutionVector.push_back("RotateBW");
-}
-if(k==4){
-Face temp = cubeArr[0];
-cubeArr[4].rotate();
-cubeArr[0] = cubeArr[4];
-cubeArr[5].rotate();
-cubeArr[4] = cubeArr[5];
-cubeArr[2].rotate();
-cubeArr[5] = cubeArr[2];
-temp.rotate();
-cubeArr[2] = temp;
-cubeArr[1].rotate();
-cubeArr[3].rotateI();
-solutionVector.push_back("RotateCW");
-}
-}
+
 void Cube::rotate(int k){
-if(k==1){
-Face temp = cubeArr[1];
-cubeArr[1]=cubeArr[2];
-cubeArr[2]=cubeArr[3];
-cubeArr[3]=cubeArr[4];
-cubeArr[4] = temp;
-cubeArr[0].rotate();
-cubeArr[5].rotateI();
-solutionVector.push_back("SpinCW");
+	if(k==1){
+	Face temp = cubeArr[1];
+		cubeArr[1]=cubeArr[2];
+		cubeArr[2]=cubeArr[3];
+		cubeArr[3]=cubeArr[4];
+		cubeArr[4] = temp;
+		cubeArr[0].rotate();
+		cubeArr[5].rotateI();
+		solutionVector.push_back("SpinCW");
+	}
+	if(k==2){		
+		Face temp = cubeArr[1];
+		cubeArr[1]=cubeArr[4];
+		cubeArr[4]=cubeArr[3];
+		cubeArr[3]=cubeArr[2];
+		cubeArr[2] = temp;		
+		cubeArr[0].rotateI();
+		cubeArr[5].rotate();
+		solutionVector.push_back("SpinCCW");
+	}
 }
-if(k==2){
-Face temp = cubeArr[1];
-cubeArr[1]=cubeArr[4];
-cubeArr[4]=cubeArr[3];
-cubeArr[3]=cubeArr[2];
-cubeArr[2] = temp;
-cubeArr[0].rotateI();
-cubeArr[5].rotate();
-solutionVector.push_back("SpinCCW");
-}
-}
+
 void Cube::step1Move(){
-spinRi();
-spinU();
-spinFi();
-spinUi();
-solutionVector.pop_back(); solutionVector.pop_back(); solutionVector.pop_back(); solutionVector.pop_back();
-solutionVector.push_back("Step1Move");
+	spinRi();
+	spinU();
+	spinFi();
+	spinUi();
+	solutionVector.pop_back(); solutionVector.pop_back(); solutionVector.pop_back(); solutionVector.pop_back();     //remove last 4 steps to tell user simply "step1move"
+	solutionVector.push_back("Step1Move");
 }
+
 void Cube::step2Move(){
-spinRi();
-spinDi();
-spinR();
-spinD();
-solutionVector.pop_back(); solutionVector.pop_back(); solutionVector.pop_back(); solutionVector.pop_back();
-solutionVector.push_back("Step2Move");
+	spinRi();
+	spinDi();
+	spinR();
+	spinD();
+	solutionVector.pop_back(); solutionVector.pop_back(); solutionVector.pop_back(); solutionVector.pop_back();
+	solutionVector.push_back("Step2Move");
 }
+
 void Cube::step3aMove(){
-spinU();
-spinR();
-spinUi();
-spinRi();
-spinUi();
-spinFi();
-spinU();
-spinF();
-solutionVector.pop_back(); solutionVector.pop_back(); solutionVector.pop_back(); solutionVector.pop_back(); solutionVector.pop_back(); solutionVector.pop_back(); solutionVector.pop_back(); solutionVector.pop_back();
-solutionVector.push_back("Step3aMove");
+	spinU();
+	spinR();
+	spinUi();
+	spinRi();
+	spinUi();
+	spinFi();
+	spinU();
+	spinF();
+	solutionVector.pop_back(); solutionVector.pop_back(); solutionVector.pop_back(); solutionVector.pop_back(); solutionVector.pop_back(); solutionVector.pop_back(); solutionVector.pop_back(); solutionVector.pop_back();
+	solutionVector.push_back("Step3aMove");
 }
+
 void Cube::step3bMove(){
-spinUi();
-spinFi();
-spinU();
-spinF();
-spinU();
-spinR();
-spinUi();
-spinRi();
-solutionVector.pop_back(); solutionVector.pop_back(); solutionVector.pop_back(); solutionVector.pop_back(); solutionVector.pop_back(); solutionVector.pop_back(); solutionVector.pop_back(); solutionVector.pop_back();
-solutionVector.push_back("Step3bMove");
+	spinUi();
+	spinFi();
+	spinU();
+	spinF();
+	spinU();
+	spinR();
+	spinUi();
+	spinRi();
+	solutionVector.pop_back(); solutionVector.pop_back(); solutionVector.pop_back(); solutionVector.pop_back(); solutionVector.pop_back(); solutionVector.pop_back(); solutionVector.pop_back(); solutionVector.pop_back();
+	solutionVector.push_back("Step3bMove");
 }
+
 void Cube::step4Move(){
-spinF();
-spinR();
-spinU();
-spinRi();
-spinUi();
-spinFi();
-solutionVector.pop_back(); solutionVector.pop_back(); solutionVector.pop_back(); solutionVector.pop_back(); solutionVector.pop_back(); solutionVector.pop_back();
-solutionVector.push_back("Step4Move");
+	spinF();
+	spinR();
+	spinU();
+	spinRi();
+	spinUi();
+	spinFi();
+	solutionVector.pop_back(); solutionVector.pop_back(); solutionVector.pop_back(); solutionVector.pop_back(); solutionVector.pop_back(); solutionVector.pop_back();
+	solutionVector.push_back("Step4Move");
 }
+
 void Cube::step5Move(){
-spinR();
-spinU();
-spinRi();
-spinU();
-spinR();
-spinU();
-spinU();
-spinRi();
-solutionVector.pop_back(); solutionVector.pop_back(); solutionVector.pop_back(); solutionVector.pop_back(); solutionVector.pop_back(); solutionVector.pop_back(); solutionVector.pop_back(); solutionVector.pop_back();
-solutionVector.push_back("Step5Move");
+	spinR();
+	spinU();
+	spinRi();
+	spinU();
+	spinR();
+	spinU();
+	spinU();
+	spinRi();
+	solutionVector.pop_back(); solutionVector.pop_back(); solutionVector.pop_back(); solutionVector.pop_back(); solutionVector.pop_back(); solutionVector.pop_back(); solutionVector.pop_back(); solutionVector.pop_back();
+	solutionVector.push_back("Step5Move");
 }
+
 void Cube::step6Move(){
-spinU();
-spinR();
-spinUi();
-spinLi();
-spinU();
-spinRi();
-spinUi();
-spinL();
-solutionVector.pop_back(); solutionVector.pop_back(); solutionVector.pop_back(); solutionVector.pop_back(); solutionVector.pop_back(); solutionVector.pop_back(); solutionVector.pop_back(); solutionVector.pop_back();
-solutionVector.push_back("Step6Move");
+	spinU();
+	spinR();
+	spinUi();
+	spinLi();
+	spinU();
+	spinRi();
+	spinUi();
+	spinL();
+	solutionVector.pop_back(); solutionVector.pop_back(); solutionVector.pop_back(); solutionVector.pop_back(); solutionVector.pop_back(); solutionVector.pop_back(); solutionVector.pop_back(); solutionVector.pop_back();
+	solutionVector.push_back("Step6Move");
 }
+
 void Cube::fixSideOrientation(){
-spinFi();
-spinU();
-spinLi();
-spinUi();
-solutionVector.pop_back(); solutionVector.pop_back(); solutionVector.pop_back(); solutionVector.pop_back();
-solutionVector.push_back("Step1Move");
+	spinFi();
+	spinU();
+	spinLi();
+	spinUi();
+	solutionVector.pop_back(); solutionVector.pop_back(); solutionVector.pop_back(); solutionVector.pop_back();
+	solutionVector.push_back("FixSideOrientation");
 }
-void Cube::solveSide(string c0, string c1){
-if((c0 == cubeArr[0].getFace()[1][0].getColor() && c1 == cubeArr[4].getFace()[0][1].getColor()) || (c1 == cubeArr[0].getFace()[1][0].getColor() && c0 == cubeArr[4].getFace()[0][1].getColor())){
-spinL(); spinL(); spinD(); spinF(); spinF();
+
+void Cube::solveSide(string c0, string c1){      //based on where the specific side piece is, do specific steps
+	if((c0 == cubeArr[0].getFace()[1][0].getColor() && c1 == cubeArr[4].getFace()[0][1].getColor()) || (c1 == cubeArr[0].getFace()[1][0].getColor() && c0 == cubeArr[4].getFace()[0][1].getColor())){
+		spinL(); spinL(); spinD(); spinF(); spinF();
+	}
+	else if((c0 == cubeArr[0].getFace()[1][2].getColor() && c1 == cubeArr[2].getFace()[0][1].getColor()) || (c1 == cubeArr[0].getFace()[1][2].getColor() && c0 == cubeArr[2].getFace()[0][1].getColor())){
+		spinR(); spinR(); spinDi(); spinF(); spinF();
+	}
+	else if((c0 == cubeArr[0].getFace()[0][1].getColor() && c1 == cubeArr[3].getFace()[0][1].getColor()) || (c1 == cubeArr[0].getFace()[0][1].getColor() && c0 == cubeArr[3].getFace()[0][1].getColor())){
+		rotate(1); rotate(1); spinF(); spinF(); spinD(); rotate(1); rotate(1); spinD(); spinF(); spinF();
+	}
+	else if((c0 == cubeArr[1].getFace()[1][0].getColor() && c1 == cubeArr[4].getFace()[1][2].getColor()) || (c1 == cubeArr[1].getFace()[1][0].getColor() && c0 == cubeArr[4].getFace()[1][2].getColor())){
+		spinL(); spinD(); spinLi(); spinF(); spinF();
+	}
+	else if((c0 == cubeArr[4].getFace()[1][0].getColor() && c1 == cubeArr[3].getFace()[1][2].getColor()) || (c1 == cubeArr[4].getFace()[1][0].getColor() && c0 == cubeArr[3].getFace()[1][2].getColor())){
+		spinLi(); spinD(); spinL(); spinF(); spinF();
+	}
+	else if((c0 == cubeArr[1].getFace()[1][2].getColor() && c1 == cubeArr[2].getFace()[1][0].getColor()) || (c1 == cubeArr[1].getFace()[1][2].getColor() && c0 == cubeArr[2].getFace()[1][0].getColor())){
+		spinRi(); spinDi(); spinR(); spinF(); spinF();
+	}
+	else if((c0 == cubeArr[2].getFace()[1][2].getColor() && c1 == cubeArr[3].getFace()[1][0].getColor()) || (c1 == cubeArr[2].getFace()[1][2].getColor() && c0 == cubeArr[3].getFace()[1][0].getColor())){
+		spinR(); spinDi(); spinRi(); spinF(); spinF();
+	}
+	else if((c0 == cubeArr[1].getFace()[2][1].getColor() && c1 == cubeArr[5].getFace()[0][1].getColor()) || (c1 == cubeArr[1].getFace()[2][1].getColor() && c0 == cubeArr[5].getFace()[0][1].getColor())){
+		spinF(); spinF();
+	}
+	else if((c0 == cubeArr[4].getFace()[2][1].getColor() && c1 == cubeArr[5].getFace()[1][0].getColor()) || (c1 == cubeArr[4].getFace()[2][1].getColor() && c0 == cubeArr[5].getFace()[1][0].getColor())){
+		spinD(); spinF(); spinF();
+	}
+	else if((c0 == cubeArr[2].getFace()[2][1].getColor() && c1 == cubeArr[5].getFace()[1][2].getColor()) || (c1 == cubeArr[2].getFace()[2][1].getColor() && c0 == cubeArr[5].getFace()[1][2].getColor())){
+		spinDi(); spinF(); spinF();
+	}
+	else if((c0 == cubeArr[3].getFace()[2][1].getColor() && c1 == cubeArr[5].getFace()[2][1].getColor()) || (c1 == cubeArr[3].getFace()[2][1].getColor() && c0 == cubeArr[5].getFace()[2][1].getColor())){
+		spinD(); spinD(); spinF(); spinF();
+	}
+	if(c0 == cubeArr[1].getFace()[0][1].getColor() && c1 == cubeArr[0].getFace()[2][1].getColor()) fixSideOrientation();
 }
-else if((c0 == cubeArr[0].getFace()[1][2].getColor() && c1 == cubeArr[2].getFace()[0][1].getColor()) || (c1 == cubeArr[0].getFace()[1][2].getColor() && c0 == cubeArr[2].getFace()[0][1].getColor())){
-spinR(); spinR(); spinDi(); spinF(); spinF();
+
+void Cube::solveTopCross(){                                             //solve for the entire top cross
+	string topColor = cubeArr[0].getFace()[1][1].getColor();               
+	string currentColor = cubeArr[1].getFace()[1][1].getColor();
+	solveSide(topColor, currentColor);
+	rotate(1);
+	currentColor = cubeArr[1].getFace()[1][1].getColor();
+	solveSide(topColor, currentColor);
+	rotate(1);
+	currentColor = cubeArr[1].getFace()[1][1].getColor();
+	solveSide(topColor, currentColor);
+	rotate(1);
+	currentColor = cubeArr[1].getFace()[1][1].getColor();
+	solveSide(topColor, currentColor);
+	rotate(1);
 }
-else if((c0 == cubeArr[0].getFace()[0][1].getColor() && c1 == cubeArr[3].getFace()[0][1].getColor()) || (c1 == cubeArr[0].getFace()[0][1].getColor() && c0 == cubeArr[3].getFace()[0][1].getColor())){
-rotate(1); rotate(1); spinF(); spinF(); spinD(); rotate(1); rotate(1); spinD(); spinF(); spinF();
+
+void Cube::solveCorner(string c0, string c1, string c2){                //based on specific location, do specific steps
+	string f0; string f1; string f2; string f3; string f4; string f5; 
+	f0 = cubeArr[0].getFace()[2][0].getColor();
+	f1 = cubeArr[1].getFace()[0][0].getColor();
+	f4 = cubeArr[4].getFace()[0][2].getColor();
+	if((c0==f0&&c1==f1&&c2==f4)||(c0==f0&&c1==f4&&c2==f1)||(c0==f1&&c1==f0&&c2==f4)||(c0==f4&&c1==f1&&c2==f0)||(c0==f1&&c1==f4&&c2==f0)||(c0==f4&&c1==f0&&c2==f1)){
+		spinL(); spinD(); spinLi();
+	}
+	f0 = cubeArr[0].getFace()[0][0].getColor();
+	f3 = cubeArr[3].getFace()[0][2].getColor();
+	f4 = cubeArr[4].getFace()[0][0].getColor();
+	if((c0==f0&&c1==f3&&c2==f4)||(c0==f0&&c1==f4&&c2==f3)||(c0==f3&&c1==f0&&c2==f4)||(c0==f3&&c1==f4&&c2==f0)||(c0==f4&&c1==f3&&c2==f0)||(c0==f4&&c1==f0&&c2==f3)){
+		spinLi(); spinD(); spinD(); spinL();
+	}
+	f0 = cubeArr[0].getFace()[0][2].getColor();
+	f2 = cubeArr[2].getFace()[0][2].getColor();
+	f3 = cubeArr[3].getFace()[0][0].getColor();
+	if((c0==f0&&c1==f2&&c2==f3)||(c0==f0&&c1==f3&&c2==f2)||(c0==f2&&c1==f0&&c2==f3)||(c0==f2&&c1==f3&&c2==f0)||(c0==f3&&c1==f2&&c2==f0)||(c0==f3&&c1==f0&&c2==f2)){
+		spinR(); spinDi(); spinRi(); spinDi();
+	}
+	f1 = cubeArr[1].getFace()[2][0].getColor();
+	f4 = cubeArr[4].getFace()[2][2].getColor();
+	f5 = cubeArr[5].getFace()[0][0].getColor();
+	if((c0==f1&&c1==f4&&c2==f5)||(c0==f1&&c1==f5&&c2==f4)||(c0==f4&&c1==f1&&c2==f5)||(c0==f4&&c1==f5&&c2==f1)||(c0==f5&&c1==f1&&c2==f4)||(c0==f5&&c1==f4&&c2==f1)){
+		spinD();
+	}
+	f3 = cubeArr[3].getFace()[2][2].getColor();
+	f4 = cubeArr[4].getFace()[2][0].getColor();
+	f5 = cubeArr[5].getFace()[2][0].getColor();
+	if((c0==f3&&c1==f4&&c2==f5)||(c0==f3&&c1==f5&&c2==f4)||(c0==f4&&c1==f3&&c2==f5)||(c0==f4&&c1==f5&&c2==f3)||(c0==f5&&c1==f3&&c2==f4)||(c0==f5&&c1==f4&&c2==f3)){
+		spinD(); spinD();
+	}
+	f2 = cubeArr[2].getFace()[2][2].getColor();
+	f3 = cubeArr[3].getFace()[2][0].getColor();
+	f5 = cubeArr[5].getFace()[2][2].getColor();
+	if((c0==f2&&c1==f3&&c2==f5)||(c0==f2&&c1==f5&&c2==f3)||(c0==f3&&c1==f2&&c2==f5)||(c0==f3&&c1==f5&&c2==f2)||(c0==f5&&c1==f2&&c2==f3)||(c0==f5&&c1==f3&&c2==f2)){
+		spinDi();
+	}
+	f0 = cubeArr[0].getFace()[2][2].getColor();
+	f1 = cubeArr[1].getFace()[0][2].getColor();
+	f2 = cubeArr[2].getFace()[0][0].getColor();
+	
+	while(!(c0==f0&&c1==f1&&c2==f2)){
+		step2Move();                                      //keep performing step 2 move until in right spot
+		f0 = cubeArr[0].getFace()[2][2].getColor();
+		f1 = cubeArr[1].getFace()[0][2].getColor();
+		f2 = cubeArr[2].getFace()[0][0].getColor();
+	}
 }
-else if((c0 == cubeArr[1].getFace()[1][0].getColor() && c1 == cubeArr[4].getFace()[1][2].getColor()) || (c1 == cubeArr[1].getFace()[1][0].getColor() && c0 == cubeArr[4].getFace()[1][2].getColor())){
-spinL(); spinD(); spinLi(); spinF(); spinF();
+
+void Cube::solveTopCorners(){                                      //solve for each of the top corners
+	string topColor = cubeArr[0].getFace()[1][1].getColor();
+	string frontColor = cubeArr[1].getFace()[1][1].getColor();
+	string rightColor = cubeArr[2].getFace()[1][1].getColor();
+	solveCorner(topColor, frontColor, rightColor);
+	rotate(1);
+	frontColor = cubeArr[1].getFace()[1][1].getColor();
+	rightColor = cubeArr[2].getFace()[1][1].getColor();
+	solveCorner(topColor, frontColor, rightColor);
+	rotate(1);
+	frontColor = cubeArr[1].getFace()[1][1].getColor();
+	rightColor = cubeArr[2].getFace()[1][1].getColor();
+	solveCorner(topColor, frontColor, rightColor);
+	rotate(1);
+	frontColor = cubeArr[1].getFace()[1][1].getColor();
+	rightColor = cubeArr[2].getFace()[1][1].getColor();
+	solveCorner(topColor, frontColor, rightColor);
+	rotate(1);
 }
-else if((c0 == cubeArr[4].getFace()[1][0].getColor() && c1 == cubeArr[3].getFace()[1][2].getColor()) || (c1 == cubeArr[4].getFace()[1][0].getColor() && c0 == cubeArr[3].getFace()[1][2].getColor())){
-spinLi(); spinD(); spinL(); spinF(); spinF();
+
+void Cube::solveTop(){               //solve the entirety of the top part of the cube
+	solveTopCross();
+	solveTopCorners();
 }
-else if((c0 == cubeArr[1].getFace()[1][2].getColor() && c1 == cubeArr[2].getFace()[1][0].getColor()) || (c1 == cubeArr[1].getFace()[1][2].getColor() && c0 == cubeArr[2].getFace()[1][0].getColor())){
-spinRi(); spinDi(); spinR(); spinF(); spinF();
+
+void Cube::solveMiddleSide(string c1, string c2){            //perform a while loop until the right center piece is correct
+	int k = 0;
+	while(!(c1 == cubeArr[1].getFace()[1][2].getColor() && c2 == cubeArr[2].getFace()[1][0].getColor())){
+	if(c1==cubeArr[0].getFace()[2][1].getColor() && c2 == cubeArr[1].getFace()[0][1].getColor()){   
+		spinUi(); step3bMove();
+	}
+	else if(c2==cubeArr[0].getFace()[2][1].getColor() && c1 == cubeArr[1].getFace()[0][1].getColor()){
+		step3aMove();
+	}
+	else if(c1 == cubeArr[0].getFace()[1][0].getColor() && c2 == cubeArr[4].getFace()[0][1].getColor()){
+		spinU(); spinU(); step3bMove();
+	}
+	else if(c2 == cubeArr[0].getFace()[1][0].getColor() && c1 == cubeArr[4].getFace()[0][1].getColor()){
+		spinUi(); step3aMove();
+	}
+	else if(c1 == cubeArr[0].getFace()[1][2].getColor() && c2 == cubeArr[2].getFace()[0][1].getColor()){
+		step3bMove(); 
+	}
+	else if(c2 == cubeArr[0].getFace()[1][2].getColor() && c1 == cubeArr[2].getFace()[0][1].getColor()){
+		spinU(); step3aMove();
+	}
+	else if(c1 == cubeArr[0].getFace()[0][1].getColor() && c2 == cubeArr[3].getFace()[0][1].getColor()){
+		spinU(); step3bMove();
+	}
+	else if(c2 == cubeArr[0].getFace()[0][1].getColor() && c1 == cubeArr[3].getFace()[0][1].getColor()){
+		spinU(); spinU(); step3aMove();
+	}
+	else if((c1 == cubeArr[1].getFace()[1][0].getColor() && c2 == cubeArr[4].getFace()[1][2].getColor()) || (c2 == cubeArr[1].getFace()[1][0].getColor() && c1 == cubeArr[4].getFace()[1][2].getColor())){
+		rotate(2); step3aMove(); rotate(1);
+	}
+	else if((c1 == cubeArr[4].getFace()[1][0].getColor() && c2 == cubeArr[3].getFace()[1][2].getColor()) || (c2 == cubeArr[4].getFace()[1][0].getColor() && c1 == cubeArr[3].getFace()[1][2].getColor())) {
+		rotate(1); rotate(1); step3aMove(); rotate(1); rotate(1);
+	}
+	else if(c2 == cubeArr[1].getFace()[1][2].getColor() && c1 == cubeArr[2].getFace()[1][0].getColor()){
+		step3aMove();
+	}
+	else if((c1 == cubeArr[2].getFace()[1][2].getColor() && c2 == cubeArr[3].getFace()[1][0].getColor()) || (c2 == cubeArr[2].getFace()[1][2].getColor() && c1 == cubeArr[3].getFace()[1][0].getColor())){
+		rotate(1); step3aMove(); rotate(2);
+	}
+	k += 1;
+	}
+
 }
-else if((c0 == cubeArr[2].getFace()[1][2].getColor() && c1 == cubeArr[3].getFace()[1][0].getColor()) || (c1 == cubeArr[2].getFace()[1][2].getColor() && c0 == cubeArr[3].getFace()[1][0].getColor())){
-spinR(); spinDi(); spinRi(); spinF(); spinF();
+
+void Cube::solveMiddleRow(){                                      //find and correct each of the center pieces
+	string frontColor = cubeArr[1].getFace()[1][1].getColor();
+	string rightColor = cubeArr[2].getFace()[1][1].getColor();
+	solveMiddleSide(frontColor, rightColor);
+	rotate(1);
+	frontColor = cubeArr[1].getFace()[1][1].getColor();
+	rightColor = cubeArr[2].getFace()[1][1].getColor();
+	solveMiddleSide(frontColor, rightColor);
+	rotate(1);
+	frontColor = cubeArr[1].getFace()[1][1].getColor();
+	rightColor = cubeArr[2].getFace()[1][1].getColor();
+	solveMiddleSide(frontColor, rightColor);
+	rotate(1);
+	frontColor = cubeArr[1].getFace()[1][1].getColor();
+	rightColor = cubeArr[2].getFace()[1][1].getColor();
+	solveMiddleSide(frontColor, rightColor);
+	rotate(1);
 }
-else if((c0 == cubeArr[1].getFace()[2][1].getColor() && c1 == cubeArr[5].getFace()[0][1].getColor()) || (c1 == cubeArr[1].getFace()[2][1].getColor() && c0 == cubeArr[5].getFace()[0][1].getColor())){
-spinF(); spinF();
+
+void Cube::solveFinalCross(){                                                     //solves for the final cross
+	string topColor = cubeArr[0].getFace()[1][1].getColor(); bool flip = true;
+	while(!((cubeArr[0].getFace()[0][1].getColor() == topColor) && (cubeArr[0].getFace()[1][0].getColor() == topColor) && (cubeArr[0].getFace()[1][2].getColor() == topColor) && (cubeArr[0].getFace()[2][1].getColor() == topColor))){
+		if(!((cubeArr[0].getFace()[0][1].getColor() == topColor) || (cubeArr[0].getFace()[1][0].getColor() == topColor) || (cubeArr[0].getFace()[1][2].getColor() == topColor) || (cubeArr[0].getFace()[2][1].getColor() == topColor))){
+			step4Move();
+		}
+		else if(((cubeArr[0].getFace()[0][1].getColor() == topColor) && !(cubeArr[0].getFace()[2][1].getColor() == topColor)) || ((cubeArr[0].getFace()[1][0].getColor() == topColor) && !(cubeArr[0].getFace()[1][2].getColor() == topColor))){
+			if((cubeArr[0].getFace()[0][1].getColor() == topColor) && (cubeArr[0].getFace()[1][0].getColor() == topColor)){
+				step4Move();
+			}
+			else spinU();
+		}
+		else{
+			if((cubeArr[0].getFace()[1][0].getColor() == topColor) && (cubeArr[0].getFace()[1][2].getColor() == topColor)){
+				step4Move();
+			}
+			else spinU();
+		}
+	}
+	int k = 0;
+	while(!((cubeArr[1].getFace()[1][1].getColor() == cubeArr[1].getFace()[0][1].getColor()) && (cubeArr[2].getFace()[1][1].getColor() == cubeArr[2].getFace()[0][1].getColor()) && 
+		(cubeArr[3].getFace()[1][1].getColor() == cubeArr[3].getFace()[0][1].getColor()) && (cubeArr[4].getFace()[1][1].getColor() == cubeArr[4].getFace()[0][1].getColor()))){
+			k += 1;
+			if((cubeArr[1].getFace()[0][1].getColor() == cubeArr[4].getFace()[1][1].getColor()) && (cubeArr[4].getFace()[0][1].getColor() == cubeArr[1].getFace()[1][1].getColor())){
+				step5Move(); spinU(); flip = false;
+			}
+			else if((cubeArr[2].getFace()[0][1].getColor() == cubeArr[3].getFace()[1][1].getColor()) && (cubeArr[3].getFace()[0][1].getColor() == cubeArr[2].getFace()[1][1].getColor())){
+				spinU(); spinU(); step5Move(); spinUi(); flip = false;
+			}
+			else if (k==4 && flip)  step5Move(); //&& (cubeArr[1].getFace()[0][1].getColor() == cubeArr[1].getFace()[1][1].getColor()))
+			else spinU();
+	}
 }
-else if((c0 == cubeArr[4].getFace()[2][1].getColor() && c1 == cubeArr[5].getFace()[1][0].getColor()) || (c1 == cubeArr[4].getFace()[2][1].getColor() && c0 == cubeArr[5].getFace()[1][0].getColor())){
-spinD(); spinF(); spinF();
-}
-else if((c0 == cubeArr[2].getFace()[2][1].getColor() && c1 == cubeArr[5].getFace()[1][2].getColor()) || (c1 == cubeArr[2].getFace()[2][1].getColor() && c0 == cubeArr[5].getFace()[1][2].getColor())){
-spinDi(); spinF(); spinF();
-}
-else if((c0 == cubeArr[3].getFace()[2][1].getColor() && c1 == cubeArr[5].getFace()[2][1].getColor()) || (c1 == cubeArr[3].getFace()[2][1].getColor() && c0 == cubeArr[5].getFace()[2][1].getColor())){
-spinD(); spinD(); spinF(); spinF();
-}
-if(c0 == cubeArr[1].getFace()[0][1].getColor() && c1 == cubeArr[0].getFace()[2][1].getColor()) fixSideOrientation();
-}
-void Cube::solveTopCross(){
-string topColor = cubeArr[0].getFace()[1][1].getColor();
-string currentColor = cubeArr[1].getFace()[1][1].getColor();
-solveSide(topColor, currentColor);
-rotate(1);
-currentColor = cubeArr[1].getFace()[1][1].getColor();
-solveSide(topColor, currentColor);
-rotate(1);
-currentColor = cubeArr[1].getFace()[1][1].getColor();
-solveSide(topColor, currentColor);
-rotate(1);
-currentColor = cubeArr[1].getFace()[1][1].getColor();
-solveSide(topColor, currentColor);
-rotate(1);
-}
-void Cube::solveCorner(string c0, string c1, string c2){
-string f0; string f1; string f2; string f3; string f4; string f5;
-f0 = cubeArr[0].getFace()[2][0].getColor();
-f1 = cubeArr[1].getFace()[0][0].getColor();
-f4 = cubeArr[4].getFace()[0][2].getColor();
-if((c0==f0&&c1==f1&&c2==f4)||(c0==f0&&c1==f4&&c2==f1)||(c0==f1&&c1==f0&&c2==f4)||(c0==f4&&c1==f1&&c2==f0)||(c0==f1&&c1==f4&&c2==f0)||(c0==f4&&c1==f0&&c2==f1)){
-spinL(); spinD(); spinLi();
-}
-f0 = cubeArr[0].getFace()[0][0].getColor();
-f3 = cubeArr[3].getFace()[0][2].getColor();
-f4 = cubeArr[4].getFace()[0][0].getColor();
-if((c0==f0&&c1==f3&&c2==f4)||(c0==f0&&c1==f4&&c2==f3)||(c0==f3&&c1==f0&&c2==f4)||(c0==f3&&c1==f4&&c2==f0)||(c0==f4&&c1==f3&&c2==f0)||(c0==f4&&c1==f0&&c2==f3)){
-spinLi(); spinD(); spinD(); spinL();
-}
-f0 = cubeArr[0].getFace()[0][2].getColor();
-f2 = cubeArr[2].getFace()[0][2].getColor();
-f3 = cubeArr[3].getFace()[0][0].getColor();
-if((c0==f0&&c1==f2&&c2==f3)||(c0==f0&&c1==f3&&c2==f2)||(c0==f2&&c1==f0&&c2==f3)||(c0==f2&&c1==f3&&c2==f0)||(c0==f3&&c1==f2&&c2==f0)||(c0==f3&&c1==f0&&c2==f2)){
-spinR(); spinDi(); spinRi(); spinDi();
-}
-f1 = cubeArr[1].getFace()[2][0].getColor();
-f4 = cubeArr[4].getFace()[2][2].getColor();
-f5 = cubeArr[5].getFace()[0][0].getColor();
-if((c0==f1&&c1==f4&&c2==f5)||(c0==f1&&c1==f5&&c2==f4)||(c0==f4&&c1==f1&&c2==f5)||(c0==f4&&c1==f5&&c2==f1)||(c0==f5&&c1==f1&&c2==f4)||(c0==f5&&c1==f4&&c2==f1)){
-spinD();
-}
-f3 = cubeArr[3].getFace()[2][2].getColor();
-f4 = cubeArr[4].getFace()[2][0].getColor();
-f5 = cubeArr[5].getFace()[2][0].getColor();
-if((c0==f3&&c1==f4&&c2==f5)||(c0==f3&&c1==f5&&c2==f4)||(c0==f4&&c1==f3&&c2==f5)||(c0==f4&&c1==f5&&c2==f3)||(c0==f5&&c1==f3&&c2==f4)||(c0==f5&&c1==f4&&c2==f3)){
-spinD(); spinD();
-}
-f2 = cubeArr[2].getFace()[2][2].getColor();
-f3 = cubeArr[3].getFace()[2][0].getColor();
-f5 = cubeArr[5].getFace()[2][2].getColor();
-if((c0==f2&&c1==f3&&c2==f5)||(c0==f2&&c1==f5&&c2==f3)||(c0==f3&&c1==f2&&c2==f5)||(c0==f3&&c1==f5&&c2==f2)||(c0==f5&&c1==f2&&c2==f3)||(c0==f5&&c1==f3&&c2==f2)){
-spinDi();
-}
-f0 = cubeArr[0].getFace()[2][2].getColor();
-f1 = cubeArr[1].getFace()[0][2].getColor();
-f2 = cubeArr[2].getFace()[0][0].getColor();
-while(!(c0==f0&&c1==f1&&c2==f2)){
-step2Move();
-f0 = cubeArr[0].getFace()[2][2].getColor();
-f1 = cubeArr[1].getFace()[0][2].getColor();
-f2 = cubeArr[2].getFace()[0][0].getColor();
-}
-}
-void Cube::solveTopCorners(){
-string topColor = cubeArr[0].getFace()[1][1].getColor();
-string frontColor = cubeArr[1].getFace()[1][1].getColor();
-string rightColor = cubeArr[2].getFace()[1][1].getColor();
-solveCorner(topColor, frontColor, rightColor);
-rotate(1);
-frontColor = cubeArr[1].getFace()[1][1].getColor();
-rightColor = cubeArr[2].getFace()[1][1].getColor();
-solveCorner(topColor, frontColor, rightColor);
-rotate(1);
-frontColor = cubeArr[1].getFace()[1][1].getColor();
-rightColor = cubeArr[2].getFace()[1][1].getColor();
-solveCorner(topColor, frontColor, rightColor);
-rotate(1);
-frontColor = cubeArr[1].getFace()[1][1].getColor();
-rightColor = cubeArr[2].getFace()[1][1].getColor();
-solveCorner(topColor, frontColor, rightColor);
-rotate(1);
-}
-void Cube::solveTop(){
-solveTopCross();
-solveTopCorners();
-}
-void Cube::solveMiddleSide(string c1, string c2){
-int k = 0;
-while(!(c1 == cubeArr[1].getFace()[1][2].getColor() && c2 == cubeArr[2].getFace()[1][0].getColor())){
-if(c1==cubeArr[0].getFace()[2][1].getColor() && c2 == cubeArr[1].getFace()[0][1].getColor()){
-spinUi(); step3bMove();
-}
-else if(c2==cubeArr[0].getFace()[2][1].getColor() && c1 == cubeArr[1].getFace()[0][1].getColor()){
-step3aMove();
-}
-else if(c1 == cubeArr[0].getFace()[1][0].getColor() && c2 == cubeArr[4].getFace()[0][1].getColor()){
-spinU(); spinU(); step3bMove();
-}
-else if(c2 == cubeArr[0].getFace()[1][0].getColor() && c1 == cubeArr[4].getFace()[0][1].getColor()){
-spinUi(); step3aMove();
-}
-else if(c1 == cubeArr[0].getFace()[1][2].getColor() && c2 == cubeArr[2].getFace()[0][1].getColor()){
-step3bMove();
-}
-else if(c2 == cubeArr[0].getFace()[1][2].getColor() && c1 == cubeArr[2].getFace()[0][1].getColor()){
-spinU(); step3aMove();
-}
-else if(c1 == cubeArr[0].getFace()[0][1].getColor() && c2 == cubeArr[3].getFace()[0][1].getColor()){
-spinU(); step3bMove();
-}
-else if(c2 == cubeArr[0].getFace()[0][1].getColor() && c1 == cubeArr[3].getFace()[0][1].getColor()){
-spinU(); spinU(); step3aMove();
-}
-else if((c1 == cubeArr[1].getFace()[1][0].getColor() && c2 == cubeArr[4].getFace()[1][2].getColor()) || (c2 == cubeArr[1].getFace()[1][0].getColor() && c1 == cubeArr[4].getFace()[1][2].getColor())){
-rotate(2); step3aMove(); rotate(1);
-}
-else if((c1 == cubeArr[4].getFace()[1][0].getColor() && c2 == cubeArr[3].getFace()[1][2].getColor()) || (c2 == cubeArr[4].getFace()[1][0].getColor() && c1 == cubeArr[3].getFace()[1][2].getColor())) {
-rotate(1); rotate(1); step3aMove(); rotate(1); rotate(1);
-}
-else if(c2 == cubeArr[1].getFace()[1][2].getColor() && c1 == cubeArr[2].getFace()[1][0].getColor()){
-step3aMove();
-}
-else if((c1 == cubeArr[2].getFace()[1][2].getColor() && c2 == cubeArr[3].getFace()[1][0].getColor()) || (c2 == cubeArr[2].getFace()[1][2].getColor() && c1 == cubeArr[3].getFace()[1][0].getColor())){
-rotate(1); step3aMove(); rotate(2);
-}
-k += 1;
-}
-}
-void Cube::solveMiddleRow(){
-string frontColor = cubeArr[1].getFace()[1][1].getColor();
-string rightColor = cubeArr[2].getFace()[1][1].getColor();
-solveMiddleSide(frontColor, rightColor);
-rotate(1);
-frontColor = cubeArr[1].getFace()[1][1].getColor();
-rightColor = cubeArr[2].getFace()[1][1].getColor();
-solveMiddleSide(frontColor, rightColor);
-rotate(1);
-frontColor = cubeArr[1].getFace()[1][1].getColor();
-rightColor = cubeArr[2].getFace()[1][1].getColor();
-solveMiddleSide(frontColor, rightColor);
-rotate(1);
-frontColor = cubeArr[1].getFace()[1][1].getColor();
-rightColor = cubeArr[2].getFace()[1][1].getColor();
-solveMiddleSide(frontColor, rightColor);
-rotate(1);
-}
-void Cube::solveFinalCross(){
-string topColor = cubeArr[0].getFace()[1][1].getColor(); bool flip = true;
-while(!((cubeArr[0].getFace()[0][1].getColor() == topColor) && (cubeArr[0].getFace()[1][0].getColor() == topColor) && (cubeArr[0].getFace()[1][2].getColor() == topColor) && (cubeArr[0].getFace()[2][1].getColor() == topColor))){
-if(!((cubeArr[0].getFace()[0][1].getColor() == topColor) || (cubeArr[0].getFace()[1][0].getColor() == topColor) || (cubeArr[0].getFace()[1][2].getColor() == topColor) || (cubeArr[0].getFace()[2][1].getColor() == topColor))){
-step4Move();
-}
-else if(((cubeArr[0].getFace()[0][1].getColor() == topColor) && !(cubeArr[0].getFace()[2][1].getColor() == topColor)) || ((cubeArr[0].getFace()[1][0].getColor() == topColor) && !(cubeArr[0].getFace()[1][2].getColor() == topColor))){
-if((cubeArr[0].getFace()[0][1].getColor() == topColor) && (cubeArr[0].getFace()[1][0].getColor() == topColor)){
-step4Move();
-}
-else spinU();
-}
-else{
-if((cubeArr[0].getFace()[1][0].getColor() == topColor) && (cubeArr[0].getFace()[1][2].getColor() == topColor)){
-step4Move();
-}
-else spinU();
-}
-}
-int k = 0;
-while(!((cubeArr[1].getFace()[1][1].getColor() == cubeArr[1].getFace()[0][1].getColor()) && (cubeArr[2].getFace()[1][1].getColor() == cubeArr[2].getFace()[0][1].getColor()) &&
-(cubeArr[3].getFace()[1][1].getColor() == cubeArr[3].getFace()[0][1].getColor()) && (cubeArr[4].getFace()[1][1].getColor() == cubeArr[4].getFace()[0][1].getColor()))){
-k += 1;
-if((cubeArr[1].getFace()[0][1].getColor() == cubeArr[4].getFace()[1][1].getColor()) && (cubeArr[4].getFace()[0][1].getColor() == cubeArr[1].getFace()[1][1].getColor())){
-step5Move(); spinU(); flip = false;
-}
-else if((cubeArr[2].getFace()[0][1].getColor() == cubeArr[3].getFace()[1][1].getColor()) && (cubeArr[3].getFace()[0][1].getColor() == cubeArr[2].getFace()[1][1].getColor())){
-spinU(); spinU(); step5Move(); spinUi(); flip = false;
-}
-else if (k==4 && flip) step5Move(); //&& (cubeArr[1].getFace()[0][1].getColor() == cubeArr[1].getFace()[1][1].getColor()))
-else spinU();
-}
-}
+
 void Cube::solveFinalCorners(){
-string topColor = cubeArr[0].getFace()[1][1].getColor();
-while(!((cubeArr[0].getFace()[0][0].getColor() == topColor) && (cubeArr[0].getFace()[2][0].getColor() == topColor) && (cubeArr[0].getFace()[0][2].getColor() == topColor) && (cubeArr[0].getFace()[2][2].getColor() == topColor))){
-if (!((cubeArr[0].getFace()[0][0].getColor() == topColor) || (cubeArr[0].getFace()[2][0].getColor() == topColor) || (cubeArr[0].getFace()[0][2].getColor() == topColor) || (cubeArr[0].getFace()[2][2].getColor() == topColor))){
-if (cubeArr[4].getFace()[0][2].getColor() == topColor) step5Move();
-else spinU();
+	string topColor = cubeArr[0].getFace()[1][1].getColor();
+	while(!((cubeArr[0].getFace()[0][0].getColor() == topColor) && (cubeArr[0].getFace()[2][0].getColor() == topColor) && (cubeArr[0].getFace()[0][2].getColor() == topColor) && (cubeArr[0].getFace()[2][2].getColor() == topColor))){
+		if (!((cubeArr[0].getFace()[0][0].getColor() == topColor) || (cubeArr[0].getFace()[2][0].getColor() == topColor) || (cubeArr[0].getFace()[0][2].getColor() == topColor) || (cubeArr[0].getFace()[2][2].getColor() == topColor))){
+			if (cubeArr[4].getFace()[0][2].getColor() == topColor) step5Move();
+			else spinU();
+		}
+		else if(!(cubeArr[0].getFace()[0][0].getColor() == topColor) && (cubeArr[0].getFace()[2][0].getColor() == topColor) && !(cubeArr[0].getFace()[0][2].getColor() == topColor) && !(cubeArr[0].getFace()[2][2].getColor() == topColor)){
+			step5Move();
+		}
+		else if((cubeArr[0].getFace()[0][0].getColor() == topColor) && (cubeArr[0].getFace()[2][0].getColor() == topColor)){
+			if(cubeArr[1].getFace()[0][0].getColor() == topColor) step5Move();
+			else spinU();
+		}
+		else if((cubeArr[0].getFace()[0][0].getColor() == topColor) && (cubeArr[0].getFace()[0][2].getColor() == topColor)){
+			if(cubeArr[1].getFace()[0][0].getColor() == topColor) step5Move();
+			else spinU();
+		}
+		else if((cubeArr[0].getFace()[0][0].getColor() == topColor) && (cubeArr[0].getFace()[2][2].getColor() == topColor)){
+			if(cubeArr[1].getFace()[0][0].getColor() == topColor) step5Move();
+			else spinU();
+		}
+		else if((cubeArr[0].getFace()[2][0].getColor() == topColor) && (cubeArr[0].getFace()[0][2].getColor() == topColor)){
+			if(cubeArr[1].getFace()[0][0].getColor() == topColor) step5Move();
+			else spinU();
+		}
+		else if((cubeArr[0].getFace()[2][0].getColor() == topColor) && (cubeArr[0].getFace()[2][2].getColor() == topColor)){
+			if(cubeArr[1].getFace()[0][0].getColor() == topColor) step5Move();
+			else spinU();
+		}
+		else if((cubeArr[0].getFace()[0][2].getColor() == topColor) && (cubeArr[0].getFace()[2][2].getColor() == topColor)){
+			if(cubeArr[1].getFace()[0][0].getColor() == topColor) step5Move();
+			else spinU();
+		}
+		else spinU();
+	}
 }
-else if(!(cubeArr[0].getFace()[0][0].getColor() == topColor) && (cubeArr[0].getFace()[2][0].getColor() == topColor) && !(cubeArr[0].getFace()[0][2].getColor() == topColor) && !(cubeArr[0].getFace()[2][2].getColor() == topColor)){
-step5Move();
+
+bool Cube::checkColors(Face face1, Face face2, Face face3, string c1, string c2, string c3){   //quick check to see how mant steps need to be taken
+	bool verified = true;
+	string f1 = face1.getFace()[1][1].getColor(); string f2 = face2.getFace()[1][1].getColor(); string f3 = face3.getFace()[1][1].getColor(); 
+	if( (c1!=f1) && (c1 != f2) && (c1 != f3) ) verified = false;
+	if( (c2!=f1) && (c2 != f2) && (c2 != f3) ) verified = false;
+	if( (c3!=f1) && (c3 != f2) && (c3 != f3) ) verified = false;
+	return verified;
 }
-else if((cubeArr[0].getFace()[0][0].getColor() == topColor) && (cubeArr[0].getFace()[2][0].getColor() == topColor)){
-if(cubeArr[1].getFace()[0][0].getColor() == topColor) step5Move();
-else spinU();
-}
-else if((cubeArr[0].getFace()[0][0].getColor() == topColor) && (cubeArr[0].getFace()[0][2].getColor() == topColor)){
-if(cubeArr[1].getFace()[0][0].getColor() == topColor) step5Move();
-else spinU();
-}
-else if((cubeArr[0].getFace()[0][0].getColor() == topColor) && (cubeArr[0].getFace()[2][2].getColor() == topColor)){
-if(cubeArr[1].getFace()[0][0].getColor() == topColor) step5Move();
-else spinU();
-}
-else if((cubeArr[0].getFace()[2][0].getColor() == topColor) && (cubeArr[0].getFace()[0][2].getColor() == topColor)){
-if(cubeArr[1].getFace()[0][0].getColor() == topColor) step5Move();
-else spinU();
-}
-else if((cubeArr[0].getFace()[2][0].getColor() == topColor) && (cubeArr[0].getFace()[2][2].getColor() == topColor)){
-if(cubeArr[1].getFace()[0][0].getColor() == topColor) step5Move();
-else spinU();
-}
-else if((cubeArr[0].getFace()[0][2].getColor() == topColor) && (cubeArr[0].getFace()[2][2].getColor() == topColor)){
-if(cubeArr[1].getFace()[0][0].getColor() == topColor) step5Move();
-else spinU();
-}
-else spinU();
-}
-}
-bool Cube::checkColors(Face face1, Face face2, Face face3, string c1, string c2, string c3){
-bool verified = true;
-string f1 = face1.getFace()[1][1].getColor(); string f2 = face2.getFace()[1][1].getColor(); string f3 = face3.getFace()[1][1].getColor();
-if( (c1!=f1) && (c1 != f2) && (c1 != f3) ) verified = false;
-if( (c2!=f1) && (c2 != f2) && (c2 != f3) ) verified = false;
-if( (c3!=f1) && (c3 != f2) && (c3 != f3) ) verified = false;
-return verified;
-}
+
 void Cube::finishCube(){
-string f0 = cubeArr[0].getFace()[1][1].getColor(); string f1 = cubeArr[1].getFace()[1][1].getColor(); string f2 = cubeArr[2].getFace()[1][1].getColor();
-string f3 = cubeArr[3].getFace()[1][1].getColor(); string f4 = cubeArr[4].getFace()[1][1].getColor(); int k = 0;
-while(!checkColors(cubeArr[0], cubeArr[1], cubeArr[2], cubeArr[0].getFace()[2][2].getColor(), cubeArr[1].getFace()[0][2].getColor(), cubeArr[2].getFace()[0][0].getColor())){
-rotate(1);
-k += 1;
-if (k == 4) step6Move();
+	string f0 = cubeArr[0].getFace()[1][1].getColor(); string f1 = cubeArr[1].getFace()[1][1].getColor(); string f2 = cubeArr[2].getFace()[1][1].getColor(); 
+	string f3 = cubeArr[3].getFace()[1][1].getColor(); string f4 = cubeArr[4].getFace()[1][1].getColor(); int k = 0; 
+	while(!checkColors(cubeArr[0], cubeArr[1], cubeArr[2], cubeArr[0].getFace()[2][2].getColor(), cubeArr[1].getFace()[0][2].getColor(), cubeArr[2].getFace()[0][0].getColor())){
+		rotate(1);
+		k += 1;
+		if (k == 4) step6Move();
+	}
+	while(!(checkColors(cubeArr[0], cubeArr[1], cubeArr[2], cubeArr[0].getFace()[2][2].getColor(), cubeArr[1].getFace()[0][2].getColor(), cubeArr[2].getFace()[0][0].getColor()) 
+		&& checkColors(cubeArr[0], cubeArr[1], cubeArr[4], cubeArr[0].getFace()[2][0].getColor(), cubeArr[1].getFace()[0][0].getColor(), cubeArr[4].getFace()[0][2].getColor())
+		&& checkColors(cubeArr[0], cubeArr[2], cubeArr[3], cubeArr[0].getFace()[0][2].getColor(), cubeArr[2].getFace()[0][2].getColor(), cubeArr[3].getFace()[0][0].getColor()) 
+		&& checkColors(cubeArr[0], cubeArr[3], cubeArr[4], cubeArr[0].getFace()[0][0].getColor(), cubeArr[3].getFace()[0][2].getColor(), cubeArr[4].getFace()[0][0].getColor()))){
+		step6Move();
+	}
+	while(!((cubeArr[1].getFace()[0][0].getColor() == cubeArr[1].getFace()[1][1].getColor()) && (cubeArr[2].getFace()[0][0].getColor() == cubeArr[2].getFace()[1][1].getColor()) && 
+		(cubeArr[3].getFace()[0][0].getColor() == cubeArr[3].getFace()[1][1].getColor()) && (cubeArr[4].getFace()[0][0].getColor() == cubeArr[4].getFace()[1][1].getColor()))){
+		while(!(cubeArr[0].getFace()[2][2].getColor() == f0)){
+			step2Move();
+		}
+		spinU();
+	}
 }
-while(!(checkColors(cubeArr[0], cubeArr[1], cubeArr[2], cubeArr[0].getFace()[2][2].getColor(), cubeArr[1].getFace()[0][2].getColor(), cubeArr[2].getFace()[0][0].getColor())
-&& checkColors(cubeArr[0], cubeArr[1], cubeArr[4], cubeArr[0].getFace()[2][0].getColor(), cubeArr[1].getFace()[0][0].getColor(), cubeArr[4].getFace()[0][2].getColor())
-&& checkColors(cubeArr[0], cubeArr[2], cubeArr[3], cubeArr[0].getFace()[0][2].getColor(), cubeArr[2].getFace()[0][2].getColor(), cubeArr[3].getFace()[0][0].getColor())
-&& checkColors(cubeArr[0], cubeArr[3], cubeArr[4], cubeArr[0].getFace()[0][0].getColor(), cubeArr[3].getFace()[0][2].getColor(), cubeArr[4].getFace()[0][0].getColor()))){
-step6Move();
-}
-while(!((cubeArr[1].getFace()[0][0].getColor() == cubeArr[1].getFace()[1][1].getColor()) && (cubeArr[2].getFace()[0][0].getColor() == cubeArr[2].getFace()[1][1].getColor()) &&
-(cubeArr[3].getFace()[0][0].getColor() == cubeArr[3].getFace()[1][1].getColor()) && (cubeArr[4].getFace()[0][0].getColor() == cubeArr[4].getFace()[1][1].getColor()))){
-while(!(cubeArr[0].getFace()[2][2].getColor() == f0)){
-step2Move();
-}
-spinU();
-}
-}
+
 void Cube::solveCube(){
-solutionVector.clear();
-solveTop();
-setTop(2); setTop(2);
-solveMiddleRow();
-solveFinalCross();
-//solveFinalCorners();
-finishCube();
+	solutionVector.clear();
+	solveTop();
+	setTop(2); setTop(2);
+	solveMiddleRow();
+	solveFinalCross();
+	//solveFinalCorners();     didn't even need this :(
+	finishCube();
 }
 
 void Cube::printVector(){
@@ -732,7 +765,6 @@ void Cube::printVector(){
 
     QString tempx;
 
-//solutionVector.push_back("");
 int k = 0; int oldk = 0; bool print = false;
 for(unsigned int i = 0; i < solutionVector.size(); i++){
 if(i == 0) k += 1;
@@ -759,30 +791,6 @@ print = false;
 
 cout<<"\n";
 }
-
-
-/*  QString filenamez = "input.txt";
-  QFile filez(filenamez);
-  if(filez.open(QIODevice::ReadWrite|QIODevice::Truncate))
-  {
-      QTextStream streamz(&filez);
-
-
-
-      QString tempx;
-
-      for(int i=0;i<tempstring.size();i++){
-
-          tempx =QString::fromStdString(tempstring[i]);
-          streamz << tempx<<"\n";
-
-      }
-
-
-  }
-*/
-
-
 
 void Cube::printCube(){
 Face * activeFace;
@@ -986,7 +994,7 @@ bool Cube::Valid(){  // combines the previous functions to evaluate if the overa
 
 int solver()
 {
-
+//Creates all the objects that we wil be needing
     Cube myCube;
     Face myFace1;
     Face myFace2;
@@ -1005,14 +1013,12 @@ int solver()
     Tile r2c2;
 
 
-//create main strings 1- 6
-
-vector<char> inputs;
-string face [48];
-for(int i =0; i<48;i++){
+vector<char> inputs;  //Creates a base Char Vector to store the input data
+string face [48];     //String array used to save each individual face tile
+for(int i =0; i<48;i++){    // Initializes the string array
     face[i] = "";
 }
-ifstream myfile;
+ifstream myfile;        //Takes the input from the gui
 myfile.open("output.txt");
 char delim = ',';
 if (myfile.is_open()){
@@ -1022,20 +1028,19 @@ if (myfile.is_open()){
         }
  myfile.close();
 
-
  int j = 0;
  int pos = 0;
- while (j<48){
-        if(inputs[pos]!=','){
-            face[j] += inputs[pos];
+ while (j<48){      //Creates a loop for storing the input data into the string array for further use
+        if(inputs[pos]!=','){       // As long as the data isn't the delimiter save the char to the array string 
+            face[j] += inputs[pos]; 
             pos++;
         }
-        if(inputs[pos]==','){
+        if(inputs[pos]==','){       // At each delimiter stop saving characters to a string and move to the next array string
             j++;
             pos++;
         }
 }
-for (int i=0; i<48; i++){   //0-7,8-15,16-23,24-31,32-39,40-47
+for (int i=0; i<48; i++){   // Change the string data from the input values to correspond to the solvers requirements
     if(face[i]=="orange"){
         face[i] = "O";
     }
@@ -1055,9 +1060,7 @@ for (int i=0; i<48; i++){   //0-7,8-15,16-23,24-31,32-39,40-47
         face[i] = "G";
     }
 }
-
-//inside each step get the colors into the
-for(int i = 0; i < 6; i ++){
+for(int i = 0; i < 6; i ++){        //Save each string array to the corresponding tile piece leaving the middle piece constant
             if (i==0){
             r0c0 = Tile(face[0]);
             r0c1 = Tile(face[1]);
@@ -1138,24 +1141,15 @@ for(int i = 0; i < 6; i ++){
             else if(i == 4)myFace5 =  Face(r0c0, r0c1, r0c2, r1c0, r1c1, r1c2, r2c0, r2c1, r2c2);
             else myFace6 = Face(r0c0, r0c1, r0c2, r1c0, r1c1, r1c2, r2c0, r2c1, r2c2);
         }
-//below commented out sections with 3 comments are for testing
     myCube = Cube(myFace1, myFace2,myFace3,myFace4,myFace5,myFace6);
-
-  ///  cout<<" the code hasn't broken 1\n";
-   /// myCube.printCube();
-  ///  cout<<" the code hasn't broken 2\n";
-
     if(myCube.Valid() == true)
     {
         myCube.solveCube();
-            cout<<" works\n";
+            cout<<" \n";
         myCube.printCube();
-            cout<<" works2\n";
+            cout<<" \n";
         myCube.printVector();
-
     }
-
-
     else
     {
         QString filename = "input.txt";
@@ -1166,15 +1160,6 @@ for(int i = 0; i < 6; i ++){
            stream << "Error: Invalid Cube" << endl;
         }
     }
-
-
- ///   bool cont = true;
- ///   cout<<"1 - F, 2 - Fi, 3 - L, 4 - Li, 5 - R, 6 - Ri, \n 7 - U, 8 - Ui, 9 - D, 10 - Di, 11 - Print, 12 - RotateCW, \n 13 - RotateCCW, 14 - RotateFW, 15 - Rotate BW, 16 - RotateSideCCW, 17 - RotateSideCW 18 - Step1Move \n 19 - Step2Move 20 - Step3aMove 21 - Step3bMove 22 - Step4Move \n 23 - Step5Move 24 - Step6Move 25 - Solve Top, 26 - Solve Cube, 27 - Exit 28 - Print Instructions\n";
-
-    }
-
-
-
 
 ////////////////////////////////QT code below//////////////////////////////////////////////////
 
