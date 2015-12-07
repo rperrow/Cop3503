@@ -1160,6 +1160,7 @@ for(int i = 0; i < 6; i ++){        //Save each string array to the correspondin
            stream << "Error: Invalid Cube" << endl;
         }
     }
+}
 
 ////////////////////////////////QT code below//////////////////////////////////////////////////
 
