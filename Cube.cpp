@@ -35,8 +35,8 @@ void Cube::spinF(){
 	cubeArr[2].getFace()[0][0] = temp0;
 	cubeArr[2].getFace()[1][0] = temp1;
 	cubeArr[2].getFace()[2][0] = temp2;
-	cubeArr[1].rotate();
-	solutionVector.push_back("F");
+	cubeArr[1].rotate();                                      //the front face must also rotate
+	solutionVector.push_back("F");                            //add the instruction to the solution vector
 }
 
 void Cube::spinFi(){
@@ -237,7 +237,7 @@ void Cube::setTop(int k){
 		Face temp = cubeArr[0];
 		cubeArr[0] = cubeArr[1];
 		cubeArr[1] = cubeArr[5];
-		cubeArr[3].rotate(); cubeArr[3].rotate();
+		cubeArr[3].rotate(); cubeArr[3].rotate();          //the back face needs to be rotated twice - dimensions get tricky
 		cubeArr[5] = cubeArr[3];
 		temp.rotate(); temp.rotate();
 		cubeArr[3] = temp;
@@ -316,7 +316,7 @@ void Cube::step1Move(){
 	spinU();
 	spinFi();
 	spinUi();
-	solutionVector.pop_back(); solutionVector.pop_back(); solutionVector.pop_back(); solutionVector.pop_back();
+	solutionVector.pop_back(); solutionVector.pop_back(); solutionVector.pop_back(); solutionVector.pop_back();     //remove last 4 steps to tell user simply "step1move"
 	solutionVector.push_back("Step1Move");
 }
 
@@ -401,7 +401,7 @@ void Cube::fixSideOrientation(){
 	solutionVector.push_back("FixSideOrientation");
 }
 
-void Cube::solveSide(string c0, string c1){
+void Cube::solveSide(string c0, string c1){      //based on where the specific side piece is, do specific steps
 	if((c0 == cubeArr[0].getFace()[1][0].getColor() && c1 == cubeArr[4].getFace()[0][1].getColor()) || (c1 == cubeArr[0].getFace()[1][0].getColor() && c0 == cubeArr[4].getFace()[0][1].getColor())){
 		spinL(); spinL(); spinD(); spinF(); spinF();
 	}
@@ -438,8 +438,8 @@ void Cube::solveSide(string c0, string c1){
 	if(c0 == cubeArr[1].getFace()[0][1].getColor() && c1 == cubeArr[0].getFace()[2][1].getColor()) fixSideOrientation();
 }
 
-void Cube::solveTopCross(){
-	string topColor = cubeArr[0].getFace()[1][1].getColor();
+void Cube::solveTopCross(){                                             //solve for the entire top cross
+	string topColor = cubeArr[0].getFace()[1][1].getColor();               
 	string currentColor = cubeArr[1].getFace()[1][1].getColor();
 	solveSide(topColor, currentColor);
 	rotate(1);
@@ -454,7 +454,7 @@ void Cube::solveTopCross(){
 	rotate(1);
 }
 
-void Cube::solveCorner(string c0, string c1, string c2){
+void Cube::solveCorner(string c0, string c1, string c2){                //based on specific location, do specific steps
 	string f0; string f1; string f2; string f3; string f4; string f5; 
 	f0 = cubeArr[0].getFace()[2][0].getColor();
 	f1 = cubeArr[1].getFace()[0][0].getColor();
@@ -497,14 +497,14 @@ void Cube::solveCorner(string c0, string c1, string c2){
 	f2 = cubeArr[2].getFace()[0][0].getColor();
 	
 	while(!(c0==f0&&c1==f1&&c2==f2)){
-		step2Move(); 
+		step2Move();                                      //keep performing step 2 move until in right spot
 		f0 = cubeArr[0].getFace()[2][2].getColor();
 		f1 = cubeArr[1].getFace()[0][2].getColor();
 		f2 = cubeArr[2].getFace()[0][0].getColor();
 	}
 }
 
-void Cube::solveTopCorners(){
+void Cube::solveTopCorners(){                                      //solve for each of the top corners
 	string topColor = cubeArr[0].getFace()[1][1].getColor();
 	string frontColor = cubeArr[1].getFace()[1][1].getColor();
 	string rightColor = cubeArr[2].getFace()[1][1].getColor();
@@ -524,12 +524,12 @@ void Cube::solveTopCorners(){
 	rotate(1);
 }
 
-void Cube::solveTop(){
+void Cube::solveTop(){               //solve the entirety of the top part of the cube
 	solveTopCross();
 	solveTopCorners();
 }
 
-void Cube::solveMiddleSide(string c1, string c2){
+void Cube::solveMiddleSide(string c1, string c2){            //perform a while loop until the right center piece is correct
 	int k = 0;
 	while(!(c1 == cubeArr[1].getFace()[1][2].getColor() && c2 == cubeArr[2].getFace()[1][0].getColor())){
 	if(c1==cubeArr[0].getFace()[2][1].getColor() && c2 == cubeArr[1].getFace()[0][1].getColor()){   
@@ -573,7 +573,7 @@ void Cube::solveMiddleSide(string c1, string c2){
 
 }
 
-void Cube::solveMiddleRow(){
+void Cube::solveMiddleRow(){                                      //find and correct each of the center pieces
 	string frontColor = cubeArr[1].getFace()[1][1].getColor();
 	string rightColor = cubeArr[2].getFace()[1][1].getColor();
 	solveMiddleSide(frontColor, rightColor);
@@ -592,7 +592,7 @@ void Cube::solveMiddleRow(){
 	rotate(1);
 }
 
-void Cube::solveFinalCross(){
+void Cube::solveFinalCross(){                                                     //solves for the final cross
 	string topColor = cubeArr[0].getFace()[1][1].getColor(); bool flip = true;
 	while(!((cubeArr[0].getFace()[0][1].getColor() == topColor) && (cubeArr[0].getFace()[1][0].getColor() == topColor) && (cubeArr[0].getFace()[1][2].getColor() == topColor) && (cubeArr[0].getFace()[2][1].getColor() == topColor))){
 		if(!((cubeArr[0].getFace()[0][1].getColor() == topColor) || (cubeArr[0].getFace()[1][0].getColor() == topColor) || (cubeArr[0].getFace()[1][2].getColor() == topColor) || (cubeArr[0].getFace()[2][1].getColor() == topColor))){
@@ -664,7 +664,7 @@ void Cube::solveFinalCorners(){
 	}
 }
 
-bool Cube::checkColors(Face face1, Face face2, Face face3, string c1, string c2, string c3){
+bool Cube::checkColors(Face face1, Face face2, Face face3, string c1, string c2, string c3){   //quick check to see how mant steps need to be taken
 	bool verified = true;
 	string f1 = face1.getFace()[1][1].getColor(); string f2 = face2.getFace()[1][1].getColor(); string f3 = face3.getFace()[1][1].getColor(); 
 	if( (c1!=f1) && (c1 != f2) && (c1 != f3) ) verified = false;
@@ -702,7 +702,7 @@ void Cube::solveCube(){
 	setTop(2); setTop(2);
 	solveMiddleRow();
 	solveFinalCross();
-	//solveFinalCorners();
+	//solveFinalCorners();     didn't even need this :(
 	finishCube();
 }
 
@@ -723,7 +723,7 @@ void Cube::printVector(){
 		}
 		if (print){
 			if (oldk==1) cout<<solutionVector.at(i-1)<<" ";
-			else cout<<solutionVector.at(i-1)<<"x"<<oldk<<" ";
+			else cout<<solutionVector.at(i-1)<<"x"<<oldk<<" ";   //tell the user how many times to make the specified move
 			print = false;
 		}
 	}
