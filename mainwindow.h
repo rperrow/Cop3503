@@ -15,13 +15,17 @@ class MainWindow : public QMainWindow
 
 public:
     explicit MainWindow(QWidget *parent = 0);
+    std::vector<QString> steps;
+    int buttoncount;
+    int step;
+
     //for storing variables
-    std::string white_arr[8];
-    std::string Blue_arr[8];
-    std::string orange[8];
-    std::string yellow[8];
-    std::string green[8];
-    std::string red[8];
+    QString white_arr[8];
+    QString green_arr[8];
+    QString red_arr[8];
+    QString blue_arr[8];
+    QString orange_arr[8];
+    QString yellow_arr[8];
 
     //for cylcing through colors
     //white
@@ -89,13 +93,6 @@ public:
     int orange7count;
 
 
-
-
-
-
-
-
-
     int m_counter;
     ~MainWindow();
 
@@ -111,7 +108,6 @@ private slots:
     void on_white4_clicked();
 
     void on_white5_clicked();
-
 
     void on_green0_clicked();
 
@@ -198,6 +194,15 @@ private slots:
     void on_yellow5_clicked();
 
     void on_yellow6_clicked();
+
+    void on_SolveAllSteps_clicked();
+
+    void on_CommitCube_clicked();
+
+
+    void on_HelpButton_clicked();
+
+
 
 private:
     Ui::MainWindow *ui;
