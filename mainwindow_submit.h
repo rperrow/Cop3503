@@ -1,9 +1,10 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
-
 #include <QMainWindow>
 #include <string>
-
+//Please not that in this file and the other files that there are many includes that are specific to the Qt GUI IDE
+//They only work because we downloaded the IDE and its libraries.  Therefore, compiling it on any other machine may return errors
+//but the Release folder and the exe it contains will run.
 
 namespace Ui {
 class MainWindow;
@@ -19,7 +20,7 @@ public:
     int buttoncount;
     int step;
 
-    //for storing variables
+    //for storing the color string of each tile on face, we need an array
     QString white_arr[8];
     QString green_arr[8];
     QString red_arr[8];
@@ -27,7 +28,7 @@ public:
     QString orange_arr[8];
     QString yellow_arr[8];
 
-    //for cylcing through colors
+    //for cycling through colors, we need a counter for each button/tile.
     //white
     int white0count;
     int white1count;
@@ -98,7 +99,7 @@ public:
 
 private slots:
 
-
+// all the functions below correspond to pressing a button widget, and the code that follows from that press
     void on_white0_clicked();
 
     void on_white1_clicked();
@@ -198,7 +199,6 @@ private slots:
     void on_SolveAllSteps_clicked();
 
     void on_CommitCube_clicked();
-
 
     void on_HelpButton_clicked();
 
