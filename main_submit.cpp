@@ -11,16 +11,10 @@
 
 int main(int argc, char *argv[])
 {
-
-
-
-
-
-
-
+//The code directly below initializes the "help" text file that is used by the program.  
     QString filename = "help.txt";
        QFile file(filename);
-       if(file.open(QIODevice::ReadWrite|QIODevice::Truncate))
+       if(file.open(QIODevice::ReadWrite|QIODevice::Truncate)) // if the text file is open, read/write and truncate over old text.
        {
            QTextStream stream(&file);
 
@@ -64,6 +58,10 @@ int main(int argc, char *argv[])
            stream << "[move]x(n)-Perform [move] 'n' number of times. This multiplier can be applied to moves above.\n"<< endl;
            stream << "===================================="<< endl;
        }
+       //the text file has now been written through the stream into the default directory
+       
+       //the code below contains unnececary intializations for other text files used by the program. they were commented out
+       //because they were deemed not needed.
 /*
        QString filename_1 = "input.txt";
           QFile file_1(filename_1);
@@ -80,12 +78,11 @@ int main(int argc, char *argv[])
                  stream << ""<< endl;
               }
 */
+// the code below starts up the GUI
     QApplication a(argc, argv);
     MainWindow w;
     w.show();
-
-
-
+// again, not needed text file initializer
 /*    QString filename2 = "output.txt";
        QFile file2(filename2);
        if(file2.open(QIODevice::ReadWrite|QIODevice::Truncate))
