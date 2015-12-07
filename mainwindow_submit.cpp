@@ -7,9 +7,9 @@
 #include <QPalette>
 #include <QtWidgets>
 #include <QColor>
-
+//includes above mostly used by Qt IDE
 /////////////////////////////////////////////////////////////////////////////////
-
+// includes below mostly used by c++ code
 #include <iostream>
 #include <string>
 #include <vector>
@@ -1173,12 +1173,10 @@ MainWindow::MainWindow(QWidget *parent) :
 
     /****************************************************/
         /****************************************************/
-        //listing steps one by one
+        //solution steps pulled from text file and pushed into vector
         buttoncount = 0;
         step=0;
-
-
-       QFile file("input.txt");
+        QFile file("input.txt");
         if(!file.open(QIODevice::ReadOnly|QIODevice::Truncate)){
             QMessageBox::information(0, "info", file.errorString());
         }else{
@@ -1291,7 +1289,7 @@ MainWindow::~MainWindow()
 
 
 
-//create functions for white square buttons
+//create functions for white square buttons, changes the stylesheet/color of each widget when it is clicked.
 
 void MainWindow::on_white0_clicked()
 {
@@ -3078,7 +3076,7 @@ void MainWindow::on_yellow7_clicked()
 }
 
 
-//Begin working on displaying steps
+//Begin working on displaying steps, displays input text file in the GUI textBrowser widget
 
 void MainWindow::on_SolveAllSteps_clicked()
 {
@@ -3093,7 +3091,7 @@ void MainWindow::on_SolveAllSteps_clicked()
     ui->textBrowser->setText(in.readAll());
 
 }
-//to create the steps to solve the mixed up cube
+//to create the steps to solve the mixed up cube.  outputs the color configuration via text file.
 void MainWindow::on_CommitCube_clicked(){
     buttoncount=0;
     QString tempy= "";
@@ -3106,7 +3104,7 @@ void MainWindow::on_CommitCube_clicked(){
     }
 
 
-
+//outputting cube color configuration as text file.
     QString filename = "output.txt";
     QFile file(filename);
     if(file.open(QIODevice::ReadWrite|QIODevice::Truncate))
@@ -3138,21 +3136,11 @@ void MainWindow::on_CommitCube_clicked(){
         }
 
     }
-
+//runs code segment above, includes all the algorithms for solving the cube
     solver();
 
-
-
-
-
-
 }
-
-
-
-
-
-
+//Loads the previously initialized help text file
 void MainWindow::on_HelpButton_clicked()
 {
     buttoncount=0;
@@ -3160,13 +3148,7 @@ void MainWindow::on_HelpButton_clicked()
     QFile file("help.txt");
     if(!file.open(QIODevice::ReadOnly))
         QMessageBox::information(0, "info", file.errorString());
-
+        
     QTextStream in(&file);
-
     ui->textBrowser->setText(in.readAll());
-
-
 }
-
-
-
