@@ -6,6 +6,9 @@
 //They only work because we downloaded the IDE and its libraries.  Therefore, compiling it on any other machine may return errors
 //but the Release folder and the exe it contains will run.
 
+//Please not also that mainwindow_submit.ui is automatically generated. It is included because it corresponds to the design of our
+//graphic interface, which we designed ourself.  The layouts are done somewhat visually intially, and customizations are done through code.
+
 namespace Ui {
 class MainWindow;
 }
