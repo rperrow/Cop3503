@@ -3167,24 +3167,6 @@ void MainWindow::on_CommitCube_clicked(){
 
 
 
-void MainWindow::on_SolveOneStep_clicked(){
-
-    if(buttoncount == (steps.size()))
-    {
-          ui->textBrowser->setText("Finished");
-          buttoncount=0;
-      }
-    else
-    {
-      cout << steps.size();
-      QString dis = steps[buttoncount];
-      ui->textBrowser->setText(dis);
-      buttoncount++;
-    }
-
-}
-
-
 
 void MainWindow::on_HelpButton_clicked()
 {
